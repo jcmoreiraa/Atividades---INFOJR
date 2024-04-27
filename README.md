@@ -13,7 +13,7 @@ Neste texto seguem algumas explicações importantes a respeito de como funciona
 
 Primeiramente, vocês terão que preparar o ambiente na sua máquina para começar a trabalhar. 
 
-Será necessário realizar a instalação do [Git](https://git-scm.com/downloads) e de uma IDE de código (preferenciamente o [VSCode](https://code.visualstudio.com/download))
+Será necessário realizar a instalação do [Git](https://git-scm.com/downloads) e de uma IDE de código (preferencialmente o [VSCode](https://code.visualstudio.com/download))
 
 ### Criando a sua branch
 
