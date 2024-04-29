@@ -1,0 +1,211 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+
+body{
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+}
+main{
+    width: 875px;
+    height: 492px;
+    background-color: #DFDFD6;
+    border-radius: 25px;
+    display: flex;
+    object-fit: cover;
+    justify-content: space-between;
+}
+.folha{
+    width: 291px;
+    height: 492px;
+}
+.caixa_texto{
+display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8vh;
+    color: #132305;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 100px;
+    padding-top: 18px;
+    
+
+
+
+
+
+
+
+
+
+   
+    
+
+    
+}
+section{
+    display: flex;
+    align-items: center;
+    
+    
+    
+
+}
+
+
+h1{
+   
+font-family: Josefin Sans, sans-serif;
+font-size: 36px;
+font-weight: 600;
+line-height: 36px;
+
+}
+.lorem{
+
+    
+    font-family: Open Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: justify;
+    margin: 0;
+
+}
+
+footer{
+display: flex;
+justify-content: space-between;
+padding-left: 30px;
+    padding-right: 30px;  
+    align-items: center;
+
+}
+.usuario{
+    font-family: 'Pacifico', cursive;
+
+
+    
+    
+   
+}
+.cachorro{
+    display: flex;
+    gap:10px;
+    
+}
+.cachorro_imagem{
+    background: red;
+    border-radius: 100%;
+
+    
+}
+h3{
+    padding-bottom: 15px;
+}
+.botao{
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+
+
+}
+.botao.hover{
+    cursor: pointer;
+}
+.folha_pequena{
+    display: none;
+}
+.espaço_modal{
+    
+    width:200px;
+height: 25px;
+border-radius: 18px;
+background-color: #696F5A;
+display: flex;
+gap:15px;
+padding: 8px 11px 8px 11px;
+
+
+
+
+
+}
+.apresentacao{
+    display: flex;
+    
+  
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.58vh;
+    padding-bottom: 10px;
+    
+    
+  
+
+}
+.social{
+    background-color: black;
+}
+
+@media(max-width:700px){
+
+
+    .folha{
+        display: none;
+    }
+    .folha_pequena{
+        display: block;
+    }
+    main{
+        width: 350px;
+        height: 750px;
+        flex-direction: column;
+    }
+    .caixa_texto{
+        width: 290px;
+height: 368px;
+flex-direction: column;
+    }
+    footer{
+        display: flex;
+        width:290px;
+        height: 50px;
+        align-items: center;
+        padding-bottom: 35px;
+        padding-right: 30px;
+        justify-content: space-between;
+
+
+
+
+
+        
+    }
+    .apresentacao{
+       align-items: center;
+       padding-bottom: 45px;
+       padding-left:5px;
+       
+       
+    }
+    .espaço_modal{
+        visibility: visible;
+        padding: 5px 7px 5px 7px;
+        margin-left: -55px;
+
+        
+        
+    }
+
+
+    
+
+
+}
