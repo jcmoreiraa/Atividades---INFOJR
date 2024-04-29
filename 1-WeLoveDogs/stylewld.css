@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+}
+
+strong {
+    color: #7ed321;
+}
+header {
+    display: flex;
+    align-items: baseline;
+}
+
+.logo {
+    width: 281px;
+    height: 65px;
+    text-align: center;
+    font-size: 48px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.cima {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.botao {
+    width: 112px;
+    height: 22px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.botao_vc {
+    background-color: rgba(126, 211, 33, 0.4);
+    width: 112px;
+    height: 22px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #1C4701;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+}
+
+.texto {
+    margin: 5% 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.texto_principal {
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+
+.botao_v {
+    background-color: #7ED321;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: #1C4701;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
