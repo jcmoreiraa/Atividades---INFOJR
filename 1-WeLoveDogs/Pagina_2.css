@@ -1,0 +1,43 @@
+
+
+#corpo {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em uma coluna */
+    align-items: center; /* Centraliza horizontalmente na coluna */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente na página */
+}
+
+div h1 { 
+    font-family: 'Open sans', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.5px;
+    padding-left: 553px; /* Centraliza o texto horizontalmente */
+
+}
+
+div p {
+    width: 687px;
+    height: 176px;
+    top: 229px;
+    left: 377px;
+    padding-left: 377px;
+    
+
+
+    
+    
+}
+
+.img1  {
+    
+    padding-left: 543px;
+    position: absolute;
+    text-align: center;
+    width: 354;
+    
+    height: 266px;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente no contêiner */
+}
