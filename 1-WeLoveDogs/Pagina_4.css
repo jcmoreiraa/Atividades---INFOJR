@@ -19,10 +19,12 @@ padding-right: 100px;
 }
 
 label {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     padding-right: 20px;
     text-align: center;
+    font-family: 'Open Sans', sans-serif; /* Define a família de fontes */
+
     
 
 }

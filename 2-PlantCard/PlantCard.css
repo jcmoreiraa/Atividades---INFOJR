@@ -101,7 +101,7 @@ padding-left: 30px;
     
 }
 .cachorro_imagem{
-    background: red;
+    background: black;
     border-radius: 100%;
 
     
@@ -210,6 +210,10 @@ flex-direction: column;
 
         
         
+    }
+    .cachorro_imagem{
+        background: white;
+
     }
 
 
