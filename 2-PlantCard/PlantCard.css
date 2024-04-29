@@ -132,12 +132,17 @@ background-color: #696F5A;
 display: flex;
 gap:15px;
 padding: 8px 11px 8px 11px;
+opacity: 0;
+transition: opacity 2.5s ease;
+
+
 
 
 
 
 
 }
+
 .apresentacao{
     display: flex;
     
@@ -148,9 +153,11 @@ padding: 8px 11px 8px 11px;
     padding-bottom: 10px;
     
     
+    
   
 
 }
+
 .social{
     background-color: black;
 }
