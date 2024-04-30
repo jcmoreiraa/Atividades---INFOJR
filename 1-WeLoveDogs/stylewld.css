@@ -21,6 +21,8 @@ header {
     justify-content: space-between;
 }
 
+/* pagina Home */
+
 .logo {
     width: 281px;
     height: 65px;
@@ -95,8 +97,25 @@ header {
     text-align: center;
     margin-right: 30%;
 }
+ /* pagina Quem Somos */
 
-#centro {
+.quemsomos {
+    display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 535px;
+}
 
+h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    padding: 2%;
+}
+p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    width: 687px;
 }
