@@ -1,42 +1,116 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body{
+  margin:0;
+  padding:0;
+}
+header{
+gap: 511px;
+box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.kevin{  
+display: flex;
+text-align: left;
+gap:50px;
+
+
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.nome{
+font-weight: 700;
+font-size: 20px;
+line-height: 20px;
+font-family: "Be Vietnam", sans-serif;
+letter-spacing: -0.02em;
+
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.section{
+  display: flex;
+  gap:20px;
+  list-style: none;
+  padding-top: 11px;
+  
+
+
+
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.section a{
+  
+   font-family: "Be Vietnam", sans-serif;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 20.45px;
+   text-decoration: none;
+   color: #0065FF;
+
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.redes_e_botao{
+  display: flex;
+
+  gap:50px;
+}
+.redes{
+  display: flex;
+  padding-top: 15px;
+gap: 30px;
+}
+.togle{
+  display: flex;
+  gap: 15px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-top: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
 }
 
-.card {
-  padding: 2em;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: white;
+  -webkit-transition: .4s;
 }
 
-.read-the-docs {
-  color: #888;
+input:checked + .slider {
+  background-color: black;
 }
+.dm{
+  font-family: 'Be Vietnam', sans-serif;
+  font-size: 14px;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+}
+
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+  
+
