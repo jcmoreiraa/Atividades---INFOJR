@@ -146,3 +146,63 @@ h2 {
     width: 778px;
     padding: 2%;
 }
+
+/* pagina Contato */
+
+label {
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    align-content: center;
+    text-align: center;
+    margin-top: 2px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+input {
+    border-radius:7px;
+    width: 419px;
+    height: 38px;
+    padding-left: 10px;
+    font-family: "Open Sans", sans-serif;
+
+}
+
+textarea {
+    border-radius:7px;
+    width: 419px;
+    height: 160px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: "Open Sans", sans-serif;
+}
+
+button {
+    background-color: #7ED321;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #1C4701;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    width: 141px;
+    height: 42px;
+    margin-left: 75%;
+}
+
+
+.inscricao {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 20px
+}

@@ -20,34 +20,36 @@
 
         <main>
             <h1>Inscrição</h1>
+            
+            <div class="inscricao">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="campo">
+                        <label for="">Nome</label>
+                        <input name="nome" required="required" placeholder="Seu nome" type="text"> 
+                    </div>
 
-            <form action="" method="post" enctype="multipart/form-data">
-                <div>
-                    <label for="">Nome</label>
-                    <input name="nome" required="required" placeholder="Seu nome" type="text"> 
-                </div>
+                    <div class="campo">
+                        <label for="">Idade</label>
+                        <input name="idade" required="required" placeholder="18" type="text"> 
+                    </div>
 
-                <div>
-                    <label for="">Idade</label>
-                    <input name="idade" required="required" placeholder="18" type="text"> 
-                </div>
+                    <div class="campo">
+                        <label for="">E-mail</label>
+                        <input name="email" required="required" placeholder="exemplo@exemplo" type="text"> 
+                    </div>
 
-                <div>
-                    <label for="">E-mail</label>
-                    <input name="email" required="required" placeholder="exemplo@exemplo" type="text"> 
-                </div>
+                    <div class="campo">
+                        <label for="">Ama cachorros?</label>
+                        <textarea name="amacachorros" required="required" placeholder="Mensagem" type="text" cols="30" rows="10"></textarea>
+                    </div>
 
-                <div>
-                    <label for="">Ama cachorros?</label>
-                    <textarea name="amacachorros" required="required" placeholder="Mensagem" type="text" cols="30" rows="10"></textarea>
-                </div>
+                    <div>
+                        <button name="enviar" value="1" type="submit">Enviar</button>
+                    </div>
+                </form>
 
-                <div>
-                    <button name="enviar" value="1" type="submit">Enviar</button>
-                </div>
-            </form>
-
-            <img src="imagens/imagem5.svg">
+                <img src="imagens/imagem5.svg">
+            </div>
         </main>
 
         <footer></footer>
