@@ -1,4 +1,5 @@
 let modal = document.querySelector(".espaço_modal");
+let botao = document.getElementById("meu_botao")
 
 function aparecer() {
     if (modal.style.visibility === "hidden") {
@@ -16,4 +17,6 @@ function aparecer() {
 
 modal.style.visibility = "hidden";
 modal.style.opacity = "0";
+
+botao.onclick = aparecer;
 

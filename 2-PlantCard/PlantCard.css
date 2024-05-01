@@ -95,6 +95,7 @@ padding-left: 30px;
     
    
 }
+
 .cachorro{
     display: flex;
     gap:10px;
@@ -114,6 +115,7 @@ h3{
     border: none;
     cursor: pointer;
     
+    
 
 
 }
@@ -126,14 +128,14 @@ h3{
 .espaço_modal{
     
     width:200px;
-height: 25px;
+height: 20px;
 border-radius: 18px;
 background-color: #696F5A;
 display: flex;
 gap:15px;
 padding: 8px 11px 8px 11px;
 opacity: 0;
-transition: opacity 2.5s ease;
+transition: opacity 3s ease;
 
 
 
@@ -149,8 +151,8 @@ transition: opacity 2.5s ease;
   
     flex-direction: column;
     align-items: flex-end;
-    gap: 1.58vh;
-    padding-bottom: 10px;
+    gap: 7px;
+    padding-bottom: 15px;
     
     
     
@@ -185,10 +187,9 @@ flex-direction: column;
         display: flex;
         width:290px;
         height: 50px;
-        align-items: center;
-        padding-bottom: 35px;
-        padding-right: 30px;
-        justify-content: space-between;
+        align-items: center ;
+        margin-bottom: 35px;
+        justify-content: space-around;
 
 
 
@@ -197,16 +198,17 @@ flex-direction: column;
         
     }
     .apresentacao{
+       padding-bottom: 30px;
+       padding-left:40px;
        align-items: center;
-       padding-bottom: 45px;
-       padding-left:5px;
        
        
     }
     .espaço_modal{
         visibility: visible;
         padding: 5px 7px 5px 7px;
-        margin-left: -55px;
+        margin-left: -97px;
+        margin-bottom: 5px;
 
         
         
