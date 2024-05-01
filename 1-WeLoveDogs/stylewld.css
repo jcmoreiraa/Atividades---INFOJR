@@ -21,115 +21,135 @@ header {
     justify-content: space-between;
 }
 
-/* pagina Home */
+h1 {
+    display: flex;
+    justify-content: center;
 
-.logo {
-    width: 281px;
-    height: 65px;
-    margin-left: 20px;
-    font-size: 48px;
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    padding: 10px 0;
+    font-size: 48px;
+
+    margin-top: 20px;
+}
+
+h2 {
+    display: flex;
+    
+    font-size: 32px;
+
+    padding-bottom: 2%;
+}
+
+/* pagina Home */
+.logo {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
     color: black;
+    font-size: 48px;
     text-decoration: none;
+
+    margin-left: 20px;
+    padding: 10px 0;
+
+    width: 281px;
+    height: 65px;
 }
 
 .cima {
     display: flex;
     justify-content: flex-end;
+
     margin-right: 20px;
 }
 
 .botao {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+
+    text-align: center;
+    padding: 10px 0;
+
     width: 112px;
     height: 22px;
-    text-align: center;
-    font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    padding: 10px 0;
-    color: black;
-    text-decoration: none;
 }
 
-.botao_vc {
+#botao_header {
     background-color: rgba(126, 211, 33, 0.4);
-    width: 151px;
-    height: 20px;
-    text-align: center;
     border-radius: 15px;
-    font-size: 16px;
-    padding: 10px 0;
-    text-decoration: none;
-    color: #1C4701;
+
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
+    color: #1C4701;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+
+    padding: 10px 0;
+
+    width: 151px;
+    height: 20px;
 }
 
 .texto {
-    margin: 5% 14%;
     display: flex;
     flex-direction: row;
+
+    margin: 5% 14%;
     gap: 5%;
 }
 
 .texto_principal {
-    width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-size: 48px;
+
+    width: 30%;
+    gap: 40px;
 }
 
 
-.botao_v {
+#botao_meio {
     background-color: #7ED321;
     border-radius: 15px;
-    font-size: 20px;
-    padding: 15px 0;
-    text-decoration: none;
-    color: #1C4701;
+    
+    
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
+    color: #1C4701;
+    font-size: 20px;
+    text-decoration: none;
     text-align: center;
+
+    padding: 15px 0;
+
     margin-right: 30%;
 }
  /* pagina Quem Somos */
-
 .quemsomos {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
     height: 535px;
 }
 
-h1 {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    font-size: 48px;
-    display: flex;
-    justify-content: center;
-}
-
-h2 {
-    display: flex;
-    padding-bottom: 2%;
-    font-size: 32px;
-}
-.quemsomostexto {
+#quemsomostexto {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
-    padding: 2%;
     text-align: justify;
+
     width: 687px;
+    padding: 2%;
 }
 
 /*pagina Blog */
-
 .blog {
     display: flex;
     flex-direction: row;
@@ -140,66 +160,83 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     text-align: justify;
-    width: 778px;
+
+    width: 770px;
+    height: 200px;
     padding: 2%;
 }
 
 /* pagina Contato */
-
 label {
     display: inline-block;
-    width: 140px;
-    height: 40px;
     align-content: center;
     text-align: center;
     margin-top: 2px;
+
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
     font-weight: 700;
+    font-size: 18px;
     line-height: 24px;
+
+    width: 140px;
+    height: 40px;
 }
 
 input {
     border-radius:7px;
-    width: 419px;
-    height: 38px;
     padding-left: 10px;
+
     font-family: "Open Sans", sans-serif;
 
+    width: 419px;
+    height: 38px;
 }
 
 textarea {
     border-radius:7px;
-    width: 419px;
-    height: 160px;
     padding-left: 10px;
     padding-top: 10px;
+
     font-family: "Open Sans", sans-serif;
+
+    width: 419px;
+    height: 160px;
 }
 
 button {
     background-color: #7ED321;
     border-radius: 10px;
-    font-size: 16px;
-    text-decoration: none;
-    color: #1C4701;
+    border: none;
+    
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
+    color: #1C4701;
+    font-size: 16px;
+    text-decoration: none;
     text-align: center;
+
     width: 141px;
     height: 42px;
     margin-left: 75%;
 }
 
+form {
+    padding-top: 40px;
+}
 
-.inscricao {
+#inscricao {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 450px;
+    width: 1100px;
 }
 
 .campo {
