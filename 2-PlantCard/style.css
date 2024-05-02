@@ -12,20 +12,17 @@ body {
     background-color: #BCCDD0;
     display: flex;
     flex-direction: row;
-
-    margin: auto 0;
-
+    justify-content: center;
     align-items: center;
 }
 
 #card {
     background-color: #DFDFD6;
     border-radius: 28px;
-    margin: 0 auto; 
     
     display: flex;
 
-    width: 87.5%;
+    width: 90%;
     max-width: 875px;
     max-height: 492px;
 }
@@ -78,3 +75,26 @@ p {
 h4 {
     font-size: 24px;
 }
+
+@media (max-width: 800px) {
+    #card {
+        display: flex;
+        transform: rotate(90deg);
+        
+        height: 350px;
+        width: 100%;
+    }
+
+    #conteudo {
+        width: 200px;
+        transform: rotate(-90deg);
+        
+        padding: 25px 30px 25px 30px;
+        
+    }
+
+    #texto {
+        gap: 10px;
+    }
+
+}    
