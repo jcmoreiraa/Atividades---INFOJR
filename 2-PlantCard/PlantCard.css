@@ -27,7 +27,7 @@ main{
 display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8vh;
+    gap: 4vh;
     color: #132305;
     padding-left: 30px;
     padding-right: 30px;
@@ -75,7 +75,6 @@ line-height: 36px;
     font-weight: 400;
     line-height: 21.79px;
     text-align: justify;
-    margin: 0;
 
 }
 
@@ -88,7 +87,8 @@ padding-left: 30px;
 
 }
 .usuario{
-    font-family: 'Pacifico', cursive;
+    font-family: 'Overpass', sans-serif;
+
 
 
     
@@ -114,6 +114,7 @@ h3{
     background: none;
     border: none;
     cursor: pointer;
+    margin-bottom: 10px;
     
     
 
@@ -143,6 +144,10 @@ transition: opacity 3s ease;
 
 
 
+}
+.share{
+    font-family:'Overpass', sans-serif
+    ;
 }
 
 .apresentacao{
@@ -181,13 +186,10 @@ transition: opacity 3s ease;
     .caixa_texto{
         width: 290px;
 height: 368px;
-flex-direction: column;
     }
     footer{
-        display: flex;
         width:290px;
-        height: 50px;
-        align-items: center ;
+        height: 30px;
         margin-bottom: 35px;
         justify-content: space-around;
 
@@ -199,8 +201,6 @@ flex-direction: column;
     }
     .apresentacao{
        padding-bottom: 30px;
-       padding-left:40px;
-       align-items: center;
        
        
     }

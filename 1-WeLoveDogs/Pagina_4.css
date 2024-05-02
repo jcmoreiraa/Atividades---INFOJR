@@ -38,6 +38,7 @@ label {
     size: 18px;
 
     font-weight: bold;
+    padding-left: 10px;
     
 
 
@@ -50,6 +51,7 @@ label {
 height: 160px;
 
 border-radius: 7px;
+padding-left: 10px;
 
 }
 
