@@ -4,9 +4,11 @@ import VectorImage from './assets/Vector (1).png';
 import VectorImagem from './assets/Vector (2).png'; 
 import twitter from './assets/twitter-icon.png';
 import avatar from './assets/avatar.png';
-import check from './assets/check.png';
+import check from './assets/check (1).png';
 import julio from './assets/julio cesar eu mesmo (1).jpg';
 import ufba from './assets/ufba (1).png';
+import menuu from './assets/menu.png';
+import teste from './assets/teste.png';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -45,6 +47,8 @@ function App() {
             
     <main>
       <section>
+        <button className='menu'><img  className='menu' src={menuu}></img></button>
+
         <div className='first_text'>
           <div className="x">
             <img className='minha_foto' src={julio}></img>
@@ -54,7 +58,7 @@ function App() {
         <div className='linha'></div>
         <p className='first_text_big'>I'm a Computer Science enthusiast at UFBA, currently participating in an exciting trainee selection process at InfoJr. I'm focused on delivering web programming projects that blend functionality and elegance. My passion lies in simplifying complex processes and creating intuitive digital experiences for end users.<p></p> 
         As part of my commitment to excellence, I'm constantly honing my skills in various languages, including Python, C++, Ruby, and JavaScript, as well as HTML and CSS. I'm excited to collaborate with a dynamic and diverse team where I can contribute my expertise in interface design and digital product development.<p></p>
-        While my professional journey is just beginning, I'm eager to apply my passion for technology and my desire for continuous learning to tackle exciting challenges and drive team success."</p>
+        While my professional journey is just beginning, I'm eager to apply my passion for technology and my desire for continuous learning to tackle exciting challenges and drive team success.</p>
         </div>
         <div className='avaliable'>
           <img  className="check" src={check}></img>
@@ -67,7 +71,7 @@ function App() {
 
 
        <section>
-        <h2 className='title'> Title </h2>
+        <h1 className='title' id='title'> Title </h1>
         <p className='texto__'>
         Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. 
         </p>

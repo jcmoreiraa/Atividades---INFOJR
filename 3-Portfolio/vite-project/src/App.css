@@ -18,6 +18,16 @@ gap:50px;
 
 
 }
+.menu{
+  border: none;
+  background:none;
+  cursor: pointer;
+  display: none;
+}
+
+#title{
+  font-weight: bold;
+}
 #section:hover{
   opacity: 0.6;
 }
@@ -122,7 +132,7 @@ main{
 
 }
 section{
-  margin-left: 240px;
+  margin-left: 238px;
   margin-top: 60px;
 }
 .first_text{
@@ -266,3 +276,135 @@ cursor: pointer;
 
 }
 
+
+
+
+@media(max-width:1000px){
+
+  section{
+    width: 310px;
+height: 926px;
+margin-left: 85px;
+
+
+  }
+  .hello{font-family: "EB Garamond", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.08em;
+    text-align: center;
+    }
+
+    .first_text_big{
+      width: 310px;
+height: 540px;
+font-family: "Be Vietnam", sans-serif;
+font-size: 17px;
+font-weight: 400;
+line-height: 24.84px;
+text-align: center;
+margin-bottom: 50px;
+
+
+
+
+    }
+    .linha
+    {
+      width: 192px;
+      margin-left: 51px;
+    }
+    .linha_azul{
+      width: 320px;
+    }
+    .minha_foto{
+      margin-left: 105px;
+      visibility: visible;
+    }
+    .x{
+      visibility: hidden;
+    }
+    .avaliable{
+      width: 280px;
+height: 30px;
+padding: 20px;
+gap: 15px;
+border-radius: 10px;
+
+    }
+    .title{
+      margin-left: 130px;
+    }
+    .texto__{
+      width: 310px;
+height: 135px;
+text-align: center;
+font-family: "Be Vietnam", sans-serif;
+font-size: 17px;
+font-weight: 400;
+line-height: 24.84px;
+
+    }
+    .espaço_para_imagem{
+      width: 310px;
+height: 179px;
+border-radius: 10px;
+
+
+
+
+    }
+    .primeira_imagem_texto{
+      flex-direction: column;
+      gap: 0px;
+      margin-left: 10px;
+
+    }
+    .segunda_imagem_texto{
+      flex-direction: column-reverse;
+      gap:0px;
+      padding-bottom: 50px;
+      margin-bottom: 150px;
+      margin-left: 10px;
+      padding-top: 35px;
+    }
+    .leanding{
+      width: 310px;
+height: 100px;
+font-family: 'Be Vietnam', sans-serif;
+font-size: 17px;
+font-weight: 400;
+line-height: 24.84px;
+text-align: center;
+
+
+
+
+    }
+    .bpl{
+      margin-left: 0px;
+      height: 50px;
+      width: 310px;
+}
+
+.section{
+  display: none;
+
+}
+header{
+  width: 500px;
+  gap:0px;
+  justify-content: space-around;
+}
+.redes{
+  display: none;
+}
+
+.menu{
+  display: block;
+}
+
+
+
+}
