@@ -4,7 +4,7 @@ body{
 }
 header{
 gap: 511px;
-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -16,6 +16,10 @@ gap:50px;
 
 
 
+
+}
+#section:hover{
+  opacity: 0.6;
 }
 
 .nome{
@@ -43,7 +47,7 @@ letter-spacing: -0.02em;
    font-size: 14px;
    line-height: 20.45px;
    text-decoration: none;
-   color: #0065FF;
+   color: black;
 
 
 }
@@ -129,16 +133,18 @@ section{
   line-height: 70px;
   letter-spacing: -0.02em;
   text-align: left;
-  color: #0065FF;
+  color: black;
   margin:0;
   padding-bottom: 20px;
 
 }
 .linha{
-  width: 192px;
+  width: 670px;
 height: 1px;
 
-background: #0065FF;
+background: black;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+
 
 }
 .first_text_big{
@@ -150,16 +156,18 @@ background: #0065FF;
  height: 100px;
  border-radius: 93px;
  margin-bottom: 20px;
- position: relative;
+ border-radius: 50%;
 
+}
+.minha_foto{
+  border-radius: 100%;
 }
 .avaliable{
   gap: 10px;
   width: 462px;
   height: 56px;
   
-  background-color: #F8F9FA;
-  ;
+  background-color: #EDEFF0;  
 align-items: center;  
 padding-left: 20px;
 display: flex;
@@ -169,8 +177,9 @@ margin-top: 20px;
 {
   width: 960px;
 height: 0.8px;
-background: #0065FF;
-margin-top: 50px
+background: black;
+margin-top: 50px;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
 ;
 
 
@@ -182,7 +191,7 @@ margin-top: 50px
   line-height: 24px;
   letter-spacing: -0.02em;
   text-align: left;
-  color: #0065FF;
+  color: black;
 
 }
 .texto__{
@@ -194,3 +203,66 @@ line-height: 24.84px;
 
 
 }
+
+.espaço_para_imagem{
+  width: 640px;
+height: 370px;
+background: #E5E5E5;
+;
+
+border-radius: 10px;
+}
+.primeira_imagem_texto{
+  display: flex;
+  gap:50px;
+
+}
+
+.title{
+
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 20px;
+    font-weight: 00;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: left;
+
+}
+.leanding{
+  Width: 280px;
+Height: 125px;
+font-family: "Be Vietnam";
+font-weight: 400;
+font-size: 17px;
+line-height: 24.84px;
+
+
+}
+
+.bpl{
+  width: 180px;
+height: 50px;
+gap: 10px;
+border-radius: 40px;
+border: 1px solid transparent;
+border-color: black;
+font-family: "Be Vietnam", sans-serif;
+font-size: 12px;
+font-weight: 700;
+line-height: 17.px;
+cursor: pointer;
+}
+
+.bpl:hover{
+  background: #E5E5E5;
+
+}
+
+.segunda_imagem_texto{
+  display: flex;
+  padding-top: 60px;
+  gap:50px;
+  margin-bottom: 100px;
+
+}
+

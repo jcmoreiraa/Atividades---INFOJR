@@ -169,7 +169,7 @@ transition: opacity 3s ease;
     background-color: black;
 }
 
-@media(max-width:700px){
+@media(max-width:1000px){
 
 
     .folha{
