@@ -49,6 +49,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 #perfil {
@@ -68,6 +69,8 @@ body {
 
 #share {
     display: flex;
+    height: 52px;
+    width: 52px;
 }
 
 p {
@@ -85,17 +88,34 @@ h4 {
 
         height: 100%;
         max-height: 350px;
-        min-width: 750px;
+        min-width: 700px;
         
     }
 
     #conteudo {
-        transform: rotate(-90deg);
-        padding: 0%;
+        width: 100%;
+        height: 100%;
+        flex-direction: column-reverse;
+        padding: 30px 25px 30px 25px;
+        max-width: 440px;
+        max-height: 290px;
+        writing-mode: vertical-rl;
+        gap: 105px;
     }
 
     #texto {
+        height: 100%;
+        transform: rotate(180deg);
+        transform-origin: center;
         gap: 10px;
     }
 
-}    
+    #rodape {
+        transform: rotate(180deg);
+        
+    }
+
+    .imgrodape {
+        transform: rotate(90deg);
+    }
+}
