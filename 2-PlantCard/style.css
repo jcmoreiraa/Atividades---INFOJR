@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+*, ul {
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -73,8 +73,36 @@ body {
     width: 52px;
 }
 
+#share:hover {
+    height: 54px;
+    width: 54px;
+    cursor: pointer;
+}
+
+#menu {
+    display:flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #696F5A;
+}
+
+.links {
+    color: #DFDFD6;
+    text-decoration: none;
+}
+
+.links:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
 p {
     font-size: 16px;
+}
+
+h3 {
+    color: #DFDFD6;
 }
 
 h4 {
