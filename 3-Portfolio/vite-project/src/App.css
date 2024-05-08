@@ -248,6 +248,9 @@ line-height: 24.84px;
 
 
 }
+.section__{
+  display: none;
+}
 
 .bpl{
   width: 180px;
@@ -266,6 +269,9 @@ cursor: pointer;
 .bpl:hover{
   background: #E5E5E5;
 
+}
+.redes_{
+  display: none;
 }
 
 .segunda_imagem_texto{
@@ -404,7 +410,45 @@ header{
 .menu{
   display: block;
 }
+.section__{
+  display: block;
 
+}
+.section_2{
+  gap:20px;
+  list-style: none;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+.section_2 a{
+  text-decoration: none;
+  font-family: "Be Vietnam", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20.45px;
+  color: black;
+}
+.section_2 a:hover{
+  opacity: 0.6;
+}
+
+.redes_{
+  display: flex;
+  padding-left: 30px;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.meu_codigo_esta_uma_bagunça{
+  gap:20px;
+
+}
 
 
 }
+
+
+
