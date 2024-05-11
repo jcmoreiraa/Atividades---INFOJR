@@ -14,7 +14,7 @@ main{
     width: 875px;
     height: 492px;
     background-color: #DFDFD6;
-    border-radius: 25px;
+    border-radius: 28px;
     display: flex;
     object-fit: cover;
     justify-content: space-between;
@@ -32,7 +32,7 @@ display: flex;
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 100px;
-    padding-top: 18px;
+    padding-top: 20px;
     
     
 
@@ -114,7 +114,7 @@ h3{
     background: none;
     border: none;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     
     
 
@@ -134,13 +134,14 @@ border-radius: 18px;
 background-color: #696F5A;
 display: flex;
 gap:15px;
-padding: 8px 11px 8px 11px;
+padding: 10px 11px 10px 11px;
 opacity: 0;
 transition: opacity 3s ease;
+}
 
 
-
-
+#foto{
+    filter:grayscale(100%)
 
 
 
@@ -182,6 +183,7 @@ transition: opacity 3s ease;
         width: 350px;
         height: 750px;
         flex-direction: column;
+        margin-top: 30px;
     }
     .caixa_texto{
         width: 290px;
@@ -206,13 +208,16 @@ height: 368px;
     }
     .espaço_modal{
         visibility: visible;
-        padding: 5px 7px 5px 7px;
+        padding: 10px 8px 10px 8px;
         margin-left: -97px;
         margin-bottom: 5px;
 
         
         
     }
+    .folha_pequena{
+        border-radius: 30px 30px 0px 0px;
+        }
     
 
 
