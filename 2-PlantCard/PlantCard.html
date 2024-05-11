@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Desktop</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="plantcard.css">
     </head>
 
     <body>
@@ -27,17 +27,22 @@
                         </div>
                     </div>
                     
-                    <img id="share" class="imgrodape" onclick="clicar()" src="imagens/share.png">
-                    
-                    <div id="menu">
-                        <h3>SHARE</h3>
-                        <nav>
-                            <ul>
-                                <li><img class="links" src="imagens/facebook.png"></li>
-                                <li><img class="links" src="imagens/twitter.png"></li>
-                                <li><img class="links" src="imagens/pinterest.png"></li>
-                            </ul>
-                        </nav>
+                    <div id="ble">
+                        
+                            <nav id="menu">
+                                <h3 id="cshare">S H A R E</h3>
+                                
+                                <ul>
+                                    <li><img class="links" src="imagens/facebook.png"></li>
+                                    <li><img class="links" id="twitter" src="imagens/twitter.png"></li>
+                                    <li><img class="links" src="imagens/pinterest.png"></li>
+                                </ul>
+                            </nav>
+                        
+                        
+                        <button id="compartilhar">
+                            <img id="share" class="imgrodape" onclick="clicar()" src="imagens/share.png">
+                        </button>
                     </div>
                 </div>
 
@@ -45,13 +50,7 @@
 
         </div>
 
-        <script>
-            var menu = window.document.getElementById("menu");
-
-            function clicar(){
-                
-            }
-        </script>
+        <script src="./plantcard.js"></script>
     </body>
 
     <footer></footer>

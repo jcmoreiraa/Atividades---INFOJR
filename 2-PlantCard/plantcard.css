@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+
 *, ul {
     margin: 0px;
     padding: 0px;
@@ -49,7 +50,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items:end;
 }
 
 #perfil {
@@ -67,24 +68,47 @@ body {
     justify-content: space-around;
 }
 
+button {
+    display: block;
+    border: none;
+    background: none;
+}
+
 #share {
-    display: flex;
     height: 52px;
     width: 52px;
+
 }
 
 #share:hover {
-    height: 54px;
-    width: 54px;
     cursor: pointer;
 }
 
 #menu {
-    display:flex;
-    gap: 15px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 15px;
+    height: 44px;
+    width: 230px;
+    display: none;
     align-items: center;
     justify-content: space-between;
     background-color: #696F5A;
+}
+
+
+#ble {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 15px;
 }
 
 .links {
@@ -93,16 +117,24 @@ body {
 }
 
 .links:hover {
-    background-color: aliceblue;
     cursor: pointer;
+}
+
+#twitter {
+    padding-top: 2px;
 }
 
 p {
     font-size: 16px;
 }
 
-h3 {
+#cshare {
     color: #DFDFD6;
+    width: 84px;
+    height: 21px;
+    font-family: "Overpass", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 h4 {
@@ -128,7 +160,7 @@ h4 {
         max-width: 440px;
         max-height: 290px;
         writing-mode: vertical-rl;
-        gap: 105px;
+        gap: 10px;
     }
 
     #texto {
@@ -146,4 +178,38 @@ h4 {
     .imgrodape {
         transform: rotate(90deg);
     }
+
+    #ble {
+        flex-direction: column;
+    }
+
+    #perfil {
+        position: absolute;
+    }
+
+    #compartilhar {
+        padding-top: 250px;
+    }
+
+    #menu {
+        height: 220px;
+        width: 34px;
+    }
+
+    #cshare {
+        height: 220px;
+        width: 30px;
+        padding-top: 8px;
+        padding-right: 5px;
+    }
+
+    ul {
+        transform: rotate(90deg);
+        flex-direction: column-reverse;
+        padding-right: 73px;
+        gap: 10px;
+    }
+    
+    
+    
 }
