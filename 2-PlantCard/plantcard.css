@@ -97,7 +97,7 @@ button {
 }
 
 
-#ble {
+#hamburguer {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -179,7 +179,7 @@ h4 {
         transform: rotate(90deg);
     }
 
-    #ble {
+    #hamburguer {
         flex-direction: column;
     }
 
