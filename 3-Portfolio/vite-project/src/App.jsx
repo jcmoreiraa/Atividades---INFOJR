@@ -11,12 +11,25 @@ import menuu from './assets/menu.png';
 import teste from './assets/teste.png';
 
 function App() {
-  const [count, setCount] = useState(0);
   const [showSection, setShowSection] = useState(false);
   const toggleShowSection = () => {
     setShowSection(prevState => !prevState);
     
   };
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+
+    }
+  }, [isDarkMode]);
 
   useEffect(() => {
     const handleWindowSizeChange = () => {
@@ -32,7 +45,7 @@ function App() {
 
   return (
     <body>
-      <header>
+      <header className={isDarkMode ? 'dark-mode' : 'light-mode'}>
         <div className='kevin'> 
           <div className='nome'> 
             <h4> 
@@ -55,7 +68,8 @@ function App() {
         <div className="togle">
           <p className="dm"> Dark mode: </p>
           <label className="switch">
-            <input type="checkbox"/>
+            <input onClick={toggleDarkMode}  type="checkbox"/>
+            
             <span className="slider round"></span>
             </label>
             </div>
@@ -90,16 +104,16 @@ function App() {
 
           </div>
           <h1 className='hello'> Hello. <br></br>My name is Júlio César</h1>
-        <div className='linha'></div>
+        <div className={!isDarkMode? 'linha': 'linha-dark'}></div>
         <p className='first_text_big'>I'm a Computer Science enthusiast at UFBA, currently participating in an exciting trainee selection process at InfoJr. I'm focused on delivering web programming projects that blend functionality and elegance. My passion lies in simplifying complex processes and creating intuitive digital experiences for end users.<p></p> 
         As part of my commitment to excellence, I'm constantly honing my skills in various languages, including Python, C++, Ruby, and JavaScript, as well as HTML and CSS. I'm excited to collaborate with a dynamic and diverse team where I can contribute my expertise in interface design and digital product development.<p></p>
         While my professional journey is just beginning, I'm eager to apply my passion for technology and my desire for continuous learning to tackle exciting challenges and drive team success.</p>
         </div> 
-       <div className='avaliable'>
+       <div className={!isDarkMode? 'avaliable': 'avaliable-dark'}>
           <img  className="check" src={check}></img>
           <p>Available for work and general design goodness – say hello</p>
           </div>
-          <div className='linha_azul'>
+          <div className={!isDarkMode? 'linha_azul': 'linha_azul_dark'}>
 
           </div></div> )}
           </section>
