@@ -1,0 +1,149 @@
+.App {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+}
+
+.Destaque {
+  color: rgb(164, 88, 235) ;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Left-aligned {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding-left: 15px;
+}
+
+.Right-aligned {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding-right: 15px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  font-size: 17px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Inicio {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  max-height: 783px;
+}
+
+.Foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.Hello {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.1;
+  font-size: 20px;
+}
+
+.Conteudo {
+  max-width: 960px;
+  max-height: 1003px;
+}
+
+.SectionThree {
+  display: flex;
+}
+
+.SectionFour {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Texto {
+  align-items: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .Inicio {
+    min-width: 310px;
+    max-height: 926px;
+  }
+
+  .Profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Hello {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SectionThree {
+    flex-direction: column;
+  }
+
+  .SectionFour {
+    flex-direction: column;
+  }
+
+  .Texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
