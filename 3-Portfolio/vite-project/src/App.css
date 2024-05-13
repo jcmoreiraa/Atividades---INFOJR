@@ -1,18 +1,22 @@
 .dark-mode {
-  --background-color: #000000; /* preto */
-  --color: #ffffff; /* branco */
-  --background: black;
-  --box-shadow: 1px 2px 4px rgb(255, 255, 255);
+  --background-color:#3C3B3A;
+  --color: #ffffff; 
+  --background: #3C3B3A;
+  ;
+  --box-shadow: 0px 25px 65px 0px rgba(0, 0, 0, 0.38);
 }
 
 .light-mode {
-  --background-color: #ffffff; /* branco */
-  --color: #000000; /* preto */
+  --background-color: #ffffff; 
+  --color: #000000; 
   --background: white;
-  --box-shadow:  1px 2px 4px rgb(0, 0, 0);
+  --box-shadow: 0px 25px 65px 0px rgba(0, 0, 0, 0.15);
 
 }
+.check{
+  background-image: none;
 
+}
 
 
 
@@ -97,6 +101,14 @@ letter-spacing: -0.02em;
   display: flex;
   padding-top: 15px;
 gap: 30px;
+
+
+}
+.redes_dark{
+  display: flex;
+  padding-top: 15px;
+gap: 30px;
+
 }
 .togle{
   display: flex;
@@ -156,6 +168,8 @@ input:checked + .slider:before {
 }
 
 main{
+  align-items: center;
+  justify-content: center;
 
 }
 section{
@@ -328,12 +342,33 @@ font-weight: 700;
 line-height: 17.px;
 cursor: pointer;
 }
+.bpl_dark{
+  width: 180px;
+  height: 50px;
+  gap: 10px;
+  border-radius: 40px;
+  border: 1px solid transparent;
+  border-color: white;
+  font-family: "Be Vietnam", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17.px;
+  cursor: pointer;
+  background: #3C3B3A;
+color:white;}
+
 
 .bpl:hover{
   background: #E5E5E5;
 
 }
+.bpl_dark:hover{
+  background:#30302f ;
+}
 .redes_{
+  display: none;
+}
+.redes_dark_{
   display: none;
 }
 
@@ -473,6 +508,11 @@ text-align: center;
       height: 50px;
       width: 310px;
 }
+.bpl_dark{
+  margin-left: 0px;
+  height: 50px;
+  width: 310px;
+}
 
 .section{
   display: none;
@@ -484,6 +524,9 @@ header{
   justify-content: space-around;
 }
 .redes{
+  display: none;
+}
+.redes_dark{
   display: none;
 }
 
@@ -521,6 +564,15 @@ header{
   align-items: center;
   justify-content: space-around;
   padding-top: 20px;
+}
+.redes_dark_{
+  display: flex;
+  padding-left: 30px;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 20px;
+
 }
 .meu_codigo_esta_uma_bagunça{
   gap:20px;
