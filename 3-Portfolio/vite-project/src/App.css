@@ -104,6 +104,9 @@ gap: 30px;
 
 
 }
+#redes:hover{
+  -webkit-transform: scale(1.1);
+}
 .redes_dark{
   display: flex;
   padding-top: 15px;
@@ -173,7 +176,7 @@ main{
 
 }
 section{
-  margin-left: 238px;
+  margin-left: 300px;
   margin-top: 60px;
 }
 .first_text{
@@ -522,6 +525,8 @@ header{
   width: 500px;
   gap:0px;
   justify-content: space-around;
+
+
 }
 .redes{
   display: none;

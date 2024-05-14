@@ -66,13 +66,13 @@ function App() {
         </div>
         <div className="redes_e_botao">
            { !isDarkMode && (<div className="redes">
-            <a href=""> <img src={twitter} alt="Minha Imagem" /> </a>
-            <a href="#"><img src={VectorImage} alt="Minha Imagem" /></a>
-            <a href='#'> <img src={VectorImagem} alt="Minha Imagem" /></a></div>)}
+            <a href="" id='redes'> <img src={twitter} alt="Minha Imagem" /> </a>
+            <a href="#" id='redes'><img src={VectorImage} alt="Minha Imagem" /></a>
+            <a href='#' id='redes'> <img src={VectorImagem} alt="Minha Imagem" /></a></div>)}
           { isDarkMode && (<div className="redes_dark">
-            <a href=""> <img src={twitter_dark} alt="Minha Imagem" /></a>
-            <a href="#"><img src={vector_dark} alt="Minha Imagem" /></a>
-            <a href='#'> <img src={insta_dark} alt="Minha Imagem" /></a></div>)}
+            <a href="" id='redes'> <img src={twitter_dark} alt="Minha Imagem" /></a>
+            <a href="#" id='redes'><img src={vector_dark} alt="Minha Imagem" /></a>
+            <a href='#' id='redes'> <img src={insta_dark} alt="Minha Imagem" /></a></div>)}
           <div className="togle">
             <p className="dm"> Dark mode:</p>
             <label className="switch">
@@ -97,13 +97,13 @@ function App() {
                 </ul>
               </nav>
               {!isDarkMode && (<div className="redes_">
-                <a href=""> <img src={twitter} alt="Minha Imagem" /> </a>
-                <a href="#"><img src={VectorImage} alt="Minha Imagem" /></a>
-                <a href='#'> <img src={VectorImagem} alt="Minha Imagem" /> </a></div>)}
+                <a href="" id='redes'> <img src={twitter} alt="Minha Imagem" /> </a>
+                <a href="#"id='redes'><img src={VectorImage} alt="Minha Imagem" /></a>
+                <a href='#'id='redes'> <img src={VectorImagem} alt="Minha Imagem" /> </a></div>)}
               {isDarkMode &&(<div className="redes_dark_">
-                <a href=""> <img src={twitter_dark} alt="Minha Imagem" /> </a>
-                <a href="#"><img src={vector_dark} alt="Minha Imagem" /></a>
-                <a href='#'> <img src={insta_dark} alt="Minha Imagem" /> </a></div>)}
+                <a href=""id='redes'> <img src={twitter_dark} alt="Minha Imagem" /> </a>
+                <a href="#"id='redes'><img src={vector_dark} alt="Minha Imagem" /></a>
+                <a href='#'id='redes'> <img src={insta_dark} alt="Minha Imagem" /> </a></div>)}
             </div>)}
           
         {!showSection && (
@@ -114,8 +114,14 @@ function App() {
           </div>
           <h1 className='hello'> Hello. <br></br>My name is Júlio César</h1>
           <div className={!isDarkMode? 'linha': 'linha-dark'}></div>
-          <p className='first_text_big'>I'm a Computer Science enthusiast at UFBA, currently participating in an exciting trainee selection process at InfoJr. I'm focused on delivering web programming projects that blend functionality and elegance. My passion lies in simplifying complex processes and creating intuitive digital experiences for end users.<p></p> 
-          As part of my commitment to excellence, I'm constantly honing my skills in various languages, including Python, C++, Ruby, and JavaScript, as well as HTML and CSS. I'm excited to collaborate with a dynamic and diverse team where I can contribute my expertise in interface design and digital product development.<p></p>
+          <p className='first_text_big'> 
+          <span style={{ fontWeight: 'bold' }}> I'm a Computer Science enthusiast at UFBA  </span>
+          , currently participating in an exciting trainee selection process at InfoJr. I'm focused on delivering web programming projects that blend functionality and elegance. My passion lies in simplifying complex processes and creating intuitive digital experiences for end users.<p></p> 
+          As part of my commitment to excellence, I'm constantly honing my skills in various languages, including
+          <span style={{ fontWeight: 'bold' }}> Python, C++, Ruby, and JavaScript </span> 
+           as well 
+           <span style={{ fontWeight: 'bold' }}> as HTML and CSS. </span>
+            I'm excited to collaborate with a dynamic and diverse team where I can contribute my expertise in interface design and digital product development.<p></p>
           While my professional journey is just beginning, I'm eager to apply my passion for technology and my desire for continuous learning to tackle exciting challenges and drive team success.</p>
         </div> 
         <div className={!isDarkMode? 'avaliable': 'avaliable-dark'}>
@@ -133,7 +139,7 @@ function App() {
           Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. 
         </p>
         <div id="2" className='primeira_imagem_texto'> 
-          <div className='espaço_para_imagem'> </div>
+          <div className='espaço_para_imagem'>  </div>
           <div className='texto_e_titulo'>
             <h5 className='title'> Title</h5>
             <p className='leanding'>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
