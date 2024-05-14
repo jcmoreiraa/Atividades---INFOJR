@@ -1,5 +1,8 @@
 import avatar from './imagens/avatar.jpg';
 import imagem from './imagens/imagem.png';
+import { FaTwitter } from "react-icons/fa";
+import { IoLogoFigma } from "react-icons/io5";
+import { FiInstagram } from "react-icons/fi";
 import './App.css';
 
 function App() {
@@ -21,12 +24,13 @@ function App() {
         <nav>
           <div className="Right-aligned">
             <ul className="Destaque">
-              <li><i className="fas fa-twitter"></i></li>
-              <li><i className="fas fa-figma"></i></li>
-              <li><i className="fas fa-instagram"></i></li>
+              <li><FaTwitter className="Icon"/></li>
+              <li><IoLogoFigma className="Icon"/></li>
+              <li><FiInstagram className="Icon"/></li>
             </ul>
-          
-            <button>Dark mode</button>
+
+            <p>Dark mode:</p>
+            <button></button>
           </div>
         </nav>
 
