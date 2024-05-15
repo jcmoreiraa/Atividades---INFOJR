@@ -1,12 +1,19 @@
+:root {
+  --destaque: rgb(164, 88,235);
+  --fundo: white;
+  --texto: black;
+  --aviso: #f8f9fa;
+}
+
 .App {
   margin: 0;
   padding: 0;
-  background-color: white;
-  color: black;
+  background-color: var(--fundo);
+  color: var(--texto);
 }
 
 .Destaque {
-  color: rgb(164, 88, 235) ;
+  color: var(--destaque) ;
 }
 
 .App-logo {
@@ -24,27 +31,39 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: var(--fundo);
+  box-shadow: 0px 8px 80px rgb( 0, 0 ,0 , 0.2);
 }
 
 .Left-aligned {
   display: flex;
   flex-direction: row;
-  justify-content: left;
   padding-left: 15px;
+  align-items: center;
+}
+
+.Nome {
+  font-weight: 20px;
 }
 
 .Right-aligned {
   display: flex;
   flex-direction: row;
-  justify-content: right;
   padding-right: 15px;
+  align-items: center;
+  gap: 40px;
+}
+
+.DarkMode {
+  display: flex;
+  flex-direction: row;
 }
 
 ul {
   list-style: none;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 15px;
 }
 
 li:hover {
@@ -64,6 +83,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  padding: 10% 5% 10% 5%;
 }
 
 .Inicio {
@@ -77,6 +98,7 @@ main {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  box-shadow: 0px 30px 80px rgb( 0, 0 ,0 , 0.2);
 }
 
 .Hello {
@@ -84,24 +106,78 @@ main {
   flex-direction: column;
   line-height: 0.1;
   font-size: 20px;
+  padding-top: 30px;
+}
+
+hr {
+  background-color: var(--destaque);
+  height: 1px;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px
+}
+.DivisorUm {
+  width: 190px;
+}
+
+.Aviso{
+  background-color: var(--aviso);
+  max-width: 462px;
+  height: 56px;
+  width: 100%;
+
+  font-size: 14px;
+}
+
+.DivisorDois {
+  background-color: var(--destaque);
+  max-width: 960px;
 }
 
 .Conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   max-width: 960px;
   max-height: 1003px;
 }
 
+.SectionTwo {
+  display: flex;
+  flex-direction: column;
+}
+
 .SectionThree {
   display: flex;
+  justify-content: space-between;
 }
 
 .SectionFour {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.Painel {
+  width: 640px;
+  height: 370px;
 }
 
 .Texto {
   align-items: center;
+  width: 280px;
+}
+
+.Botao {
+  width: 180px;
+  height: 50px;
+  border-radius: 44px;
+  background-color: var(--fundo);
+  border-color: var(--destaque);
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {
@@ -113,10 +189,47 @@ main {
   }
 }
 
+@media (max-width: 1024px) {
+  .SectionTwo {
+    align-items: center;
+  }
+
+  .SectionThree {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .SectionFour {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Painel{
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .Texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Botao {
+    width: 310px;
+  }
+
+}
+
 @media (max-width: 800px) {
   .Inicio {
     min-width: 310px;
     max-height: 926px;
+  }
+  
+  ul {
+    display: none;
   }
 
   .Profile {
@@ -129,20 +242,7 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
-  }
-
-  .SectionThree {
-    flex-direction: column;
-  }
-
-  .SectionFour {
-    flex-direction: column;
-  }
-
-  .Texto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 100%;
   }
 
 }
