@@ -4,16 +4,24 @@ import { FaTwitter } from "react-icons/fa";
 import { IoLogoFigma } from "react-icons/io5";
 import { FiInstagram } from "react-icons/fi";
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  function darkMode() {
+    setIsDarkMode(!isDarkMode);
+  }
+
   return (
-    <div className="App">
+    <div className={isDarkMode ? "dark-mode" : "App"}>
       <header className="App-header">
 
         <nav>
           <div className="Left-aligned">
             <p className='Nome'>Stefanny Oliveira</p>
-            <ul className="Destaque">
+            <ul className="Destaque Esquerda">
               <li>Section two</li>
               <li>Section three</li>
               <li>Section four</li>
@@ -23,7 +31,7 @@ function App() {
         
         <nav>
           <div className="Right-aligned">
-            <ul className="Destaque">
+            <ul className="Destaque Direita">
               <li><FaTwitter className="Icon"/></li>
               <li><IoLogoFigma className="Icon"/></li>
               <li><FiInstagram className="Icon"/></li>
@@ -31,7 +39,7 @@ function App() {
 
             <div className='DarkMode'>
               <p>Dark mode:</p>
-              <button>toggle</button>
+              <button onClick={darkMode}>Change Color</button>
             </div>
           </div>
         </nav>
