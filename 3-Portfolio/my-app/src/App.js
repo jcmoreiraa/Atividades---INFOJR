@@ -14,39 +14,50 @@ function App() {
     setIsDarkMode(!isDarkMode);
   }
 
+ 
+  const [active, setMode] = useState(false);
+
+  const ToggleMode = () => {
+    setMode(!active)
+  };
+
   return (
     <div className={isDarkMode ? "dark-mode" : "App"}>
       <header className="App-header">
 
-        <nav>
-          <div className="Left-aligned">
-            <p className='Nome'>Stefanny Oliveira</p>
-            <ul className="Destaque Esquerda">
-              <li>Section two</li>
-              <li>Section three</li>
-              <li>Section four</li>
-            </ul>
-          </div>
-        </nav>
-        
-        <nav>
-          <div className="Right-aligned">
-            <ul className="Destaque Direita">
-              <li><FaTwitter className="Icon"/></li>
-              <li><IoLogoFigma className="Icon"/></li>
-              <li><FiInstagram className="Icon"/></li>
-            </ul>
+        <p className='Nome'>Stefanny Oliveira</p>
 
-            <div className='DarkMode'>
-              <p>Dark mode:</p>
-              <button onClick={darkMode}>Change Color</button>
-            </div>
-          </div>
-        </nav>
+        <div className={active ? 'menu menuOpen' : 'menu menuClose'}>
+          <nav>
+              <ul className="Destaque Esquerda">
+                <li>Section two</li>
+                <li>Section three</li>
+                <li>Section four</li>
+              </ul>
+          </nav>
+          
+          <nav>
+              <ul className="Destaque Direita">
+                <li><FaTwitter className="Icon"/></li>
+                <li><IoLogoFigma className="Icon"/></li>
+                <li><FiInstagram className="Icon"/></li>
+              </ul>
+          </nav>
+        </div>
+        
+        <div className='DarkMode'>
+          <p>Dark mode:</p>
+          <button onClick={darkMode}>Change Color</button>
+        </div>
+        
         
       </header>
 
       <main>
+        <div className={active ? 'icon iconActive' : 'icon'} onClick={ToggleMode}>
+          <div className='hamburguer hamburguerIcon'></div>
+        </div>
+
         <div className="Inicio">
             <div className="Profile">
               <img src={avatar} className="Foto"/>
