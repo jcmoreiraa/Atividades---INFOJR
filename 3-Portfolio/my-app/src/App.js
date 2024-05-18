@@ -1,25 +1,33 @@
-import avatar from './imagens/avatar.jpg';
+import avatar from './imagens/avatar1.png';
 import imagem from './imagens/imagem.png';
 import { FaTwitter } from "react-icons/fa";
 import { IoLogoFigma } from "react-icons/io5";
 import { FiInstagram } from "react-icons/fi";
+import { FaCheckCircle } from "react-icons/fa";
 import './App.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 function App() {
-
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   function darkMode() {
     setIsDarkMode(!isDarkMode);
   }
 
- 
   const [active, setMode] = useState(false);
 
   const ToggleMode = () => {
     setMode(!active)
   };
+
+  const Section1Ref = useRef(null);
+  const Section2Ref = useRef(null);
+  const Section3Ref = useRef(null);
+  const Section4Ref = useRef(null);
+
+  const scrollToSection = (sectionRef) => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth'});
+  }
 
   return (
     <div className={isDarkMode ? "dark-mode" : "App"}>
@@ -30,9 +38,10 @@ function App() {
         <div className={active ? 'menu menuOpen' : 'menu menuClose'}>
           <nav>
               <ul className="Destaque Esquerda">
-                <li>Section two</li>
-                <li>Section three</li>
-                <li>Section four</li>
+                <li className='Home' onClick={() => scrollToSection(Section1Ref)}>Stefanny Oliveira</li>
+                <li onClick={() => scrollToSection(Section2Ref)}>Section two</li>
+                <li onClick={() => scrollToSection(Section3Ref)}>Section three</li>
+                <li onClick={() => scrollToSection(Section4Ref)}>Section four</li>
               </ul>
           </nav>
           
@@ -46,8 +55,8 @@ function App() {
         </div>
         
         <div className='DarkMode'>
-          <p>Dark mode:</p>
-          <button onClick={darkMode}>Change Color</button>
+          <p className='DM'>Change theme: </p>
+          <input type='checkbox' onClick={darkMode}></input>
         </div>
         
         
@@ -58,7 +67,7 @@ function App() {
           <div className='hamburguer hamburguerIcon'></div>
         </div>
 
-        <div className="Inicio">
+        <div className="Inicio" ref={Section1Ref}>
             <div className="Profile">
               <img src={avatar} className="Foto"/>
               <div className="Hello">
@@ -75,20 +84,21 @@ function App() {
               <p>I've got some <span className="Destaque">work on Dribbble</span>, some previous work at <span className="Destaque">Saga</span> and you can find me over on twitter and sometimes <span className="Destaque">on Medium too</span>. I also take <span className="Destaque">too many photos</span>.</p>
             </div>
 
-            <div className='Aviso'>
-              <p>Available for work and general design goodness - <span className='Destaque'>say hello</span></p>
+            <div className='Aviso Check'>
+              <FaCheckCircle className='Destaque'/>
+              <p className='aviso'>Available for work and general design goodness - <span className='Destaque'>say hello</span></p>
             </div>
         </div>
 
         <hr className='DivisorDois'/>
 
         <div className="Conteudo">
-          <div className="SectionTwo">
+          <div className="SectionTwo" ref={Section2Ref}>
             <h2 className="Destaque">Title</h2>      
             <p>Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. </p>
           </div>
 
-          <div className="SectionThree">
+          <div className="SectionThree" ref={Section3Ref}>
             <img src={imagem} className='Painel'/>
             <div className="Texto">
               <h4>Title</h4>
@@ -97,7 +107,7 @@ function App() {
             </div>
           </div>
 
-          <div className="SectionFour">
+          <div className="SectionFour" ref={Section4Ref}>
             <img src={imagem} className='Painel'/>
             <div className="Texto">
               <h4>Title</h4>

@@ -1,16 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
 :root {
   --destaque: rgb(127, 47, 202);
   --fundo: white;
   --texto: black;
   --aviso: #f8f9fa;
+  --sombra-menu: rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode {
   background-color: black;
   --fundo: black;
   color: white;
-  --aviso: #282829;
+  --aviso: #19191a;
   --destaque: rgb(233, 216, 250);
+  --sombra-menu: rgb(233, 216, 250, 0.4);
 }
 
 .App {
@@ -35,6 +40,8 @@
   flex-direction: row;
   background-color: var(--fundo);
   box-shadow: 0px 8px 80px rgb( 0, 0 ,0 , 0.15);
+  align-items: center;
+  height: 56px;
 }
 
 .menu {
@@ -43,11 +50,17 @@
   align-items: center;
   padding-right: 40px;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.Home {
+  display: none;
 }
 
 .Nome {
   flex: 0 0 auto;
-  font-weight: 20px;
+  font-weight: 700;
   padding-left: 3%;
 }
 
@@ -57,9 +70,52 @@
 
 .DarkMode {
   margin-left: auto;
+  align-items: center;
   display: flex;
   flex-direction: row;
   padding-right: 3%;
+  height: 100%;
+}
+
+.DM {
+  font-size: 13px;
+}
+
+input[type='checkbox']:hover {
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  position: relative;
+  background-color: var(--destaque);
+  width: 60px;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.7s ease; 
+}
+
+input[type='checkbox']::before {
+  content: "";
+  position: absolute;
+  background-color: var(--fundo);
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  transform: scale(0.8);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.7s ease; 
+}
+
+input[type='checkbox']:checked::before {
+  background-color: var(--fundo);
+  left: 24px;
+}
+
+input[type='checkbox']:checked {
+  background-color: var(--destaque)
 }
 
 ul {
@@ -67,6 +123,9 @@ ul {
   display: flex;
   flex-direction: row;
   gap: 15px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 li:hover {
@@ -80,6 +139,9 @@ nav {
 
 p {
   font-size: 17px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 main {
@@ -87,67 +149,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 5%;
-}
-.icon {
-  position: absolute;
-  z-index: 4;
-  left: 1%;
-  width: fit-content;
-  height: 44px;
-  cursor: pointer;
-}
-
-.icon.iconActive.hamburguer {
-  background: transparent;
-  box-shadow: 0 2px 5px transparent;
-}
-
-.icon.iconActive.hamburguer:after {
-  top: 0;
-  background: var(--fundo);
-  transform: rotate(225deg);
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.icon.iconActive.hamburguer:before {
-  top: 0;
-  background: var(--fundo);
-  transform: rotate(135deg);
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.hamburguer {
-  top: 50%;
-  left: 10%;
-  width: 30px;
-  height: 6px;
-  background-color: var(--destaque);
-  position: absolute;
-  box-shadow: 0.2px 5px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
-}
-
-.hamburguer:before {
-  top: -12px;
-  content: " ";
-  width: 37px;
-  height: 6px;
-  background-color: var(--destaque);
-  position: absolute;
-  box-shadow: 0.2px 5px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
-}
-
-.hamburguer:after {
-  top: 12px;
-  content: " ";
-  width: 37px;
-  height: 6px;
-  background-color: var(--destaque);
-  position: absolute;
-  box-shadow: 0.2px 5px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
+  padding: 3% 5% 5% 5%;
 }
 
 .Inicio {
@@ -170,6 +172,10 @@ main {
   line-height: 0.1;
   font-size: 20px;
   padding-top: 30px;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 hr {
@@ -181,14 +187,21 @@ hr {
 }
 .DivisorUm {
   width: 190px;
+  margin-right: 100%;
 }
 
 .Aviso{
+  display: flex;
+  align-items: center;
   background-color: var(--aviso);
-  max-width: 462px;
+  max-width: 470px;
   height: 56px;
   width: 100%;
+  padding: 0 1% 0 1%;
+  gap: 2%;
+}
 
+.aviso {
   font-size: 14px;
 }
 
@@ -246,9 +259,22 @@ button:hover {
 }
 
 @media (max-width: 1024px) {
+  .App-header {
+    align-items: baseline;
+    height: 100%;
+  }
+
+  input[type='checkbox'] {
+    width: 43px;
+  }
+
+  main {
+    height: 2500px;
+  }
   .Inicio {
     min-width: 310px;
     max-height: 926px;
+    padding-top: 30px;
   }
 
   .Profile {
@@ -261,7 +287,12 @@ button:hover {
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-size: 100%;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .DivisorUm {
+    margin-right: auto;
   }
 
   .SectionTwo {
@@ -281,8 +312,8 @@ button:hover {
   }
 
   .Painel{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
   }
 
   .Texto {
@@ -296,18 +327,91 @@ button:hover {
     width: 310px;
   }
 
+  .icon {
+    position: absolute;
+    z-index: 4;
+    left: 5%;
+    width: fit-content;
+    height: 44px;
+    cursor: pointer;
+  }
+  
+  .icon.iconActive {
+    position: fixed;
+  }
+
+  .icon.iconActive .hamburguer {
+    background: transparent;
+    box-shadow: 0 2px 5px transparent;
+  }
+  
+  .icon.iconActive .hamburguer:after {
+    top: 0;
+    background: var(--destaque);
+    transform: rotate(225deg);
+    box-shadow: 0 -2px 5px var(--sombra-menu);
+  }
+  
+  .icon.iconActive .hamburguer:before {
+    top: 0;
+    background: var(--destaque);
+    transform: rotate(135deg);
+    box-shadow: 0 -2px 5px var(--sombra-menu);
+  }
+  
+  .hamburguer {
+    top: 50%;
+    left: 10%;
+    width: 37px;
+    height: 6px;
+    border-radius: 15px;
+    background: var(--destaque);
+    position: absolute;
+    box-shadow: 0.2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+  }
+  
+  .hamburguer:before {
+    top: -12px;
+    content: "";
+    width: 37px;
+    height: 6px;
+    border-radius: 15px;
+    background: var(--destaque);
+    position: absolute;
+    box-shadow: 0.2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+  }
+  
+  .hamburguer:after {
+    top: 12px;
+    content: "";
+    width: 37px;
+    height: 6px;
+    border-radius: 15px;
+    background: var(--destaque);
+    position: absolute;
+    box-shadow: 0.2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+  }  
+
   .menu {
     justify-content: center;
     display: flex;
     position:fixed;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    padding: 20px;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: var(--fundo);
-    padding: 20px;
     flex-wrap: nowrap;
     transition: left 0.3s ease;
+    gap: 5%;
+  }
+
+  .Home {
+    display: flex;
   }
   
   .Esquerda {
@@ -320,11 +424,6 @@ button:hover {
     gap: 100%;
   }
 
-  .Icon {
-    height: 30px;
-    width: 30px;
-  }
-
   .menu ul {
     list-style: none;
     padding: 0;
@@ -333,15 +432,15 @@ button:hover {
   .menu ul li {
     margin-bottom: 10px;
     color: var(--destaque);
+    font-size: 3.5vw;
   }
 
-
-
   .menu.menuOpen {
-    width: 150px;
+    width: 60%;
     height: 100vh;
     background: var(--fundo);
-    box-shadow: 10px 0px 69px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 0px 69px 0px var(--sombra-menu);
+    position: fixed;
   }
   
   .menu.menuClose {
@@ -349,5 +448,14 @@ button:hover {
     width: 0px;
   }
 
+  @media (max-width: 494px) {
+    .Hello {
+      font-size: 18px;
+      width: 100%;
+      height: 100%;
+    }
+  }  
+  
+  
 }
 
