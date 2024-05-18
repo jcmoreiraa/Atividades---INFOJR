@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
+
 :root {
   --destaque: rgb(127, 47, 202);
   --fundo: white;
@@ -36,22 +37,29 @@
 
 .App-header {
   display: flex;
-  position: relative;
   flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  align-items: flex-end;
   background-color: var(--fundo);
   box-shadow: 0px 8px 80px rgb( 0, 0 ,0 , 0.15);
-  align-items: center;
-  height: 56px;
 }
 
 .menu {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-right: 40px;
   justify-content: space-between;
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  padding-right: 30px;
+}
+
+.DarkMode {
+  flex: 0 0 auto;
+  display: flex;
+  padding-right: 3%;
+}
+
+.DM {
+  font-size: 15px;
 }
 
 .Home {
@@ -64,23 +72,6 @@
   padding-left: 3%;
 }
 
-.Direita {
-  gap: 20px;
-}
-
-.DarkMode {
-  margin-left: auto;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  padding-right: 3%;
-  height: 100%;
-}
-
-.DM {
-  font-size: 13px;
-}
-
 input[type='checkbox']:hover {
   cursor: pointer;
 }
@@ -89,7 +80,7 @@ input[type='checkbox'] {
   -webkit-appearance: none;
   position: relative;
   background-color: var(--destaque);
-  width: 60px;
+  width: 43px;
   height: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -180,11 +171,11 @@ main {
 
 hr {
   background-color: var(--destaque);
-  height: 1px;
+  height: 4px;
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px
+  border-radius: 40px;
 }
+
 .DivisorUm {
   width: 190px;
   margin-right: 100%;
@@ -192,16 +183,14 @@ hr {
 
 .Aviso{
   display: flex;
-  align-items: center;
   background-color: var(--aviso);
-  max-width: 470px;
-  height: 56px;
-  width: 100%;
-  padding: 0 1% 0 1%;
+  max-width: 480px;
+  padding: 1% 1% 0 1%;
   gap: 2%;
 }
 
 .aviso {
+  display: flex;
   font-size: 14px;
 }
 
@@ -261,7 +250,11 @@ button:hover {
 @media (max-width: 1024px) {
   .App-header {
     align-items: baseline;
-    height: 100%;
+    height: 50px;
+  }
+
+  .Nome{
+    padding-top: 13px;
   }
 
   input[type='checkbox'] {
@@ -271,6 +264,7 @@ button:hover {
   main {
     height: 2500px;
   }
+
   .Inicio {
     min-width: 310px;
     max-height: 926px;
@@ -293,6 +287,7 @@ button:hover {
 
   .DivisorUm {
     margin-right: auto;
+    margin-left: auto;
   }
 
   .SectionTwo {
@@ -397,6 +392,7 @@ button:hover {
 
   .menu {
     justify-content: center;
+    align-items: center;
     display: flex;
     position:fixed;
     flex-direction: column-reverse;
@@ -437,10 +433,11 @@ button:hover {
 
   .menu.menuOpen {
     width: 60%;
-    height: 100vh;
+    height: 100%;
     background: var(--fundo);
     box-shadow: 10px 0px 69px 0px var(--sombra-menu);
     position: fixed;
+    z-index: 3;
   }
   
   .menu.menuClose {

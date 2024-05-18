@@ -1,11 +1,22 @@
 import avatar from './imagens/avatar1.png';
-import imagem from './imagens/imagem.png';
+import clamp1 from './imagens/clamp1.jpg';
+import clamp2 from './imagens/clamp2.jpg';
+import clamp3 from './imagens/clamp3.jpe';
+import osu1 from './imagens/osu1.jpg';
+import osu2 from './imagens/osu2.jpeg';
+import osu3 from './imagens/osu3.jpg';
+
 import { FaTwitter } from "react-icons/fa";
 import { IoLogoFigma } from "react-icons/io5";
 import { FiInstagram } from "react-icons/fi";
 import { FaCheckCircle } from "react-icons/fa";
+
 import './App.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useRef } from 'react';
+import Carousel from 'react-bootstrap/Carousel'
+
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -55,7 +66,7 @@ function App() {
         </div>
         
         <div className='DarkMode'>
-          <p className='DM'>Change theme: </p>
+          <p className='DM'>Theme: </p>
           <input type='checkbox' onClick={darkMode}></input>
         </div>
         
@@ -85,7 +96,7 @@ function App() {
             </div>
 
             <div className='Aviso Check'>
-              <FaCheckCircle className='Destaque'/>
+              <FaCheckCircle className='Destaque check'/>
               <p className='aviso'>Available for work and general design goodness - <span className='Destaque'>say hello</span></p>
             </div>
         </div>
@@ -99,7 +110,20 @@ function App() {
           </div>
 
           <div className="SectionThree" ref={Section3Ref}>
-            <img src={imagem} className='Painel'/>
+            
+            <Carousel slide={false}>
+              <Carousel.Item>
+                <img src={clamp1} className='Painel'/>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src={clamp2} className='Painel'/>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src={clamp3} className='Painel'/>
+              </Carousel.Item>
+            </Carousel>
+
+
             <div className="Texto">
               <h4>Title</h4>
               <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
@@ -108,7 +132,19 @@ function App() {
           </div>
 
           <div className="SectionFour" ref={Section4Ref}>
-            <img src={imagem} className='Painel'/>
+
+            <Carousel slide={false}>
+              <Carousel.Item>
+                <img src={osu1} className='Painel'/>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src={osu2} className='Painel'/>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src={osu3} className='Painel'/>
+              </Carousel.Item>
+            </Carousel>
+
             <div className="Texto">
               <h4>Title</h4>
               <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
