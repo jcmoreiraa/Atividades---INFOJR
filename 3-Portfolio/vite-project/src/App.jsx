@@ -3,16 +3,17 @@ import './App.css';
 import VectorImage from './assets/Vector (1).png'; 
 import VectorImagem from './assets/Vector (2).png'; 
 import twitter from './assets/twitter-icon.png';
-import avatar from './assets/avatar.png';
+import info from './assets/infojr.png';
 import check from './assets/check (1).png';
 import julio from './assets/julio cesar eu mesmo (1).jpg';
-import ufba from './assets/ufba (1).png';
+import ufba from './assets/ufba (1).jpg';
 import menuu from './assets/menu.png';
-import teste from './assets/teste.png';
 import twitter_dark from './assets/Vector (5).png';
 import insta_dark from './assets/Vector (4).png';
-import vector_dark from './assets/Vector (3).png'
+import vector_dark from './assets/Vector (3).png';
 import menu_dark from './assets/Group.png';
+import fechar from './assets/fechar.png';
+import fechar_dark from './assets/fechar-dark.png';
 
 function App() {
   const [showSection, setShowSection] = useState(false);
@@ -23,7 +24,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode(prevState => !prevState)
   };
   
   useEffect(() => {
@@ -85,8 +86,11 @@ function App() {
             
     <main>
       <section >
-        {!isDarkMode && (<button className='menu'><img  className='menu' onClick={toggleShowSection} src={menuu}></img></button>)}
-        {isDarkMode && (<button className='menu'><img  className='menu' onClick={toggleShowSection} src={menu_dark}></img></button>)}
+        {!isDarkMode && !showSection && (<button className='menu'><img  className='menu' onClick={toggleShowSection} src={menuu}></img></button>)}
+        {isDarkMode && !showSection && (<button className='menu'><img  className='menu' onClick={toggleShowSection} src={menu_dark}></img></button>)}
+        {!isDarkMode && showSection && (<button className='menu'><img  className='menu' onClick={toggleShowSection} src={fechar}></img></button>)}
+        {isDarkMode && showSection && (<button className='menu'><img  className='menu' onClick={toggleShowSection} src={fechar_dark}></img></button>)}
+
         {showSection && (
             <div className='meu_codigo_esta_uma_bagunça'>
               <nav className="section__"> 
@@ -115,18 +119,17 @@ function App() {
           <h1 className='hello'> Hello. <br></br>My name is Júlio César</h1>
           <div className={!isDarkMode? 'linha': 'linha-dark'}></div>
           <p className='first_text_big'> 
-          <span style={{ fontWeight: 'bold' }}> I'm a Computer Science enthusiast at UFBA  </span>
-          , currently participating in an exciting trainee selection process at InfoJr. I'm focused on delivering web programming projects that blend functionality and elegance. My passion lies in simplifying complex processes and creating intuitive digital experiences for end users.<p></p> 
+          <span style={{ fontWeight: 'bold' }}> I'm a Computer Science enthusiast at UFBA</span>, currently participating in an exciting trainee selection process at InfoJr. I'm focused on delivering web programming projects that blend functionality and elegance. My passion lies in simplifying complex processes and creating intuitive digital experiences for end users.<p></p> 
           As part of my commitment to excellence, I'm constantly honing my skills in various languages, including
           <span style={{ fontWeight: 'bold' }}> Python, C++, Ruby, and JavaScript </span> 
            as well 
            <span style={{ fontWeight: 'bold' }}> as HTML and CSS. </span>
-            I'm excited to collaborate with a dynamic and diverse team where I can contribute my expertise in interface design and digital product development.<p></p>
+            I'm excited to collaborate with a dynamic and diverse team where I can contribute my expertise in real projects.<p></p>
           While my professional journey is just beginning, I'm eager to apply my passion for technology and my desire for continuous learning to tackle exciting challenges and drive team success.</p>
         </div> 
         <div className={!isDarkMode? 'avaliable': 'avaliable-dark'}>
           <img  className="check" src={check}></img>
-          <p>Available for work and general design goodness – say hello</p>
+          <p>Available for work and development of projects – say hello!</p>
         </div>
         <div className={!isDarkMode? 'linha_azul': 'linha_azul_dark'}></div>
         </div> )}
@@ -139,7 +142,7 @@ function App() {
           Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. 
         </p>
         <div id="2" className='primeira_imagem_texto'> 
-          <div className='espaço_para_imagem'>  </div>
+          <div className='espaço_para_imagem'> <img id='ufba' src={ufba}></img> </div>
           <div className='texto_e_titulo'>
             <h5 className='title'> Title</h5>
             <p className='leanding'>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
@@ -153,7 +156,7 @@ function App() {
             <p className='leanding'>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
             <button className={ !isDarkMode? 'bpl':'bpl_dark'}> {isDarkMode ? 'Button Primary Dark' : 'Button Primary Light'}</button>
           </div>
-        <div className='espaço_para_imagem'></div>
+         <img id='info' src={info}></img>
         </div>
           
       </section> )}
