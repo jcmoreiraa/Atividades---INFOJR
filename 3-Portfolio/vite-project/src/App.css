@@ -148,8 +148,6 @@ gap: 30px;
   -webkit-transition: .4s;
 }
 
-input:checked + .slider {
-}
 
 .dm{
   font-family: 'Be Vietnam', sans-serif;
@@ -179,8 +177,7 @@ section{
   margin-left: 300px;
   margin-top: 60px;
 }
-.first_text{
-}
+
 .hello{
   font-family: 'EB Garamond', serif;
   font-size: 70px;
