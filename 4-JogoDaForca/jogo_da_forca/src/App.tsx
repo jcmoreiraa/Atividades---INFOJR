@@ -84,6 +84,8 @@ function App() {
             document.removeEventListener("keypress", handler);
         };
     }, [GuessedLetters]);
+
+    
     const restartGame = () => {
         setWordToGuess( words[Math.floor(Math.random() * words.length)]);
         SetGuessedLetters([]);
@@ -93,6 +95,19 @@ function App() {
 
     const isLoser = incorrectGuesses.length >=6;
     const isWinner = wordToGuess.split('').every((letter)=>GuessedLetters.includes(letter))
+    useEffect(() => {
+        const handler = (e:KeyboardEvent) => {
+            if (e.key === 'Enter' && (isLoser || isWinner)) {
+                restartGame();
+            }
+        };
+
+        document.addEventListener('keydown', handler);
+
+        return () => {
+            document.removeEventListener('keydown', handler);
+        };
+    }, [isLoser, isWinner]);
   return (
         <Wrapper>
             {!isTrue && (
