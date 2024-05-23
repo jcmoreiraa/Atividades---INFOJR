@@ -6,18 +6,16 @@ const keys = [
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: repeat(8, 1fr) minmax(70px, 1fr);
+grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 gap:0.3rem;
 width: 700px;
-justify-self:center;
-align-items:center;
-justify-content:center;
-@media(max-width:700px){
-width: 400px;
-grid-template-columns: repeat(auto-fit, minmax(45px,0.5fr));
-gap:0.5rem;
 display:none;
-
+margin-bottom:20px;
+@media(max-width:700px){
+width: 450px;
+grid-template-columns: repeat(auto-fit, minmax(50px,2fr));
+gap:0.8rem;
+display:inline-block;
 
 
 
@@ -26,8 +24,10 @@ display:none;
 
 `
 
-const Button = styled.button<{isActive:boolean}>`
+const Button = styled.button<{isActive:boolean,isIncorrect:boolean }>`
 opacity:${(p)=>(p.isActive ? 'null':'0.3')};
+cursor: ${(p) => (p.isActive? 'pointer' : 'not-allowed')};
+background-color: ${(p) => (p.isIncorrect ? '#1C1C1C' : 'grey')};
 `
 
 interface KeyBoardProps{
@@ -35,18 +35,20 @@ interface KeyBoardProps{
     inactiveLetters: string[]
     addGuessedLetters: (letter: string) => void
     disabled:boolean
+    wordToGuess: string[];
 
 }
-export default function Keyboard({activeLetters,disabled=true, inactiveLetters, addGuessedLetters}:KeyBoardProps){
+export default function Keyboard({activeLetters, disabled=true, inactiveLetters, addGuessedLetters, wordToGuess}:KeyBoardProps){
     return (
         <Wrapper>
        {keys.map((letter) => {
-        const isActive =  !activeLetters.includes(letter)
-        const isInactive = !inactiveLetters.includes(letter)
+       const isActive = !activeLetters.includes(letter);
+       const isIncorrect = !wordToGuess.includes(letter);
+       const isInactive = !inactiveLetters.includes(letter);
        return (  
 
        
-        <Button style={{backgroundColor:'#1C1C1C', color:'white'}}onClick={()=> addGuessedLetters(letter)}isActive={isActive && isInactive} key={letter} disabled={ disabled}>
+        <Button style={{ color:'white'}}onClick={()=> addGuessedLetters(letter)}isActive={isActive && isInactive} key={letter} disabled={ disabled} isIncorrect={isIncorrect}>
             {letter}
         </Button>
        )})}
@@ -54,3 +56,6 @@ export default function Keyboard({activeLetters,disabled=true, inactiveLetters, 
         </Wrapper>
     )
 }
+
+
+

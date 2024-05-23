@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 
 
@@ -24,12 +24,35 @@ const Button = styled.button`
   cursor: pointer;
   text-align: center;
   display: inline-block;
+  display:none;
   transition: background-color 0.3s;
 
   &:hover {
     background-color: pink;
   }
+  @media(max-width:600px){
+    display:inline-block;
+}
+
 `;
+const Animation = keyframes`
+  to {
+    visibility: hidden;
+  }
+`;
+
+const Text = styled.span`
+color: white;
+font-weight:bold;
+animation: ${Animation} 1s steps(2, start) infinite;
+text-align:center;
+@media(max-width:600px){
+  display:none;
+}
+
+
+`
+
 const Placar = styled.div`
   background-color: red;
   border: 1px solid ##D2691E;
@@ -56,6 +79,7 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
 
       Errou feio.
     </h3>
+    <Text> Aperte enter para reiniciar</Text>
     <Placar>
     
     <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
@@ -72,6 +96,7 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
            
                  Parabéns, você acertou!
                </h3>
+               <Text> Aperte enter para reiniciar</Text>
                <Placar>
                
                <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>

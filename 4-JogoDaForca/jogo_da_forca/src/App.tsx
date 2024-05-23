@@ -23,8 +23,8 @@ const Wrapper = styled.div`
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    @media (max-width: 700px) {
-        padding-bottom:100px;
+    @media (max-width: 600px) {
+        padding-top:50px;
     }
     `;
 const Button = styled.button`
@@ -43,7 +43,7 @@ const words = ['endou', 'gouenji', 'kidou', 'kazemaru', 'kabeyama',
   'sakuma', 'afuro'];
 
 function App() {
-    const [isTrue, setIsTrue] = useState(false);
+    const [isShow, setIsShow] = useState(false);
     const [wordToGuess,setWordToGuess] = useState(() => {
         return words[Math.floor(Math.random() * words.length)];
     });
@@ -108,31 +108,48 @@ function App() {
             document.removeEventListener('keydown', handler);
         };
     }, [isLoser, isWinner]);
+    useEffect(() => {
+        const handler = (e:KeyboardEvent) => {
+            if (e.key === 'Enter') {
+             setIsShow(() => true);
+            }
+        };
+
+        document.addEventListener('keydown', handler);
+
+        return () => {
+            document.removeEventListener('keydown', handler);
+        };
+    }, []);
   return (
         <Wrapper>
-            {!isTrue && (
-              <Button onClick={() => setIsTrue(true)}>
-              Iniciar
+            
+            {!isShow && (
+              <Button onClick={() => setIsShow(true)}>
+              Clique Enter
               </Button>
            
             )}
             <Score countWin={countWin} countLoser={countLose} restartGame={restartGame} isLoser={isLoser} isWinner={isWinner}/>
 
-            {isTrue && (
+            {isShow && (
                 <HangmanParts>
 
-                    {(isTrue && (!isWinner && !isLoser) )&&<h2>Jogo da Forca</h2>}
+                    {(isShow && (!isWinner && !isLoser) )&&<h2>Jogo da Forca</h2>}
                     <HangmanDrawing NumberOfGuesses={incorrectGuesses.length}/>
                     <HangmanWord GuessedLetters={GuessedLetters} word={wordToGuess} reveal={isLoser} />
                 </HangmanParts>
             )}
+            {(!isWinner && !isLoser && isShow) && (
+            <h4> Personagens de Super Onze</h4>)}
 
-            {isTrue && <div style={{}}>
+            {isShow && <div style={{}}>
                 <Keyboard 
                 activeLetters = {GuessedLetters}
                 inactiveLetters = {incorrectGuesses}
                 addGuessedLetters={addGuessedLetters}
-                disabled = {isLoser || isWinner || !isTrue}
+                disabled = {isLoser || isWinner || !isShow}
+                wordToGuess = {incorrectGuesses}
                 />
             </div>}
         </Wrapper>
