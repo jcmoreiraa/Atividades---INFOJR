@@ -44,7 +44,7 @@ const Animation = keyframes`
 const Text = styled.span`
 color: white;
 font-weight:bold;
-animation: ${Animation} 1s steps(2, start) infinite;
+animation: ${Animation} 1.5s steps(2, start) infinite;
 text-align:center;
 @media(max-width:600px){
   display:none;
@@ -79,7 +79,8 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
                 <h3 style={{color:'red'}}> 
                 Errou feio, <span style={{fontWeight:'bold', color:'white'}}>{name}</span> 
                 </h3>
-                <Text> Aperte enter para reiniciar</Text>
+               <Text> Aperte ENTER para reiniciar<br/>
+                  Aperte ESC se quiser mudar de jogador</Text>
                 <Placar>
                   <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
                   <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>
@@ -92,7 +93,8 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
                   <h3 style={{color:'white'}}> 
                   Parabéns <span style={{fontWeight:'bold', color:'black'}}>{name},</span> você acertou!
                   </h3>
-                  <Text> Aperte enter para reiniciar</Text>
+                  <Text> Aperte enter para reiniciar<br/>
+                  Aperte ESC se quiser mudar de jogador</Text>
                   <Placar>
                     <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
                     <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>

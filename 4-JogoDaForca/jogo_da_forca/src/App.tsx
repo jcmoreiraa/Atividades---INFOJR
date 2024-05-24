@@ -102,8 +102,12 @@ function App() {
         setWordToGuess( words[Math.floor(Math.random() * words.length)]);
         SetGuessedLetters([]);
         };
-    
-
+    const changePlayer = () => {
+        setIsShow(() => false)
+        setName (() => "")
+        setCountLose(()=> 0)
+        setCountWin(()=> 0)
+    };
 
     const isLoser = incorrectGuesses.length >=6;
     const isWinner = wordToGuess.split('').every((letter)=>GuessedLetters.includes(letter))
@@ -124,7 +128,7 @@ function App() {
     
     useEffect(() => {
         const handler = (e:KeyboardEvent) => {
-            if (e.key === 'Enter' && (name != '')) {
+            if (e.key === 'Enter' && (name.trim() != '')) {
              setIsShow(() => true);
             }
         };
@@ -135,13 +139,27 @@ function App() {
             document.removeEventListener('keydown', handler);
         };
     }, [name]);
+    useEffect(() => {
+        const handler = (e:KeyboardEvent) => {
+            if (e.key === 'Escape' && (isLoser || isWinner)) {
+                changePlayer();
+                restartGame();
+            }
+        };
+
+        document.addEventListener('keydown', handler);
+
+        return () => {
+            document.removeEventListener('keydown', handler);
+        };
+    }, [isLoser, isWinner]);
 
   return (
         <Wrapper>
             {!isShow && ( 
             <div style={{gap:'20px', display:'flex', flexDirection:'column' }}>
-              <Button disabled={(name === '')} onClick={() => setIsShow(true)}>
-                {name === ''? 'Não adianta clicar enter' : 'Clique enter'}
+              <Button disabled={(name.trim() === '')} onClick={() => setIsShow(true)}>
+                {name.trim() === ''? 'Não adianta clicar enter' : 'Clique enter'}
                 
               </Button>
               <Input placeholder='Digite o nome do jogador'
