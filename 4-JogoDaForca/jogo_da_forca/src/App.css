@@ -23,3 +23,10 @@ body {
   }
   
 }
+@media(max-width:500px){
+
+  .letters{
+
+    min-width: min-content;
+  }
+}

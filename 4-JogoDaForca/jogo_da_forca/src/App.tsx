@@ -11,7 +11,14 @@ const HangmanParts = styled.div`
     flex-direction: column;
     gap: 2rem;
     width: 350px;
+    @media (max-width: 500px) {
+        padding-right:100px;
+    }
+    @media (max-width: 600px) {
+        padding-right:100px;
+    }
 `;
+
 
 const Wrapper = styled.div`
     display: flex;
@@ -21,6 +28,7 @@ const Wrapper = styled.div`
     @media (max-width: 600px) {
         padding-top:50px;
     }
+    
 `;
 const Button = styled.button`
     background-color: red;
@@ -45,7 +53,7 @@ const Input = styled.input`
 const words = ['endou', 'gouenji', 'kidou', 'kazemaru', 'kabeyama',
   'matsuno', 'someoka', 'domon', 'handa',
   'shishido', 'ichinose', 'tsunami', 'fubuki', 'fudou',
-  'sakuma', 'afuro', 'tachimukay'];
+  'sakuma', 'afuro'];
 
 function App() {
     const [isShow, setIsShow] = useState(false);

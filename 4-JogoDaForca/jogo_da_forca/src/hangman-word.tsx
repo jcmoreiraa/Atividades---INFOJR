@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import './App.css';
 
 const Wrapper = styled.div `
 display: flex;
@@ -9,9 +10,16 @@ text-transform: uppercase;
 font-weight: bold;
 font-family: 'Arial';
 width:100%;
-@media(max-width:700px){
+@media(max-width:600px){
     gap:0.05rem;
     font-size:2.5rem;
+    padding-left:50px;
+    
+}
+@media(max-width:500px){
+    gap:0.05rem;
+    font-size:1.5rem;
+    padding-left:50px;
     
 }
 
@@ -28,7 +36,7 @@ export default function HangmanWord({word, GuessedLetters,reveal}:HangmanWordPro
         
         <Wrapper > {word.split("").map((letra, index) => (
             <span className="letters" style={{borderBottom:'0.25rem solid black', minWidth: '45px'}}key = {index}> 
-            <span  style={{visibility:GuessedLetters.includes(letra)||reveal? 'visible': "hidden", color:!GuessedLetters.includes(letra)? 'red':"black", width:'10px'}}>{letra}</span>
+            <span className="letters" style={{visibility:GuessedLetters.includes(letra)||reveal? 'visible': "hidden", color:!GuessedLetters.includes(letra)? 'red':"black", width:'10px'}}>{letra}</span>
             </span>))} 
         </Wrapper>
     )

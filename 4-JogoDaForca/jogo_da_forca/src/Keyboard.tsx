@@ -11,15 +11,17 @@ gap:0.3rem;
 width: 700px;
 display:none;
 margin-bottom:20px;
-@media(max-width:700px){
+@media(max-width:600px){
 width: 450px;
 grid-template-columns: repeat(auto-fit, minmax(50px,2fr));
 gap:0.8rem;
 display:inline-block;
-
-
-
-
+}
+@media(max-width:500px){
+    width: 350px;
+    grid-template-columns: repeat(auto-fit, minmax(40px,2fr));
+    gap:0.5rem;
+    display:inline-block;
 }
 
 `

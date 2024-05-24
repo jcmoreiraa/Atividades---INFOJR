@@ -58,8 +58,7 @@ const Placar = styled.div`
   border: 1px solid ##D2691E;
   width: 300px;
   border-radius: 10px;
-  @media (max-width: 700px) {
-  }
+
 `;
 
 interface ScoreProps{
@@ -93,7 +92,7 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
                   <h3 style={{color:'white'}}> 
                   Parabéns <span style={{fontWeight:'bold', color:'black'}}>{name},</span> você acertou!
                   </h3>
-                  <Text> Aperte enter para reiniciar<br/>
+                  <Text> Aperte ENTER para reiniciar<br/>
                   Aperte ESC se quiser mudar de jogador</Text>
                   <Placar>
                     <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
