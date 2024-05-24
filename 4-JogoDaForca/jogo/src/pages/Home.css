@@ -1,0 +1,47 @@
+.home {
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.name {
+    font-size: 7rem;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+}
+
+.centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    height: 100%;
+}
+
+.botao {
+    height: 105px;
+    max-width: 317px;
+    width: 100%;
+    border-radius: 24px;
+
+    font-size: 16px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 1024px) {
+    .name {
+       flex-direction: column;
+       width: 100%;
+    }
+
+    .titulo {
+        margin: 0;
+    }
+}

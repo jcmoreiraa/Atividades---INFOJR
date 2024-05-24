@@ -8,7 +8,7 @@ export function HangmanWord({ guessedLetters, wordToGuess, reveal = false}: Hang
     return (
         <div style={{ 
             display: 'flex', 
-            gap: '.25em', 
+            gap: '2%', 
             fontSize: '6rem', 
             fontWeight: 'bold', 
             textTransform: 'uppercase', 
