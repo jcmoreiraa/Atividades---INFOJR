@@ -68,43 +68,37 @@ interface ScoreProps{
     restartGame: ()=> void;
     isLoser: boolean;
     isWinner: boolean;
+    name: string;
 }
 
-export default function Score({countWin, countLoser, restartGame, isLoser, isWinner}:ScoreProps){
+export default function Score({countWin, countLoser, restartGame, isLoser, isWinner, name}:ScoreProps){
     return(
         <Wrapper>
            {isLoser && (
-  <div style={{}}>
-    <h3 style={{color:'red'}}> 
-
-      Errou feio.
-    </h3>
-    <Text> Aperte enter para reiniciar</Text>
-    <Placar>
-    
-    <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
-        <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>
-    
-    <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Partidas Totais: {countLoser + countWin}</p>
-    </Placar>
-    <Button onClick={restartGame}> Recomeçar </Button> </div> )} 
-
-
+              <div>
+                <h3 style={{color:'red'}}> 
+                Errou feio, <span style={{fontWeight:'bold', color:'white'}}>{name}</span> 
+                </h3>
+                <Text> Aperte enter para reiniciar</Text>
+                <Placar>
+                  <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
+                  <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>
+                  <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Partidas Totais: {countLoser + countWin}</p>
+                </Placar>
+                <Button onClick={restartGame}> Recomeçar </Button> 
+              </div> )} 
             {isWinner && (
-               <div style={{}}>
-               <h3 style={{color:'white'}}> 
-           
-                 Parabéns, você acertou!
-               </h3>
-               <Text> Aperte enter para reiniciar</Text>
-               <Placar>
-               
-               <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
-                   <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>
-               
-               <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Partidas Totais: {countLoser + countWin}</p>
-               </Placar>
-               <Button onClick={restartGame}> Recomeçar </Button> </div> )}  
+               <div>
+                  <h3 style={{color:'white'}}> 
+                  Parabéns <span style={{fontWeight:'bold', color:'black'}}>{name},</span> você acertou!
+                  </h3>
+                  <Text> Aperte enter para reiniciar</Text>
+                  <Placar>
+                    <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
+                    <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>
+                    <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Partidas Totais: {countLoser + countWin}</p>
+                  </Placar>
+                  <Button onClick={restartGame}> Recomeçar </Button> </div> )}  
         </Wrapper>
 
     )

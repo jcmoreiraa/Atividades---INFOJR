@@ -28,21 +28,21 @@ body{
 
 }
 header{
-gap: 511px;
 display: flex;
 box-shadow: var(--box-shadow);
-
-align-items: center;
-justify-content: center;
 color: var(--color);
 background-color: var(--background);
-
+padding: 0px 80px 0px 80px;
+align-items: center;
+justify-content: space-between;
 
 }
 .kevin{  
 display: flex;
-text-align: left;
 gap:50px;
+align-items: center;
+justify-content: center;
+
 
 }
 .menu{
@@ -50,6 +50,8 @@ gap:50px;
   background:none;
   cursor: pointer;
   display: none;
+  align-items: center;
+  justify-content: center;
   
 }
 
@@ -68,12 +70,13 @@ font-family: "Be Vietnam", sans-serif;
 letter-spacing: -0.02em;
 
 
+
 }
 .section{
   display: flex;
   gap:20px;
   list-style: none;
-  padding-top: 11px;
+  
   
 
 
@@ -94,7 +97,6 @@ letter-spacing: -0.02em;
 
 .redes_e_botao{
   display: flex;
-
   gap:50px;
 }
 .redes{
@@ -169,13 +171,15 @@ input:checked + .slider:before {
 }
 
 main{
-  align-items: center;
   justify-content: center;
-
+    align-items: center;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 section{
-  margin-left: 300px;
   margin-top: 60px;
+  
 }
 
 .hello{
@@ -393,6 +397,12 @@ margin-left: 85px;
 
 
   }
+  header{
+    align-items: center;
+    padding: 0px 25px 0px 25px;
+
+
+  }
   .hello{font-family: "EB Garamond", sans-serif;
     font-size: 32px;
     font-weight: 700;
@@ -532,7 +542,6 @@ text-align: center;
 
 }
 header{
-  width: 500px;
   gap:0px;
   justify-content: space-around;
 

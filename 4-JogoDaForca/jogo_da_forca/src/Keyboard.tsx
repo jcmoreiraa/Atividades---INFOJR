@@ -25,7 +25,7 @@ display:inline-block;
 `
 
 const Button = styled.button<{isActive:boolean,isIncorrect:boolean }>`
-opacity:${(p)=>(p.isActive ? 'null':'0.3')};
+opacity:${(p)=>(p.isActive ? '1':'0.3')};
 cursor: ${(p) => (p.isActive? 'pointer' : 'not-allowed')};
 background-color: ${(p) => (p.isIncorrect ? '#1C1C1C' : 'grey')};
 `
@@ -48,7 +48,7 @@ export default function Keyboard({activeLetters, disabled=true, inactiveLetters,
        return (  
 
        
-        <Button style={{ color:'white'}}onClick={()=> addGuessedLetters(letter)}isActive={isActive && isInactive} key={letter} disabled={ disabled} isIncorrect={isIncorrect}>
+        <Button style={{ color:'white'}}onClick={()=> addGuessedLetters(letter)}isActive={isActive && isInactive} key={letter} disabled={disabled} isIncorrect={isIncorrect}>
             {letter}
         </Button>
        )})}

@@ -114,13 +114,6 @@ export default function HangmanDrawing({NumberOfGuesses}:HangmanDrawingProps){
             <Above />
             <Vertical />
             <Base />
-            
-            
-    
-
-
-
-             
         </div>
     )
 }
