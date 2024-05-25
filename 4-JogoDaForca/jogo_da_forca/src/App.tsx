@@ -173,6 +173,22 @@ function App() {
             document.removeEventListener('keydown', handler);
         };
     }, [isLoser, isWinner]);
+    
+    useEffect(() => {
+        if (isLoser) {
+          speak('tente novamente');
+        }
+        if (isWinner) {
+            speak('parabéns')
+        }
+      }, [isLoser, isWinner]);
+    
+      const speak = (message: string): void => {
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance(message);
+          window.speechSynthesis.speak(utterance);
+        } 
+      };
 
   return (
         <Wrapper>
