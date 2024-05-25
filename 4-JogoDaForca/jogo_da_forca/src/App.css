@@ -13,6 +13,17 @@ body {
   background-color:#222;
   height: 100vh;
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 @media(max-width:700px){
   body{
@@ -21,6 +32,7 @@ body {
     justify-content: center;
 
   }
+  
   
 }
 @media(max-width:500px){

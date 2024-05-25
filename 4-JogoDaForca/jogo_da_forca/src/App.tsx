@@ -11,6 +11,7 @@ const HangmanParts = styled.div`
     flex-direction: column;
     gap: 2rem;
     width: 350px;
+    padding-right:100px;
     @media (max-width: 500px) {
         padding-right:100px;
     }
@@ -27,7 +28,10 @@ const Wrapper = styled.div`
     align-items: center;
     padding-top:70px;
     @media (max-width: 600px) {
-        padding-top:50px;
+        padding-top:100px;
+    }
+    @media (max-width: 500px) {
+        padding-top:120px;
     }
     
 `;
@@ -90,6 +94,9 @@ function App() {
     const [countLose,setCountLose ] = useState(0);
     const isLoser = incorrectGuesses.length >=6;
     const isWinner = wordToGuess.split('').every((letter)=>GuessedLetters.includes(letter))
+    const buttonStyle = name.trim() != ""
+    ? { animation: 'pulse 1s steps(2, start) infinite' }
+    : {};
 
     useEffect(()=>{
         if (isWinner){
@@ -171,7 +178,7 @@ function App() {
         <Wrapper>
             {!isShow && ( 
             <div style={{gap:'20px', display:'flex', flexDirection:'column' }}>
-              <Button disabled={(name.trim() === '')} onClick={() => setIsShow(true)}>
+              <Button style={buttonStyle}  disabled={(name.trim() === '')} onClick={() => setIsShow(true)}>
                 {name.trim() === ''? 'Não adianta clicar enter' : 'Clique enter'}
                 
               </Button>

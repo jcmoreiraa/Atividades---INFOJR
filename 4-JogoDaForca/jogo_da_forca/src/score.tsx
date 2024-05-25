@@ -80,6 +80,7 @@ const Placar = styled.div`
   border-radius: 10px;
   height:auto;
   margin-top:10px;
+  
 
 
 `;

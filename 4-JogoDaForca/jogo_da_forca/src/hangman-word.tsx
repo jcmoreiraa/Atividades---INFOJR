@@ -10,6 +10,7 @@ text-transform: uppercase;
 font-weight: bold;
 font-family: 'Arial';
 width:100%;
+padding-left:50px;
 @media(max-width:600px){
     gap:0.05rem;
     font-size:2.5rem;
