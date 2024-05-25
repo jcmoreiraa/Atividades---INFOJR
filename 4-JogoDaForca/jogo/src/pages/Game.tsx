@@ -20,6 +20,8 @@ function Game() {
 
     const [showModal, setShowModal] = useState(false);
 
+    const [gameHistory, setGameHistory] = useState<{ result: string, word: string }[]>([]);
+
     const incorrectLetters = guessedLetters.filter(
       letter => !wordToGuess.includes(letter)
     )
@@ -69,12 +71,14 @@ function Game() {
     useEffect(() => {
       if (isWinner) {
           setWins(wins + 1);
+          setGameHistory(currentHistory => [...currentHistory, { result: 'Vitória', word: wordToGuess }]);
           setShowModal(true);
       } else if (isLoser) {
           setLosses(losses + 1);
+          setGameHistory(currentHistory => [...currentHistory, { result: 'Derrota', word: wordToGuess }]);
           setShowModal(true);
       }
-  }, [isWinner, isLoser]);
+  }, [isWinner, isLoser, wordToGuess]);
 
   const resetGame = () => {
       setGuessedLetters([]);
@@ -111,11 +115,19 @@ function Game() {
         </div>
 
         <Modal show={showModal} onClose={() => setShowModal(false)}>
-            <div className='placar'>
+          <div className='placar'>
               <div>Vitórias: {wins}</div>
               <div>Derrotas: {losses}</div>
+          </div>
+          <div className='historico'>
+              <h3>Histórico de Partidas</h3>
+              <ul>
+                {gameHistory.map((game, index) => (
+                <li key={index}>{game.result}: {game.word}</li>
+                ))}
+              </ul>
             </div>
-          <button className='btn primeiro' onClick={resetGame}>Novo jogo</button>
+          <button onClick={resetGame}>Novo jogo</button>
         </Modal>
 
         <div className='final'>

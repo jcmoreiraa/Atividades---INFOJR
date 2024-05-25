@@ -13,6 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+img {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  transform: rotate(90deg);
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,6 +35,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  
+  color: #000000;
 }
 
 h1 {

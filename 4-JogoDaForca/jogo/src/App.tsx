@@ -19,8 +19,6 @@ function App() {
   };
   return (
     <div>
-        
-        
 
     <Router>
       <AppRoutes />

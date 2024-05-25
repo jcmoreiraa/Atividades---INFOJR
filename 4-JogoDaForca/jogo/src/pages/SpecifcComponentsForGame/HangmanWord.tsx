@@ -20,7 +20,7 @@ export function HangmanWord({ guessedLetters, wordToGuess, reveal = false}: Hang
                     visibility: guessedLetters.includes(letter) || reveal 
                     ? 'visible' 
                     : 'hidden',
-                    color: !guessedLetters.includes(letter) && reveal ? 'red' : 'black',
+                    color: !guessedLetters.includes(letter) && reveal ? '#9657e7' : 'black',
                 }}>{letter}</span>
             </span>
         ))}</div>

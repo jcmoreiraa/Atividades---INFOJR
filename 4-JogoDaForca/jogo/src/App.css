@@ -3,8 +3,15 @@
   margin: 0 auto;
   padding: 0;
 
-  --destaque: #9657e7;
-  --fundo: white;
+  --destaque: #000000;
+  --fundo: #e2c4ff;
+}
+
+body {
+  background-image: url('./assets/pink.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .primeiro {
