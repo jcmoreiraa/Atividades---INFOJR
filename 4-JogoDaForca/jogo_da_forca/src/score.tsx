@@ -115,7 +115,7 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
                 <ButtonChangePlayer onClick={changePlayer} > Mudar jogador</ButtonChangePlayer> </div>
               </div> )} 
             {isWinner && (
-               <div>
+               <div style={{flexDirection:'column', alignItems:'center', display:'flex'}}>
                   <h3 style={{color:'white'}}> 
                   Parabéns <span style={{fontWeight:'bold', color:'black'}}>{name},</span> você acertou!
                   </h3>
