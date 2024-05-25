@@ -9,17 +9,21 @@ const Wrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(60px, 2fr));
 gap:0.5rem;
-width: 630px;
+width: 650px;
 margin-bottom:20px;
 @media(max-width:600px){
 width: 450px;
-gap:0.5rem;
-display:inline-block;
+    display: grid;
+    text-align:center;
+grid-template-columns: repeat(auto-fit, minmax(50px, 2fr));
+gap:0.3rem;
 }
 @media(max-width:500px){
     width: 350px;
-    gap:0.5rem;
-    display:inline-block;
+    display: grid;
+    text-align:center;
+grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+gap:0.3rem;
 }
 
 `

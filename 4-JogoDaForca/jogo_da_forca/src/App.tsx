@@ -72,9 +72,24 @@ function App() {
         if (GuessedLetters.includes(letter) || isLoser||isWinner) return;
         SetGuessedLetters(GuessedLetters => [...GuessedLetters, letter]);
     }
+    function restartGame() {
+        setWordToGuess( words[Math.floor(Math.random() * words.length)]);
+        SetGuessedLetters([]);
+
+    };
+
+    function changePlayer() {
+        setIsShow(() => false);
+        setName(() => "");
+        setCountLose(() => 0);
+        setCountWin(() => 0);
+        restartGame();
+    }
 
     const [countWin, setCountWin] = useState(0);
     const [countLose,setCountLose ] = useState(0);
+    const isLoser = incorrectGuesses.length >=6;
+    const isWinner = wordToGuess.split('').every((letter)=>GuessedLetters.includes(letter))
 
     useEffect(()=>{
         if (isWinner){
@@ -89,6 +104,7 @@ function App() {
 
 
     useEffect(() => {
+        
         if (isShow){
         const handler = (e: KeyboardEvent) => {
             const key = e.key.toLowerCase(); 
@@ -105,24 +121,9 @@ function App() {
             document.removeEventListener("keypress", handler);
         };}
     }, [GuessedLetters, isShow]);
-
-    
-    const restartGame = () => {
-        setWordToGuess( words[Math.floor(Math.random() * words.length)]);
-        SetGuessedLetters([]);
-        };
-    const changePlayer = () => {
-        setIsShow(() => false)
-        setName (() => "")
-        setCountLose(()=> 0)
-        setCountWin(()=> 0)
-        restartGame();
-    };
-
-    const isLoser = incorrectGuesses.length >=6;
-    const isWinner = wordToGuess.split('').every((letter)=>GuessedLetters.includes(letter))
     
     useEffect(() => {
+
         const handler = (e:KeyboardEvent) => {
             if (e.key === 'Enter' && (isLoser || isWinner)) {
                 restartGame();
@@ -137,6 +138,7 @@ function App() {
     }, [isLoser, isWinner]);
     
     useEffect(() => {
+
         const handler = (e:KeyboardEvent) => {
             if (e.key === 'Enter' && (name.trim() != '')) {
              setIsShow(() => true);
@@ -150,6 +152,7 @@ function App() {
         };
     }, [name]);
     useEffect(() => {
+
         const handler = (e:KeyboardEvent) => {
             if (e.key === 'Escape' && (isLoser || isWinner)) {
                 changePlayer();
