@@ -25,6 +25,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    padding-top:70px;
     @media (max-width: 600px) {
         padding-top:50px;
     }
@@ -115,6 +116,7 @@ function App() {
         setName (() => "")
         setCountLose(()=> 0)
         setCountWin(()=> 0)
+        restartGame();
     };
 
     const isLoser = incorrectGuesses.length >=6;
@@ -151,7 +153,7 @@ function App() {
         const handler = (e:KeyboardEvent) => {
             if (e.key === 'Escape' && (isLoser || isWinner)) {
                 changePlayer();
-                restartGame();
+                
             }
         };
 
@@ -176,8 +178,9 @@ function App() {
             </div>
            
             )}
+            {isShow&&(
             
-            <Score countWin={countWin} countLoser={countLose} restartGame={restartGame} isLoser={isLoser} isWinner={isWinner} name={name}/>
+            <Score countWin={countWin} countLoser={countLose} restartGame={restartGame} isLoser={isLoser} isWinner={isWinner} name={name} changePlayer={changePlayer}/>)}
 
             {isShow && (
                 <HangmanParts>

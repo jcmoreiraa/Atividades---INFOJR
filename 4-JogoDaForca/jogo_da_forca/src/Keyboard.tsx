@@ -7,20 +7,17 @@ const keys = [
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-gap:0.3rem;
-width: 700px;
-display:none;
+grid-template-columns: repeat(auto-fit, minmax(60px, 2fr));
+gap:0.5rem;
+width: 630px;
 margin-bottom:20px;
 @media(max-width:600px){
 width: 450px;
-grid-template-columns: repeat(auto-fit, minmax(50px,2fr));
-gap:0.8rem;
+gap:0.5rem;
 display:inline-block;
 }
 @media(max-width:500px){
     width: 350px;
-    grid-template-columns: repeat(auto-fit, minmax(40px,2fr));
     gap:0.5rem;
     display:inline-block;
 }
