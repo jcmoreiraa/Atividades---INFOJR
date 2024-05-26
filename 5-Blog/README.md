@@ -29,6 +29,13 @@ Desenvolver um blog com base em um dos designs indicados e permitir a edição a
 - Criar seção de posts dinamicos no blog
 - Editar post com titulo, subtitulo, texto e imagem numa pagina que não seja a principal ( Com conteudo dinamico )
 
+
+### Design
+
+O link do design a ser seguido nesta atividade  (se desejarem): 
+- https://www.figma.com/design/HHnCMPtiamwzbKj1BFdsOL/Untitled?node-id=0-1&t=yD7R9ek9Z1DaF9Ba-1 (Feito pelo trainee Ruan Correia Brasil)
+- https://www.figma.com/design/KxMWxqTJ2CoaMNLfbx1gPk/Portifólio-(Márcio)?node-id=4079-6&t=iqvZ1rDbDmluuBQr-1 (Feito pelo trainee Márcio Vilas Boas Cerqueira)
+
 ## LINKS UTEIS
 
 - Todos das atividades anteriores
