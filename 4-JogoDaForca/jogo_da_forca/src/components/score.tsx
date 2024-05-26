@@ -72,7 +72,7 @@ text-align:center;
 
 `
 
-const Placar = styled.div`
+const Scoreboard = styled.div`
   background-color: red;
   border: 1px solid ##D2691E;
   min-width: 270px;
@@ -106,11 +106,11 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
                 </h3>
                <Text> Aperte ENTER para reiniciar<br/>
                   Aperte ESC se quiser mudar de jogador</Text>
-                <Placar >
+                <Scoreboard >
                   <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
                   <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>
                   <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Partidas Totais: {countLoser + countWin}</p>
-                </Placar>
+                </Scoreboard>
                 <div style={{display:'flex', gap:'10px'}}>
                 <Button onClick={restartGame}> Recomeçar </Button> 
                 <ButtonChangePlayer onClick={changePlayer} > Mudar jogador</ButtonChangePlayer> </div>
@@ -122,11 +122,11 @@ export default function Score({countWin, countLoser, restartGame, isLoser, isWin
                   </h3>
                   <Text> Aperte ENTER para reiniciar<br/>
                   Aperte ESC se quiser mudar de jogador</Text>
-                  <Placar>
+                  <Scoreboard>
                     <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Vitórias: {countWin}</p>
                     <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Derrotas: {countLoser}</p>
                     <p style={{color:'black', fontSize:'20px', fontWeight:'bold'}}>Partidas Totais: {countLoser + countWin}</p>
-                  </Placar>
+                  </Scoreboard>
                   <div style={{display:'flex', gap:'10px'}}>
                 <Button onClick={restartGame}> Recomeçar </Button> 
                 <ButtonChangePlayer onClick={changePlayer} > Mudar jogador</ButtonChangePlayer> </div>

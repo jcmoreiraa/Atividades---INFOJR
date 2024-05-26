@@ -1,10 +1,10 @@
 import  { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import './App.css';
-import Keyboard from './Keyboard';
-import HangmanDrawing from './hangman-drawing';
-import HangmanWord from './hangman-word';
-import Score from './score';
+import Keyboard from './components/Keyboard';
+import HangmanDrawing from './components/hangman-drawing';
+import HangmanWord from './components/hangman-word';
+import Score from './components/score';
 
 const HangmanParts = styled.div`
     display: flex;
@@ -174,21 +174,6 @@ function App() {
         };
     }, [isLoser, isWinner]);
     
-    useEffect(() => {
-        if (isLoser) {
-          speak('tente novamente');
-        }
-        if (isWinner) {
-            speak('parabéns')
-        }
-      }, [isLoser, isWinner]);
-    
-      const speak = (message: string): void => {
-        if ('speechSynthesis' in window) {
-          const utterance = new SpeechSynthesisUtterance(message);
-          window.speechSynthesis.speak(utterance);
-        } 
-      };
 
   return (
         <Wrapper>
@@ -210,7 +195,7 @@ function App() {
 
             {isShow && (
                 <HangmanParts>
-                    {(isShow && (!isWinner && !isLoser) )&& <h2>Jogo da Forca</h2>}
+                    {(isShow && (!isWinner && !isLoser) )&& <h2 style={{paddingLeft:'30px'}}>Jogo da Forca</h2>}
                     <HangmanDrawing NumberOfGuesses={incorrectGuesses.length}/>
                     <HangmanWord GuessedLetters={GuessedLetters} word={wordToGuess} reveal={isLoser}/>
                 </HangmanParts>
