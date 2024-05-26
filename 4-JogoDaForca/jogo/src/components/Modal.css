@@ -11,13 +11,17 @@
 }
 
 .modal {
-    background: white;
-    padding: 20px;
+    background: #e2c4ff;
+    padding: 15px;
+    margin: 5px;
     border-radius: 5px;
     max-width: 500px;
     width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-close {
@@ -34,15 +38,42 @@
     margin-top: 20px;
 }
 
+.placar {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .historico {
     margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
 }
 
 .historico ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     list-style-type: none;
     padding: 0;
 }
 
 .historico li {
     margin-bottom: 10px;
+}
+
+.reset {
+    margin: auto;
+}
+
+@media (max-width: 375px) {
+    .historico ul {
+        display: flex;
+        flex-direction: column;
+    }
 }

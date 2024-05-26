@@ -9,7 +9,7 @@ export function HangmanWord({ guessedLetters, wordToGuess, reveal = false}: Hang
         <div style={{ 
             display: 'flex', 
             gap: '2%', 
-            fontSize: '6rem', 
+            fontSize: 'clamp(2rem, 15vw, 4rem)', 
             fontWeight: 'bold', 
             textTransform: 'uppercase', 
             fontFamily: 'monospace',}}>

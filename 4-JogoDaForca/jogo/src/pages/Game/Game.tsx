@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
-import { HangmanDrawing } from './SpecifcComponentsForGame/HangmanDrawing'
-import { HangmanWord } from './SpecifcComponentsForGame/HangmanWord'
-import  { Keyboard }  from './SpecifcComponentsForGame/Keyboard'
-import words from './SpecifcComponentsForGame/wordList.json'
+import { HangmanDrawing } from '../../components/HangmanDrawing'
+import { HangmanWord } from '../../components/HangmanWord'
+import  { Keyboard }  from '../../components/Keyboard'
+import words from '../SpecifcComponentsForGame/wordList.json'
 import './Game.css'
 import { Link } from 'react-router-dom';
-import Modal from './SpecifcComponentsForGame/Modal'
+import Modal from '../../components/Modal'
 
 function getWord() {
     return words[Math.floor(Math.random() * words.length)]
@@ -71,11 +71,11 @@ function Game() {
     useEffect(() => {
       if (isWinner) {
           setWins(wins + 1);
-          setGameHistory(currentHistory => [...currentHistory, { result: 'Vitória', word: wordToGuess }]);
+          setGameHistory(currentHistory => [...currentHistory, { result: 'WIN', word: wordToGuess }]);
           setShowModal(true);
       } else if (isLoser) {
           setLosses(losses + 1);
-          setGameHistory(currentHistory => [...currentHistory, { result: 'Derrota', word: wordToGuess }]);
+          setGameHistory(currentHistory => [...currentHistory, { result: 'LOSS', word: wordToGuess }]);
           setShowModal(true);
       }
   }, [isWinner, isLoser, wordToGuess]);
@@ -89,10 +89,6 @@ function Game() {
   return (
     <div className='game'>
       <div className='jogo'>
-        <div style={{fontSize: '2rem', textAlign: 'center'}}>
-          {isWinner && 'Winner!'}
-          {isLoser && 'Nice Try'}
-        </div>
 
         <div className='meio'>
           <div className='hangman'>
@@ -115,24 +111,31 @@ function Game() {
         </div>
 
         <Modal show={showModal} onClose={() => setShowModal(false)}>
+          <div style={{fontSize: '2rem', textAlign: 'center'}}>
+            {isWinner && 'omggg u are so good at this!!!'}
+            {isLoser && 'smfh loser do it again'}
+          </div>
+
           <div className='placar'>
-              <div>Vitórias: {wins}</div>
-              <div>Derrotas: {losses}</div>
+            <div>Wins: {wins}</div>
+            <div>Losses: {losses}</div>
           </div>
           <div className='historico'>
-              <h3>Histórico de Partidas</h3>
-              <ul>
-                {gameHistory.map((game, index) => (
-                <li key={index}>{game.result}: {game.word}</li>
-                ))}
-              </ul>
-            </div>
-          <button onClick={resetGame}>Novo jogo</button>
+            <h3>LATEST MATCHES</h3>
+            <ul className='historico-list'>
+              {gameHistory.slice(-10).map((game, index) => (
+                <li key={index} className='historico-item'>
+                  <span key={index}>{game.result}: {game.word}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <button className='btn primeiro reset' onClick={resetGame}>NEW GAME</button>
         </Modal>
 
         <div className='final'>
-          <button className='btn primeiro' onClick={resetGame}>Novo jogo</button>
-          <Link className='btn segundo' to="/">Desistir</Link>
+          <button className='btn primeiro' onClick={resetGame}>NEW GAME</button>
+          <Link className='btn segundo' to="/">HOME</Link>
         </div>
       </div>
     </div>

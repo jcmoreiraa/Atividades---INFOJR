@@ -15,9 +15,9 @@ type KeyboardProps = {
 
 export function Keyboard({disabled = false, activeLetters, inactiveLetters, addGuessedLetter}: KeyboardProps) {
     const rows = [
-        KEYS.slice(0, 10),  // Primeira linha
-        KEYS.slice(10, 19), // Segunda linha
-        KEYS.slice(19)      // Terceira linha
+        KEYS.slice(0, 10),  
+        KEYS.slice(10, 19), 
+        KEYS.slice(19) 
       ];
    
     return (

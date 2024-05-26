@@ -21,9 +21,20 @@ body {
   cursor: pointer;
 }
 
+.primeiro:hover {
+  background: var(--fundo);
+  color: var(--destaque);
+  border-color: var(--destaque);
+}
+
 .segundo {
   background-color: none; 
   border: 2px solid var(--destaque);
   color: var(--destaque);
   cursor: pointer;
+}
+
+.segundo:hover {
+  background-color: var(--fundo);
+  color: var(--destaque);
 }
