@@ -26,12 +26,11 @@ const Wrapper = styled.div`
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    padding-top:70px;
     @media (max-width: 600px) {
-        padding-top:100px;
+        padding-top:50px;
     }
     @media (max-width: 500px) {
-        padding-top:120px;
+        padding-top:80px;
     }
     
 `;
@@ -178,7 +177,7 @@ function App() {
   return (
         <Wrapper>
             {!isShow && ( 
-            <div style={{gap:'20px', display:'flex', flexDirection:'column' }}>
+            <div style={{gap:'20px', display:'flex', flexDirection:'column', paddingBottom:'100px' }}>
               <Button style={buttonStyle}  disabled={(name.trim() === '')} onClick={() => setIsShow(true)}>
                 {name.trim() === ''? 'Não adianta clicar enter' : 'Clique enter'}
                 
