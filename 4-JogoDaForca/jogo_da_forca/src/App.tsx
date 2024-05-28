@@ -27,10 +27,8 @@ const Wrapper = styled.div`
     gap: 1rem;
     align-items: center;
     @media (max-width: 600px) {
-        padding-top:50px;
     }
     @media (max-width: 500px) {
-        padding-top:80px;
     }
     
 `;
@@ -194,14 +192,14 @@ function App() {
 
             {isShow && (
                 <HangmanParts>
-                    {(isShow && (!isWinner && !isLoser) )&& <h2 style={{paddingLeft:'30px'}}>Jogo da Forca</h2>}
+                    {(isShow && (!isWinner && !isLoser) )&& <h2 style={{paddingLeft:'30px', color:'white'}}>Jogo da Forca</h2>}
                     <HangmanDrawing NumberOfGuesses={incorrectGuesses.length}/>
                     <HangmanWord GuessedLetters={GuessedLetters} word={wordToGuess} reveal={isLoser}/>
                 </HangmanParts>
             )}
             
             {(!isWinner && !isLoser && isShow) && (
-                <h4> Personagens de Super Onze</h4>)}
+                <h4 style={{color:'white'}}> Personagens de Super Onze</h4>)}
 
             {isShow && <div>
                 <Keyboard 

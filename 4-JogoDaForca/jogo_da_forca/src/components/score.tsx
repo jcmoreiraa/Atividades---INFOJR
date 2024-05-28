@@ -6,7 +6,6 @@ import styled, { keyframes } from 'styled-components';
 const Wrapper = styled.div`
 justify-content: center;
 flex-direction: column;
-padding-top:100px;
 @media(max-width:600px){
 }
 
