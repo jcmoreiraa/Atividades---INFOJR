@@ -1,8 +1,8 @@
 {
-  "id": "hero",
+  "id": "text_with_image",
   "type": "SharedSlice",
-  "name": "Hero",
-  "description": "Hero",
+  "name": "TextWithImage",
+  "description": "TextWithImage",
   "variations": [
     {
       "id": "default",
@@ -18,7 +18,7 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1"
+            "single": "heading2"
           }
         },
         "body": {
@@ -28,21 +28,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em"
-          }
-        },
-        "button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Button Text",
-            "placeholder": ""
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "select": null
           }
         },
         "image": {
@@ -57,8 +42,8 @@
       "items": {}
     },
     {
-      "id": "horizontal",
-      "name": "Horizontal",
+      "id": "inverted",
+      "name": "Inverted",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -70,7 +55,7 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1"
+            "single": "heading2"
           }
         },
         "body": {
@@ -80,21 +65,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em"
-          }
-        },
-        "button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Button Text",
-            "placeholder": ""
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "select": null
           }
         },
         "image": {
