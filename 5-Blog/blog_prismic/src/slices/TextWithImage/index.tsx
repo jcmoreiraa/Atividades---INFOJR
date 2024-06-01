@@ -12,7 +12,7 @@ export type TextWithSliceProps =
 
   const components: JSXMapSerializer = {
     heading2: ({ children }) => (
-      <Heading as="h2" size="lg" className="">
+      <Heading as="h2" size="md" className="">
         {children}
       </Heading>
     ),
@@ -26,7 +26,7 @@ const TextWithSlice = ({ slice }: TextWithSliceProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid gap-8 md:grid-cols-2 place-items-center">
+      <div className="grid gap-10 md:flex md:justify-center place-items-center border bg-emerald-50 shadow-lg rounded-xl px-8 md:px-0 py-10 ">
         <PrismicNextImage
           field={slice.primary.image}
           className={clsx(

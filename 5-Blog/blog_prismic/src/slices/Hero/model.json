@@ -73,6 +73,15 @@
             "multi": "heading1,strong"
           }
         },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "SubTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading5,heading6,paragraph,strong,em"
+          }
+        },
         "body": {
           "type": "StructuredText",
           "config": {

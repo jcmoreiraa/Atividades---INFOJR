@@ -31,10 +31,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
  
   return {
-    title: settings.data.site_title || "Meu Blog",
-    description: settings.data.meta_description || "Super onze eh demais",
+    title: settings.data.site_title || "",
+    description: settings.data.meta_description || "",
     openGraph: {
-      images: [settings.data.og_image.url || "Raimon"],
+      images: [settings.data.og_image.url || ""],
     },
   }
 }
@@ -50,7 +50,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer/>
-        <div className="fixed bg-gradient-to-tr from-emerald-50 to-yellow-50 z-[-1] inset-0 opacity-50" />
+        <div className="fixed bg-gradient-to-tr from-emerald-50 to-emerald-100 z-[-1] inset-0 opacity-50" />
         <PrismicPreview repositoryName={repositoryName} />
       
       

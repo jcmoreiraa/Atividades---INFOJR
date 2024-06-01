@@ -24,7 +24,7 @@ const components:JSXMapSerializer = {
     </Heading>
   ),
   paragraph:({children} )=> (
-    <p className="text-base  font-medium font-body text-slate-600 sm:text-left text-center">
+    <p className="text-base  font-medium font-body text-emerald-600 sm:text-left text-center">
       {children}
     </p>
   )
@@ -50,7 +50,7 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
     >
       <PrismicRichText components={components} field={slice.primary.heading} />
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-5xl gap-x-24 gap-y-12 mx-auo sm:place-items-start place-items-center pl-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 max-w-5xl gap-x-24 gap-y-12 mx-auto sm:place-items-center place-items-center ">
 
         {slice.primary.my_items.map((item, index) => (
           <div key={index} className="max-w-xs grid sm:place items-start place-items-center ">

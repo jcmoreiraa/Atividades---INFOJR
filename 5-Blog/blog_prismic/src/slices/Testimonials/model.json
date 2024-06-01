@@ -18,7 +18,7 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2"
+            "multi": "heading2,strong"
           }
         },
         "testimonial_items": {

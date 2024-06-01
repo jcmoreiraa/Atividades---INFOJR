@@ -252,6 +252,17 @@ interface TestimonialDocumentData {
   name: prismic.KeyTextField;
 
   /**
+   * Title field in *Testimonial*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
    * Job Title field in *Testimonial*
    *
    * - **Field Type**: Text
@@ -555,6 +566,16 @@ export interface HeroSliceHorizontalPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
+
+  /**
+   * SubTitle field in *Hero → Horizontal → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.horizontal.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
 
   /**
    * Body field in *Hero → Horizontal → Primary*
