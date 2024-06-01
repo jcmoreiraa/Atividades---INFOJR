@@ -34,25 +34,29 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 <Bounded 
   data-slice-type={slice.slice_type}
   data-slice-variation={slice.variation}>
- <PrismicRichText field={slice.primary.heading} components={components}/>
-<div className="grid grid-cols-1  max-w-full place-items-center md:flex md:gap-10 md:justify-center">
-  <div className="flex-col max-w-lg ">
-<PrismicRichText field={slice.primary.subtitle} components={components} />
-<PrismicRichText field={slice.primary.body} components={components}/>
-</div>
-<PrismicNextImage field={slice.primary.image} className="drop-shadow-xl max-w-md w-full  " />
+ <PrismicRichText field={slice.primary.heading} components={components} />
 
+<div className="grid grid-cols-1 max-w-full md:place-items-center md:flex md:gap-10 md:justify-center">
+  <div className="flex-col md:max-w-xl">
+    <PrismicRichText field={slice.primary.subtitle} components={components} />
+    <PrismicRichText field={slice.primary.body} components={components} />
+  </div>
+  <PrismicNextImage field={slice.primary.image} className="drop-shadow-xl max-w-md w-full" />
 </div>
-<div className=" flex md:justify-center mt-2 md:mt-0 max-w-8xl xl:ml-10 ">
-<PrismicRichText field={slice.primary.second_body} components={components}/>
+
+<div className="flex md:justify-center mt-2 md:mt-0 max-w-8xl xl:ml-10">
+  <PrismicRichText field={slice.primary.second_body} components={components} />
 </div>
 
 <div className="grid grid-cols-1 max-w-10xl place-items-center xl:flex gap-10 md:justify-center md:ml-10">
-  <PrismicNextImage field={slice.primary.double_image} className=""/>
-  <PrismicNextImage field={slice.primary.triple_image}/>
+  <PrismicNextImage field={slice.primary.double_image} className="" />
+  <PrismicNextImage field={slice.primary.triple_image} className="" />
 </div>
-<div className=" flex md:justify-center max-w-full xl:ml-10 md:mt-10 mt-2 ">
-<PrismicRichText field={slice.primary.third_body} components={components}/></div>
+
+<div className="flex md:justify-center max-w-full xl:ml-10 md:mt-10 mt-2">
+  <PrismicRichText field={slice.primary.third_body} components={components} />
+</div>
+
 </Bounded>
   )}
   {slice.variation === 'horizontal' && (
@@ -74,8 +78,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         {slice.primary.button_text}
       </Button>
     </div>
-    <div className="order-1 md:order-2 w-full max-w-4xl">
-      <PrismicNextImage field={slice.primary.image} className="drop-shadow-xl w-full" />
+    <div className="order-1 md:order-2  max-w-4xl">
+      <PrismicNextImage field={slice.primary.image} className="drop-shadow-xl w-lg" />
     </div>
   </div>
     </Bounded>
