@@ -18,7 +18,16 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,strong"
+            "multi": "heading1,strong,heading2"
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "SubTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading5,heading6"
           }
         },
         "body": {
@@ -27,22 +36,16 @@
             "label": "Body",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "paragraph,strong"
           }
         },
-        "button_text": {
-          "type": "Text",
+        "second_body": {
+          "type": "StructuredText",
           "config": {
-            "label": "Button Text",
-            "placeholder": ""
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
+            "label": "Second Body",
             "placeholder": "",
-            "select": null
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "image": {
@@ -51,6 +54,31 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "double_image": {
+          "type": "Image",
+          "config": {
+            "label": "Double Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "triple_image": {
+          "type": "Image",
+          "config": {
+            "label": "Triple Image ",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "third_body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Third Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },
