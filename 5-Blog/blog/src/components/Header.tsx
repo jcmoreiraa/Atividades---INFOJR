@@ -1,8 +1,7 @@
 import { createClient } from "@/prismicio"; 
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "@/components/Bounded";
-import Logo from "@/components/Logo";
 
 export default async function Header() {
 
@@ -12,11 +11,11 @@ export default async function Header() {
 
 
     return (
-    <Bounded as="header" className="py-4 md:py-6 lg:py-8">
+    <Bounded as="header" className="text-pink-900 py-4 md:py-6 lg:py-8">
 
     <div className="flex gap-4 items-center justify-between sm:flex-row flex col">
         <Link href="/">
-            <Logo />
+            <PrismicNextImage field={settings.data.og_image} />
         </Link>
 
         <nav>

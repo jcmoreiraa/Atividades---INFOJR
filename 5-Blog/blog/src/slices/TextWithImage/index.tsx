@@ -33,7 +33,7 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
       data-slice-variation={slice.variation}>
     
       <div className="grid gap-8 md:grid-cols-2 place-items-center">
-        <PrismicNextImage field={slice.primary.image} className={clsx("rounded-lg", 
+        <PrismicNextImage field={slice.primary.image} width={300} height={300} className={clsx("rounded-full", 
           slice.variation === "inverted" && "md:order-2"
         )}/>
         

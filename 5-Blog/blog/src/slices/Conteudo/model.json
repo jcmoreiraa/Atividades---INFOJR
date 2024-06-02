@@ -1,7 +1,7 @@
 {
   "id": "call_to_action",
   "type": "SharedSlice",
-  "name": "CallToAction",
+  "name": "Conteudo",
   "description": "CallToAction",
   "variations": [
     {
@@ -27,22 +27,15 @@
             "label": "Body",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em"
+            "multi": "paragraph,heading3,strong,em"
           }
         },
-        "button_link": {
-          "type": "Link",
+        "image": {
+          "type": "Image",
           "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "select": null
-          }
-        },
-        "button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Button Text",
-            "placeholder": ""
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

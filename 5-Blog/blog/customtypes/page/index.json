@@ -20,9 +20,6 @@
             "call_to_action": {
               "type": "SharedSlice"
             },
-            "features": {
-              "type": "SharedSlice"
-            },
             "hero": {
               "type": "SharedSlice"
             },

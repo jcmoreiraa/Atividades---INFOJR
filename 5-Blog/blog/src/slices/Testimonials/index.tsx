@@ -47,7 +47,7 @@ const Testimonials = async ({ slice }: TestimonialsProps): Promise<JSX.Element> 
 
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
         {testimonials.map((item, index) => item && (
-          <div key={index} className="border bg-white shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between">
+          <div key={index} className="border bg-gradient-to-tr from-fuchsia-100 to-purple-100 shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between">
             <PrismicRichText field={item.data.quote} components={components} />
 
             <div className="flex items-center">

@@ -1,7 +1,6 @@
 import { createClient } from "@/prismicio"
-import { PrismicNextLink } from "@prismicio/next"
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next"
 import Link from "next/link"
-import Logo from "@/components/Logo"
 import Bounded from "@/components/Bounded"
 
 export default async function Footer() {
@@ -10,10 +9,10 @@ export default async function Footer() {
     const settings = await client.getSingle("settings")
 
     return (
-        <Bounded as="footer">
+        <Bounded as="footer" className="text-pink-900">
             <div className="flex sm:flex-row flex-col justify-between items-center gap-6">
                 <Link href="/">
-                    <Logo />
+                    <PrismicNextImage field={settings.data.og_image} />
                 </Link>
 
                 <p className="text-xs">
