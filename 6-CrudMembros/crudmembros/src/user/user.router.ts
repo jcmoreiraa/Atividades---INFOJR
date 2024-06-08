@@ -25,7 +25,7 @@ userRouter.get("/id/:id", async (request: Request, response: Response) => {
       if (user) {
         return response.status(200).json(user);
       }
-      return response.status(404).json("User could not be found");
+      return response.status(404).json("Usuário não encontrado.");
     } catch (error: any) {
       return response.status(500).json(error.message);
     }
@@ -39,7 +39,7 @@ userRouter.get("/email/:email", async (request: Request, response: Response) => 
     if (user) {
       return response.status(200).json(user);
     }
-    return response.status(404).json("User could not be found");
+    return response.status(404).json("Usuário não encontrado.");
   } catch (error: any) {
     return response.status(500).json(error.message);
   }
@@ -96,7 +96,7 @@ userRouter.delete("/:id", async (request: Request, response: Response) => {
     const id: number = parseInt(request.params.id, 10);
     try {
       await UserService.deleteUser(id);
-      return response.status(204).json("User has been successfully deleted");
+      return response.status(204).json("Usuário deletado com sucesso!");
     } catch (error: any) {
       return response.status(500).json(error.message);
     }
