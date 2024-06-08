@@ -6,21 +6,22 @@ import * as UserService from "./user.service";
 
 export const userRouter = express.Router();
 
-// GET: List of all Authors
-userRouter.get("/", async (request: Request, response: Response) => {
+// GET: Lista de todos os Users com certo nome
+userRouter.get("/nome/:nome", async (request: Request, response: Response) => {
+    const nome: string = request.params.nome;
     try {
-      const users = await UserService.listUsers();
+      const users = await UserService.listUsers(nome);
       return response.status(200).json(users);
     } catch (error: any) {
       return response.status(500).json(error.message);
     }
   });
 
-// GET: A single author by ID
-userRouter.get("/:id", async (request: Request, response: Response) => {
+// GET: Um único User por ID
+userRouter.get("/id/:id", async (request: Request, response: Response) => {
     const id: number = parseInt(request.params.id, 10);
     try {
-      const user = await UserService.getUser(id);
+      const user = await UserService.getUserByID(id);
       if (user) {
         return response.status(200).json(user);
       }
@@ -30,8 +31,22 @@ userRouter.get("/:id", async (request: Request, response: Response) => {
     }
   });
 
-  // POST: Create a Author
-// Params: firstName, lastName
+  // GET: Um único User por email
+userRouter.get("/email/:email", async (request: Request, response: Response) => {
+  const email: string = String(request.params.email);
+  try {
+    const user = await UserService.getUserByEmail(email);
+    if (user) {
+      return response.status(200).json(user);
+    }
+    return response.status(404).json("User could not be found");
+  } catch (error: any) {
+    return response.status(500).json(error.message);
+  }
+});
+
+  // POST: Criar User
+// Params: nome, email,senha, idade, estado, cidade
 userRouter.post(
     "/",
     body("nome").isString(),
@@ -55,12 +70,11 @@ userRouter.post(
     }
   );
 
-  // PUT: Updating an Author
-// Params: firstName, lastName
+  // PUT: Atualizando User por ID
+// Params: nome
 userRouter.put(
     "/:id",
     body("nome").isString(),
-    body("email").isString(),
     async (request: Request, response: Response) => {
       const errors = validationResult(request);
       if (!errors.isEmpty()) {
@@ -77,7 +91,7 @@ userRouter.put(
     }
   );
   
-  // DELETE: Delete an author based on the id
+  // DELETE: Deletar User por ID
 userRouter.delete("/:id", async (request: Request, response: Response) => {
     const id: number = parseInt(request.params.id, 10);
     try {
