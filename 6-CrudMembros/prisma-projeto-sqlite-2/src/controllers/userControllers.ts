@@ -23,7 +23,7 @@ export default {
             }
 
             const user = await prisma.user.create({
-                data: { name, email, idade, cidade, estado, password:hashSync(password,10)}
+                data: { name, email, idade, cidade, estado, password}
             });
 
             return response.json({
@@ -186,6 +186,38 @@ export default {
             return response.json({ message: error.message });
         }
     },
+    
+    async signUp(request:Request, response:Response){
+        const {email, name, password, idade, cidade, estado} = request.body;
+        const userExist = await prisma.user.findUnique({
+            where :{ email: email}
+        })
+
+        if (userExist) {
+            return response.json({
+                error: true,
+                message: 'Erro: Usuário já existe.'
+            });}
+    const user = await prisma.user.create({
+
+            data:{ 
+            name,
+            email,
+            password:hashSync(password,10),
+            idade,
+            cidade,
+            estado
+        }
+
+            
+        })
+    
+    response.json(user);
+},
+
+
+
+
 
     async login(request: Request, response: Response)  {
         const {email, password} = request.body;
