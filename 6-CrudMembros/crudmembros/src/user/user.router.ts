@@ -75,6 +75,11 @@ userRouter.post(
 userRouter.put(
     "/:id",
     body("nome").isString(),
+    body("email").isString(),
+    body("senha").isString(),
+    body("idade").isInt(),
+    body("estado").isString(),
+    body("cidade").isString(),
     async (request: Request, response: Response) => {
       const errors = validationResult(request);
       if (!errors.isEmpty()) {

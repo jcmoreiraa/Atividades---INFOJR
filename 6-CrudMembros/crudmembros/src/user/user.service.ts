@@ -79,18 +79,16 @@ export const createUser = async (user: Omit<User, "id">): Promise<CreateUserResu
     });
 };
 
-type UpdateUserResult = Pick<User, "id" | "nome"> | { error: string };
-
+type UpdateUserResult = Pick<User, "id"> | { error: string };
 
 export const updateUser = async(user: Omit<User, "id">, id: number): Promise<UpdateUserResult> => {
-    const { nome, email } = user;
+    const { nome, email, senha, idade, estado, cidade } = user;
 
-    const existingUserByName = await db.user.findFirst({ where: { nome } });
     const existingUserByEmail = await db.user.findFirst({ where: { email } });
 
 
-    if ((existingUserByName && existingUserByName.id !== id) && (existingUserByEmail && existingUserByEmail.email !== email)) {
-        return { error: 'Já existe um usuário com este nome.' };
+    if ((existingUserByEmail && existingUserByEmail.id !== id) && (existingUserByEmail && existingUserByEmail.email == email)) {
+        return { error: 'Já existe um usuário com este email.' };
     };
 
     return db.user.update({
@@ -99,11 +97,20 @@ export const updateUser = async(user: Omit<User, "id">, id: number): Promise<Upd
         },
         data: {
             nome,
+            email,
+            senha,
+            idade,
+            estado,
+            cidade,
         },
         select: {
             id: true,
             nome: true,
             email: true,
+            senha: true,
+            idade: true,
+            estado: true,
+            cidade: true,
         },
     });
 };
