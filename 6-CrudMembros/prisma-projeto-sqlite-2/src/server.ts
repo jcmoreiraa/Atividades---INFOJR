@@ -17,8 +17,9 @@ app.delete('/deleteUserById/:id', userControllers.deleteUserById);
 app.put('/updateUserById/:id', userControllers.updateUserById);
 app.get('/login', userControllers.login);
 app.post('/signUp', userControllers.signUp);
+app.get('/getAllUsers', userControllers.getAllUsers);
 
 
-app.listen(PORT, ()=> console.log('ESSA DESGRAÇA ENVIADA PELO CAPETA TA RODANDO '));
+app.listen(PORT, ()=> console.log('Rodando'));
 
 

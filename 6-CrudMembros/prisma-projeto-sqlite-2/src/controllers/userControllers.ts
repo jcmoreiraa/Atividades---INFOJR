@@ -137,7 +137,8 @@ export default {
 
             return response.json({
                 error: false,
-                message: 'Sucesso. Usuário deletado.'
+                message: 'Sucesso. Usuário deletado.',
+                user
             });
 
         } catch (error) {
@@ -243,13 +244,29 @@ export default {
         const token = jwt.sign({
             userId: userExist.id
         }, JWT_SECRET)
-        response.json({userExist, token})
-       
+        response.json({userExist, token});
         
         
-        
-    }
-
-
-
-};
+    },
+    async getAllUsers(request, response) {
+        try {
+            const users = await prisma.user.findMany();
+            
+            if (users.length === 0) {
+                return response.json({
+                    error: true,
+                    message: 'Erro: Não há usuários.'
+                });
+            }
+    
+            return response.json({
+                error: false,
+                message: 'Sucesso. Usuários encontrados.',
+                users
+            });
+        } catch (error) {
+            return response.json({
+                error: true,
+                message: error.message
+            });
+        }}}
