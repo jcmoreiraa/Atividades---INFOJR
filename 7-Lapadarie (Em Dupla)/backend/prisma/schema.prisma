@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider       = "zod-prisma-types"
+  useMultipleFiles = true
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  name  String
+  ///@zod.number.int().min(1, { message: "Must be more than 1" }).max(100, { message: "Maximum 100 breads per client" })
+  breads Int
+}
