@@ -11,7 +11,7 @@ export default {
 
       console.log(`Recebido id: ${id}, quant: ${quant}`);
 
-      // Validar a entrada 'quant'
+      
       if (!quant || typeof quant !== "number" || quant <= 0) {
         console.error("Quantidade inválida");
         return res
@@ -23,7 +23,7 @@ export default {
         `Tentando atualizar a pessoa com ID: ${id} com quant: ${quant}`
       );
 
-      // Obter a pessoa antes de atualizar para calcular o novo valor corretamente
+      
       const pessoaAntes = await prisma.fila.findUnique({
         where: { id: id },
       });
@@ -32,19 +32,19 @@ export default {
         return res.status(404).json({ error: "Pessoa não encontrada" });
       }
 
-      // Calcular o novo valor com base na quantidade de pães
-      const precoPorPao = 0.5; // Defina o preço por pão conforme necessário
+      
+      const precoPorPao = 0.5; 
       const valorAtualizado =
         pessoaAntes.valor + quant * precoPorPao;
 
-      // Atualizar no banco de dados usando Prisma
+      
       const pessoa = await prisma.fila.update({
         where: { id: id },
         data: {
           paes: {
             increment: quant,
           },
-          valor: parseFloat(valorAtualizado.toFixed(2)), // Arredonda para 2 casas decimais
+          valor: parseFloat(valorAtualizado.toFixed(2)), 
         },
       });
 
@@ -56,7 +56,7 @@ export default {
         .status(500)
         .json({ error: "Erro ao incrementar quantidade de pães" });
     } finally {
-      await prisma.$disconnect(); // Desconectar o cliente Prisma
+      await prisma.$disconnect(); 
     }
   },
 };

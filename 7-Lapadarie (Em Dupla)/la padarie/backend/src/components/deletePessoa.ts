@@ -8,7 +8,7 @@ export default {
         try {
             const pessoaId = parseInt(req.params.id, 10);
             
-            // Fetch pessoa object from database using prisma
+            
             const pessoa = await prisma.fila.findUnique({
                 where: { id: pessoaId },
             });
@@ -16,19 +16,19 @@ export default {
             if (!pessoa) {
                 return res.status(404).json({ error: 'Pessoa não encontrada' });
             }
-            console.log('Pessoa:', pessoa); // Verifique se a pessoa foi corretamente recuperada do banco de dados
+            
 
 
             await prisma.historico.create({
                 data: {
-                    nome: pessoa.nome,   // Assuming `pessoa` has properties `nome`, `paes`, `valor`
+                    nome: pessoa.nome,   
                     paes: pessoa.paes,
                     valor: pessoa.valor,
                     createdAt: new Date(),
                 },
             });
 
-            // Delete the pessoa from the database
+            
             await prisma.fila.delete({
                 where: { id: pessoaId },
             });
@@ -38,7 +38,7 @@ export default {
             console.error('Erro ao excluir usuário:', error);
             res.status(500).json({ error: 'Erro ao excluir usuário' });
         } finally {
-            await prisma.$disconnect(); // Disconnect Prisma client
+            await prisma.$disconnect(); 
         }
     }
 }
