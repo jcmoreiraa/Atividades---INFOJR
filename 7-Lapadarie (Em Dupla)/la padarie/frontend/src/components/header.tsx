@@ -16,10 +16,10 @@ export default function Header() {
             setTotalPessoas(responsePessoas.data.totalPessoas);
             
             const responsePaes = await axios.get('http://localhost:3001/totalpaes');
-            setTotalPaes(responsePaes.data.somaQuantidadePaes._sum.paes);
+            setTotalPaes(responsePaes.data.somaQuantidadePaes);
 
             const responseEntrada = await axios.get('http://localhost:3001/totalentrada');
-            setTotalEntrada(responseEntrada.data.entrada._sum.valor);
+            setTotalEntrada(responseEntrada.data.somaValorEntrada);
         } catch (error) {
             console.error('Erro ao buscar dados: ', error);
         }

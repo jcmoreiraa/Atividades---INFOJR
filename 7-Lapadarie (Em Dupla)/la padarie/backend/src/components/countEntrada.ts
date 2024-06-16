@@ -7,16 +7,28 @@ export default {
   async entrada(req: Request, res: Response) {
     try {
       
-      const entrada = await prisma.fila.aggregate({
+      const somaValorFila = await prisma.fila.aggregate({
         _sum: {
           valor: true,
         },
       });
 
-      res.status(200).json({ entrada });
+     
+      const somaValorHistorico = await prisma.historico.aggregate({
+        _sum: {
+          valor: true,
+        },
+      });
+
+
+      const somaTotalValor = (somaValorFila?._sum?.valor || 0) + (somaValorHistorico?._sum?.valor || 0);
+      console.log("Soma total de valor de entrada:", somaTotalValor);
+
+      res.status(200).json({ somaValorEntrada: somaTotalValor });
     } catch (error) {
-      console.error("Erro ao somar valores:", error);
-      res.status(500).json({ error: "Erro ao somar valores" });
+      console.error("Erro ao somar valor de entrada:", error);
+      res.status(500).json({ error: "Erro ao somar valor de entrada" });
     }
   }
 };
+

@@ -8,7 +8,6 @@ export default {
         try {
             const pessoaId = parseInt(req.params.id, 10);
             
-            
             const pessoa = await prisma.fila.findUnique({
                 where: { id: pessoaId },
             });
@@ -16,23 +15,20 @@ export default {
             if (!pessoa) {
                 return res.status(404).json({ error: 'Pessoa não encontrada' });
             }
-            
-
 
             await prisma.historico.create({
                 data: {
-                    nome: pessoa.nome,   
+                    nome: pessoa.nome,  
                     paes: pessoa.paes,
                     valor: pessoa.valor,
                     createdAt: new Date(),
                 },
             });
 
-            
             await prisma.fila.delete({
                 where: { id: pessoaId },
             });
-            
+
             res.json({ message: 'Usuário excluído com sucesso' });
         } catch (error) {
             console.error('Erro ao excluir usuário:', error);
@@ -41,7 +37,8 @@ export default {
             await prisma.$disconnect(); 
         }
     }
-}
+};
+
 
 
 
