@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --background-start: #000000;
+    --background-end: #921515;
+}
+
+
+body {
+    background: linear-gradient(
+        to bottom,
+        var(--background-start),
+        var(--background-end));
+    color: #ffffff;
+    margin: 25px;
+    padding: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
