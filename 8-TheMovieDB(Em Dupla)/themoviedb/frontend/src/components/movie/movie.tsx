@@ -1,19 +1,23 @@
+import React from 'react';
 import './movie.css';
 
-export default function Movie() {
+interface MovieProps {
+    imageSrc: string;
+    title: string;
+}
+
+const Movie: React.FC<MovieProps> = ({ imageSrc, title }) => {
     return (
         <div className="movie">
-        
-        <div className='hover'>
-            <div className="infofilme">
-                <p>titulo do filme</p>
+            <div className='hover'>
+                <img src={imageSrc} alt={title} />
+                <div className="infofilme">
+                    <p>{title}</p>
+                </div>
+                
             </div>
-
-            <div>
-                <p>star</p>
-            </div>
-        </div>
-
         </div>
     );
 };
+
+export default Movie;
