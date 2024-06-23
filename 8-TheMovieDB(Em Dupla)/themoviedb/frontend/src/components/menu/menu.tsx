@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import './profile.css';
+import './menu.css';
 import { useEffect } from "react";
 
 interface ProfileProps {
@@ -66,8 +66,13 @@ const Profile: React.FC<ProfileProps> = ({ isVisible, onClose }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/favoritos">
+                  <Link href="/perfil">
                     Perfil
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/filmes">
+                    Filmes
                   </Link>
                 </li>
               </ul>

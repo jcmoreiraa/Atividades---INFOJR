@@ -3,7 +3,7 @@ import Link from "next/link";
 import './header.css';
 import SearchBar from "../searchbar/searchbar";
 import { CgProfile } from "react-icons/cg";
-import Profile from "../profile/profile";
+import Profile from "../menu/menu";
 import { useState } from "react";
 
 export default function Header() {
