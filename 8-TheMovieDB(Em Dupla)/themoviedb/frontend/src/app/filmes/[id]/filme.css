@@ -69,8 +69,6 @@
     }
   }
 
-  
-  /* Layout responsivo */
   @media (max-width: 772px) {
     .filme {
       flex-direction: column;

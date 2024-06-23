@@ -106,13 +106,13 @@
     .tabela {
         width: 100%;
         height: auto;
-        flex-direction: row; /* Altera a direção para linha em telas menores */
-        flex-wrap: wrap; /* Permite que os itens envolvam */
+        flex-direction: row; 
+        flex-wrap: wrap; 
         gap: 4px 4px;
     }
 
     .tabela > div {
-        flex: 1 1 calc(33.33% - 8px); /* Três colunas de igual tamanho com gap */
+        flex: 1 1 calc(33.33% - 8px); 
     }
 }
 
