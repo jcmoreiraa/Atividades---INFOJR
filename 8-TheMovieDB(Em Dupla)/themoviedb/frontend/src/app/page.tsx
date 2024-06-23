@@ -1,11 +1,12 @@
 "use client";
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
-import './page.css';
-import React, { useState } from 'react';
+import "./page.css";
+import React, { useEffect, useState } from "react";
 import MultiItemCarousel from "@/components/carousel/carousel";
 import Checkbox from "@/components/checkbox/checkbox";
 import Movie from "@/components/movie/movie";
+import axios from "axios";
 
 interface Movie {
   id: number;
@@ -13,60 +14,68 @@ interface Movie {
   title: string;
 }
 
-const moviesData: { [key: string]: Movie[] } = {
-  "Ficção Científica": [
-    { id: 1, imageSrc: "/images/image1.jpg", title: "Título do Filme 1" },
-    { id: 2, imageSrc: "/images/image2.jpg", title: "Título do Filme 2" },
-  ],
-  "Comédia Romântica": [
-    { id: 3, imageSrc: "/images/image3.jpg", title: "Título do Filme 3" },
-    { id: 4, imageSrc: "/images/image4.jpg", title: "Título do Filme 4" },
-  ],
-  "Drama": [
-    { id: 5, imageSrc: "/images/image5.jpg", title: "Título do Filme 5" },
-    { id: 6, imageSrc: "/images/image6.jpg", title: "Título do Filme 6" },
-    { id: 10, imageSrc: "/images/image10.jpg", title: "Título do Filme 10" },
-    { id: 11, imageSrc: "/images/image11.jpg", title: "Título do Filme 11" },
-    { id: 12, imageSrc: "/images/image12.jpg", title: "Título do Filme 12" },
-    { id: 13, imageSrc: "/images/image13.jpg", title: "Título do Filme 13" },
-    { id: 14, imageSrc: "/images/image14.jpeg", title: "Título do Filme 14" },
-    { id: 15, imageSrc: "/images/image15.jpg", title: "Título do Filme 15" },
-    { id: 16, imageSrc: "/images/image16.jpg", title: "Título do Filme 16" },
-    { id: 17, imageSrc: "/images/image17.jpg", title: "Título do Filme 17" },
-    { id: 18, imageSrc: "/images/image18.jpg", title: "Título do Filme 18" },
-    { id: 19, imageSrc: "/images/image19.jpg", title: "Título do Filme 19" },
-    { id: 20, imageSrc: "/images/image20.jpg", title: "Título do Filme 20" },
-  ],
-  "Ação": [
-    { id: 7, imageSrc: "/images/image7.jpg", title: "Título do Filme 7" },
-    { id: 8, imageSrc: "/images/image8.jpg", title: "Título do Filme 8" },
-  ],
-  "Romance": [
-    { id: 9, imageSrc: "/images/image9.jpg", title: "Título do Filme 9" },
-    { id: 10, imageSrc: "/images/image10.jpg", title: "Título do Filme 10" },
-  ],
-  "Animação": [
-    { id: 11, imageSrc: "/images/image11.jpg", title: "Título do Filme 11" },
-    { id: 12, imageSrc: "/images/image12.jpg", title: "Título do Filme 12" },
-  ],
-  "Suspense": [
-    { id: 11, imageSrc: "/images/image11.jpg", title: "Título do Filme 11" },
-    { id: 12, imageSrc: "/images/image12.jpg", title: "Título do Filme 12" },
-  ],
-  "Documentário": [
-    { id: 11, imageSrc: "/images/image11.jpg", title: "Título do Filme 11" },
-    { id: 12, imageSrc: "/images/image12.jpg", title: "Título do Filme 12" },
-  ],
+const categories: { [key: string]: number } = {
+  Animação: 16,
+  Aventura: 12,
+  Ação: 28,
+  Comédia: 35,
+  Crime: 80,
+  Documentário: 99,
+  Drama: 18,
+  Família: 10751,
+  Fantasia: 14,
+  Faroeste: 37,
+  "Ficção Científica": 878,
+  Guerra: 10752,
+  História: 36,
+  Mistério: 9648,
+  Música: 10402,
+  Romance: 10749,
+  Terror: 27,
+  Thriller: 53,
 };
-
-const categories = Object.keys(moviesData);
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const apiKey = "04c35731a5ee918f014970082a0088b1";
 
   const handleCheckboxChange = (category: string) => {
-    setSelectedCategory(selectedCategory === category ? null : category);
+    const newCategory = selectedCategory === category ? null : category;
+    setSelectedCategory(newCategory);
   };
+
+  useEffect(() => {
+    const accioMovieByCategory = async (category: string) => {
+      try {
+        const genreId = categories[category];
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/discover/movie`,
+          {
+            params: {
+              api_key: apiKey,
+              with_genres: genreId,
+              language: "pt-BR",
+            },
+          }
+        );
+        const acciodMovies = response.data.results.map((movie: any) => ({
+          id: movie.id,
+          imageSrc: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+          title: movie.title,
+        }));
+        setMovies(acciodMovies);
+      } catch (error) {
+        console.error("Erro ao pegar filmes por categoria", error);
+      }
+    };
+
+    if (selectedCategory) {
+      accioMovieByCategory(selectedCategory);
+    } else {
+      setMovies([]);
+    }
+  }, [selectedCategory]);
 
   return (
     <main className="flex min-h-screen flex-col justify-between">
@@ -77,7 +86,14 @@ export default function Home() {
           <img src="./images/poster.jpg" alt="Imagem de lançamento" />
           <div className="texto">
             <h1>Homem-Aranha 2</h1>
-            <p>O Dr. Otto Octavius é transformado em Doutor Octopus quando uma falha em uma experiência de fusão nuclear resulta em uma explosão que mata sua esposa. Ele culpa o Homem-Aranha pelo acidente e deseja vingança. Enquanto isso, o alter ego do herói, Peter Parker, perde seus poderes. Para complicar as coisas, o seu melhor amigo odeia o Homem-Aranha e sua amada fica noiva.</p>
+            <p>
+              O Dr. Otto Octavius é transformado em Doutor Octopus quando uma
+              falha em uma experiência de fusão nuclear resulta em uma explosão
+              que mata sua esposa. Ele culpa o Homem-Aranha pelo acidente e
+              deseja vingança. Enquanto isso, o alter ego do herói, Peter
+              Parker, perde seus poderes. Para complicar as coisas, o seu melhor
+              amigo odeia o Homem-Aranha e sua amada fica noiva.
+            </p>
           </div>
         </div>
 
@@ -86,31 +102,32 @@ export default function Home() {
         </div>
 
         <div className="meio">
-
           <div className="tabela">
-            
-              {categories.map((category: string, index: number) => (
-                <Checkbox 
-                  key={index} 
-                  label={category} 
-                  checked={selectedCategory === category}
-                  onChange={() => handleCheckboxChange(category)} 
-                />
-              ))}
-            
-          </div>
-
-          <div className="filtrados">
-            {selectedCategory && moviesData[selectedCategory].map((movie) => (
-              <Movie key={movie.id} id={movie.id }imageSrc={movie.imageSrc} title={movie.title} />
+            {Object.keys(categories).map((category: string, index: number) => (
+              <Checkbox
+                key={index}
+                label={category}
+                checked={selectedCategory === category}
+                onChange={() => handleCheckboxChange(category)}
+              />
             ))}
           </div>
 
+          <div className="filtrados">
+            {selectedCategory &&
+              movies.map((movie) => (
+                <Movie
+                  key={movie.id}
+                  id={movie.id}
+                  imageSrc={movie.imageSrc}
+                  title={movie.title}
+                />
+              ))}
+          </div>
         </div>
-
       </div>
 
       <Footer />
     </main>
   );
-};
+}
