@@ -7,6 +7,7 @@ import MultiItemCarousel from "@/components/carousel/carousel";
 import Checkbox from "@/components/checkbox/checkbox";
 import Movie from "@/components/movie/movie";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 interface Movie {
   id: number;
@@ -38,7 +39,18 @@ const categories: { [key: string]: number } = {
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
+  const router = useRouter();
   const apiKey = "04c35731a5ee918f014970082a0088b1";
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      router.push("/login");
+    } else {
+    }
+  });
 
   const handleCheckboxChange = (category: string) => {
     const newCategory = selectedCategory === category ? null : category;
@@ -46,7 +58,29 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const accioMovieByCategory = async (category: string) => {
+    const accioFavoriteMovies = async () => {
+      try {
+        const response = await axios.get("http://localhost:1895/favorites", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const favoriteMovies = response.data.map((movie: any) => ({
+          id: movie.id,
+          imageSrc: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+          title: movie.title,
+        }));
+        setFavoriteMovies(favoriteMovies);
+      } catch (error) {
+        console.error("Erro ao buscar filmes favoritos:", error);
+      }
+    };
+
+    accioFavoriteMovies();
+  }, []);
+
+  useEffect(() => {
+    const accioMoviesByCategory = async (category: string) => {
       try {
         const genreId = categories[category];
         const response = await axios.get(
@@ -71,18 +105,20 @@ export default function Home() {
     };
 
     if (selectedCategory) {
-      accioMovieByCategory(selectedCategory);
+      accioMoviesByCategory(selectedCategory);
     } else {
       setMovies([]);
     }
   }, [selectedCategory]);
+
+  const isFavorite = (movieId: number) => favoriteMovies.some((movie) => movie.id === movieId);
 
   return (
     <main className="flex min-h-screen flex-col justify-between">
       <Header />
 
       <div className="homepage">
-        <div className="lancamento">
+        <a className="lancamento" href="/filmes/558">
           <img src="./images/poster.jpg" alt="Imagem de lançamento" />
           <div className="texto">
             <h1>Homem-Aranha 2</h1>
@@ -95,7 +131,7 @@ export default function Home() {
               amigo odeia o Homem-Aranha e sua amada fica noiva.
             </p>
           </div>
-        </div>
+        </a>
 
         <div className="carrossel">
           <MultiItemCarousel />
@@ -121,6 +157,7 @@ export default function Home() {
                   id={movie.id}
                   imageSrc={movie.imageSrc}
                   title={movie.title}
+                  isFavorite={isFavorite(movie.id)}
                 />
               ))}
           </div>

@@ -134,39 +134,6 @@ app.get('/user', authMiddleware, async (req: Request, res: Response) => {
   }
 });
 
-// Filmes recomendados
-
-app.get('/recommended', authMiddleware, async (req: Request, res: Response) => {
-  const userId = req.user!.userId;
-
-  try {
-    const favorites = await prisma.favorite.findMany({
-      where: { userId },
-    });
-
-    if (favorites.length === 0) {
-      return res.status(200).json([]);
-    }
-
-    const genreCounts = favorites.reduce((acc: { [key: string]: number }, fav) => {
-      acc[fav.genre] = (acc[fav.genre] || 0) + 1;
-      return acc;
-    }, {});
-
-    const favoriteGenre = Object.keys(genreCounts).reduce((a, b) => genreCounts[a] > genreCounts[b] ? a : b);
-
-    const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=${favoriteGenre}&language=pt-BR`);
-
-    const recommendedMovies = response.data.results.filter((movie: any) =>
-      !favorites.some(fav => fav.tmdbId === movie.id)
-    ).slice(0, 4);
-
-    res.json(recommendedMovies);
-  } catch (error) {
-    res.status(500).json({ error: 'Falha ao buscar filmes recomendados' });
-  }
-});
-
 app.listen(PORT, () => {
   console.log(`Servidor funcionando na porta ${PORT}`);
 });

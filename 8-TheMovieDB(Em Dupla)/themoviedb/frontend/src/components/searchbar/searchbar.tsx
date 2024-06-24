@@ -1,56 +1,83 @@
 import React, { useState } from "react";
-import { FaSearch } from 'react-icons/fa';
-import './searchbar.css';
+import { FaSearch } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import "./searchbar.css";
+
+const apiKey = "04c35731a5ee918f014970082a0088b1";
 
 export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [expanded, setExpanded] = useState(false); 
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [suggestions, setSuggestions] = useState<
+    { id: number; title: string }[]
+  >([]);
+  const [expanded, setExpanded] = useState(false);
+  const router = useRouter();
 
-  const allSuggestions: string[] = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape"];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
 
     if (value) {
-      const filteredSuggestions = allSuggestions.filter(suggestion =>
-        suggestion.toLowerCase().includes(value.toLowerCase())
-      );
-      setSuggestions(filteredSuggestions);
-      setExpanded(true); 
+      try {
+        const response = await axios.get(
+          "https://api.themoviedb.org/3/search/movie",
+          {
+            params: {
+              api_key: apiKey,
+              query: value,
+              language: "pt-BR",
+            },
+          }
+        );
+        const results = response.data.results.map((movie: any) => ({
+          id: movie.id,
+          title: movie.title,
+        }));
+        setSuggestions(results);
+        setExpanded(true);
+      } catch (error) {
+        console.error("Erro ao buscar filmes:", error);
+        setSuggestions([]);
+        setExpanded(false);
+      }
     } else {
       setSuggestions([]);
-      setExpanded(false); 
+      setExpanded(false);
     }
   };
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Buscando por:', searchTerm);
-    
+    if (suggestions.length > 0) {
+      const closestMatch = suggestions[0];
+      router.push(`/filmes/${closestMatch.id}`);
+    } else {
+      console.log("Nenhum resultado para:", searchTerm);
+    }
   };
 
-  const handleSuggestionClick = (suggestion: string) => {
-    setSearchTerm(suggestion);
+  const handleSuggestionClick = (suggestion: { id: number; title: string }) => {
+    setSearchTerm(suggestion.title);
     setSuggestions([]);
-    setExpanded(false); 
+    setExpanded(false);
+    router.push(`/filmes/${suggestion.id}`);
   };
 
   const handleInputFocus = () => {
     if (searchTerm) {
-      setExpanded(true); 
+      setExpanded(true);
     }
   };
 
   const handleInputBlur = () => {
     if (!searchTerm) {
-      setExpanded(false); 
+      setExpanded(false);
     }
   };
 
   return (
-    <div className={`search-container ${expanded ? 'expanded' : ''}`}>
+    <div className={`search-container ${expanded ? "expanded" : ""}`}>
       <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
@@ -67,9 +94,12 @@ export default function SearchBar() {
       </form>
       {expanded && suggestions.length > 0 && (
         <ul className="suggestions-list">
-          {suggestions.map((suggestion, index) => (
-            <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
-              {suggestion}
+          {suggestions.map((suggestion) => (
+            <li
+              key={suggestion.id}
+              onMouseDown={() => handleSuggestionClick(suggestion)}
+            >
+              {suggestion.title}
             </li>
           ))}
         </ul>

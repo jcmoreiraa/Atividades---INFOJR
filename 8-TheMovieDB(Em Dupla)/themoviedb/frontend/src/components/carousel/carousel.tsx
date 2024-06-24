@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Carousel from "react-multi-carousel";
@@ -7,11 +6,8 @@ import Movie from "../movie/movie";
 
 const calculateItemsToShow = (containerWidth) => {
   const itemWidth = 120;
-
   const spacing = 16;
-
   const availableWidth = containerWidth - spacing;
-
   let maxItemsDesktop = Math.floor(availableWidth / (itemWidth + spacing));
   let maxItemsTablet = Math.floor(availableWidth / (itemWidth + spacing));
   let maxItemsMobile = Math.floor(availableWidth / itemWidth);
@@ -37,8 +33,9 @@ const calculateItemsToShow = (containerWidth) => {
 };
 
 const MultiItemCarousel = () => {
-  const [containerWidth, setContainerWidth] = React.useState(window.innerWidth);
+  const [containerWidth, setContainerWidth] = useState(window.innerWidth);
   const [movies, setMovies] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,30 +50,40 @@ const MultiItemCarousel = () => {
   const responsive = calculateItemsToShow(containerWidth);
 
   useEffect(() => {
-    const accioFilmes = async () => {
+    const fetchMoviesAndFavorites = async () => {
       try {
         const apiKey = "04c35731a5ee918f014970082a0088b1";
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=pt-BR`
-        );
-        const acciodFilmes = response.data.results.map((movie: { id: any; poster_path: any; title: any; }) => ({
+        const [moviesResponse, favoritesResponse] = await Promise.all([
+          axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=pt-BR`),
+          axios.get('http://localhost:1895/favorites', {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }),
+        ]);
+
+        const moviesData = moviesResponse.data.results.map((movie) => ({
           id: movie.id,
           imageSrc: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
           title: movie.title,
         }));
-        setMovies(acciodFilmes);
+
+        setMovies(moviesData);
+        setFavorites(favoritesResponse.data);
       } catch (error) {
-        console.error("Erro ao dar fetch nos filmes", error);
+        console.error("Erro ao buscar filmes e favoritos", error);
       }
     };
 
-    accioFilmes();
-  });
+    fetchMoviesAndFavorites();
+  }, []);
+
+  const isFavorite = (movieId) => favorites.some(favorite => favorite.id === movieId);
 
   return (
     <Carousel responsive={responsive} autoPlay={true} infinite={true}>
       {movies.map((movie) => (
-        <Movie key={movie.id} id={movie.id} imageSrc={movie.imageSrc} title={movie.title} />
+        <Movie key={movie.id} id={movie.id} imageSrc={movie.imageSrc} title={movie.title} isFavorite={isFavorite(movie.id)} />
       ))}
     </Carousel>
   );

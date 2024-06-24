@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // Import useRouter from next/router
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
 import Star from "@/components/favorito/favorito";
 import axios from "axios";
 import "./filme.css";
+import { useParams } from "next/navigation";
 
 interface FilmeProps {
   id: number;
@@ -20,16 +21,17 @@ interface FilmeProps {
 
 const Filme = () => {
   const router = useRouter();
-  const { id } = useParams();
+  const { id } = useParams(); // Use router.query instead of useParams()
   const [filme, setFilme] = useState<FilmeProps | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false); // New state for favorite status
 
   useEffect(() => {
-    const fetchMovie = async () => {
+    const fetchMovie = async (movieId: number) => {
       try {
         const TMDB_API_KEY = "04c35731a5ee918f014970082a0088b1";
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=${TMDB_API_KEY}&language=pt-BR`
+          `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}&language=pt-BR`
         );
         const movie = res.data;
 
@@ -53,8 +55,25 @@ const Filme = () => {
       }
     };
 
-    if (id) {
-      fetchMovie();
+    const fetchFavorites = async () => {
+      try {
+        const res = await axios.get(`http://localhost:1895/favorites`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const favorites = res.data;
+        const isFav = favorites.some((fav: any) => fav.id === parseInt(id, 10));
+        setIsFavorite(isFav);
+      } catch (error) {
+        console.error("Erro ao buscar favoritos:", error);
+      }
+    };
+
+    if (typeof id === "string") {
+      const movieId = parseInt(id, 10);
+      fetchMovie(movieId);
+      fetchFavorites();
     }
   }, [id]);
 
@@ -77,7 +96,7 @@ const Filme = () => {
           <div className="detalhes">
             <div className="titulo">
               <h2>Título: {filme.title}</h2>
-              <Star />
+              <Star tmdbId={filme.id} initialActive={isFavorite} /> {/* Pass isFavorite as initialActive */}
             </div>
             <p>Ano de Lançamento: {filme.anoLancamento}</p>
             <p>Bilheteria: {filme.bilheteria}</p>

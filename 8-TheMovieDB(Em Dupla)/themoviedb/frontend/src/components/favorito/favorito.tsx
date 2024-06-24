@@ -1,11 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import './favorito.css';
 
-const Star: React.FC = () => {
-  const [isActive, setIsActive] = useState(false);
+const Star: React.FC<{tmdbId: number; initialActive?: boolean;}> = ({tmdbId, initialActive = false}) => {
+  const [isActive, setIsActive] = useState(initialActive);
 
-  const handleClick = () => {
-    setIsActive(prevState => !prevState);
+  useEffect(() => {
+    setIsActive(initialActive);
+  }, [initialActive]);
+
+const handleClick = async () => {
+    try {
+      if (isActive) {
+        await axios.delete(`http://localhost:1895/favorites/${tmdbId}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        setIsActive(false);
+      } else {
+        await axios.post(`http://localhost:1895/favorites`, { tmdbId }, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        setIsActive(true);
+      }
+    } catch (error) {
+      console.error("Erro ao atualizar favoritos:", error);
+    }
   };
 
   return (
