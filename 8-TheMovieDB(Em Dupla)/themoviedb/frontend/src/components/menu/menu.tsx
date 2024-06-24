@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./menu.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface ProfileProps {
   isVisible: boolean;
@@ -9,6 +9,7 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ isVisible, onClose }) => {
   const profileClassName = isVisible ? "profile open" : "profile";
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -47,6 +48,19 @@ const Profile: React.FC<ProfileProps> = ({ isVisible, onClose }) => {
 
   const isLoggedIn = !!localStorage.getItem("token");
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
   return (
     <>
       {isVisible && (
@@ -55,20 +69,30 @@ const Profile: React.FC<ProfileProps> = ({ isVisible, onClose }) => {
       <div className={profileClassName}>
         <nav>
           <ul>
-            <li>
-              <Link href="/cadastro">Cadastre-se</Link>
-            </li>
-            <li>
-              <Link href="/login">Conecte-se</Link>
-            </li>
-            {isLoggedIn && (
-              <li>
-                <Link href="/perfil">Perfil</Link>
-              </li>
+            {!isLoggedIn && (
+              <>
+                <li>
+                  <Link href="/cadastro">Cadastre-se</Link>
+                </li>
+                <li>
+                  <Link href="/login">Conecte-se</Link>
+                </li>
+              </>
             )}
-            <li>
-              <Link href="/filmes">Filmes</Link>
-            </li>
+            {isLoggedIn && (
+              <>
+                <li>
+                  <Link href="/perfil">Perfil</Link>
+                </li>
+                <li>
+                  <Link href="/login">Conecte com outra conta</Link>
+                </li>
+              </>
+            )}
+            <hr />
+            <button onClick={toggleTheme}>
+              {theme === 'light' ? 'Dark' : 'Light'} Mode
+            </button>
           </ul>
         </nav>
       </div>

@@ -11,12 +11,8 @@
   height: 10px;
   border-radius: 0.15em;
   margin-right: 0.5em;
-  border: 0.15em solid #ffffff;
+  border: 0.15em solid ;
   outline: none;
   cursor: pointer;
 }
 
-input:checked {
-    background-color: #ffffff;
-  }
-  

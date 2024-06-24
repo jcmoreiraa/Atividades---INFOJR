@@ -12,17 +12,17 @@ interface MovieProps {
 
 const Movie: React.FC<MovieProps> = ({ imageSrc, title, id, isFavorite }) => {
   return (
-    <Link href={`/filmes/${id}`}>
-      <div className="movie">
-        <img src={imageSrc} alt={title} />
-        <div className='hover'>
-          <div className="infofilme">
-            <p>{title}</p>
-            <Star tmdbId={id} initialActive={isFavorite} /> {/* Pass the isFavorite prop */}
-          </div>
-        </div>
+    <div className="movie">
+      <Link href={`/filmes/${id}`}>
+          <img src={imageSrc} alt={title} className="movie-img" />
+      </Link>
+      <div className="infofilme">
+        <Link href={`/filmes/${id}`}>
+          <p>{title}</p>
+        </Link>
+        <Star tmdbId={id} initialActive={isFavorite} /> {/* Pass the isFavorite prop */}
       </div>
-    </Link>
+    </div>
   );
 };
 

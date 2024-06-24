@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -9,10 +9,35 @@ const apiKey = "04c35731a5ee918f014970082a0088b1";
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [suggestions, setSuggestions] = useState<
-    { id: number; title: string }[]
+    { id: number; title: string; poster_path?: string }[]
   >([]);
-  const [expanded, setExpanded] = useState(false);
   const router = useRouter();
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(event.target as Node)
+      ) {
+        setSuggestions([]);
+      }
+    };
+
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSuggestions([]);
+      }
+    };
+
+    document.body.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscKey);
+
+    return () => {
+      document.body.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, []);
 
   const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -33,17 +58,15 @@ export default function SearchBar() {
         const results = response.data.results.map((movie: any) => ({
           id: movie.id,
           title: movie.title,
+          poster_path: movie.poster_path,
         }));
         setSuggestions(results);
-        setExpanded(true);
       } catch (error) {
         console.error("Erro ao buscar filmes:", error);
         setSuggestions([]);
-        setExpanded(false);
       }
     } else {
       setSuggestions([]);
-      setExpanded(false);
     }
   };
 
@@ -60,31 +83,16 @@ export default function SearchBar() {
   const handleSuggestionClick = (suggestion: { id: number; title: string }) => {
     setSearchTerm(suggestion.title);
     setSuggestions([]);
-    setExpanded(false);
     router.push(`/filmes/${suggestion.id}`);
   };
 
-  const handleInputFocus = () => {
-    if (searchTerm) {
-      setExpanded(true);
-    }
-  };
-
-  const handleInputBlur = () => {
-    if (!searchTerm) {
-      setExpanded(false);
-    }
-  };
-
   return (
-    <div className={`search-container ${expanded ? "expanded" : ""}`}>
+    <div className="search-container" ref={searchContainerRef}>
       <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
           className="search-input"
           placeholder="Search..."
         />
@@ -92,14 +100,22 @@ export default function SearchBar() {
           <FaSearch />
         </button>
       </form>
-      {expanded && suggestions.length > 0 && (
+      {suggestions.length > 0 && (
         <ul className="suggestions-list">
           {suggestions.map((suggestion) => (
             <li
               key={suggestion.id}
               onMouseDown={() => handleSuggestionClick(suggestion)}
             >
-              {suggestion.title}
+              {suggestion.poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w92/${suggestion.poster_path}`}
+                  alt={`${suggestion.title} Poster`}
+                />
+              ) : (
+                <div className="no-image-placeholder">No Image Available</div>
+              )}
+              <span>{suggestion.title}</span>
             </li>
           ))}
         </ul>

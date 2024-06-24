@@ -133,12 +133,12 @@ export default function Home() {
           </div>
         </a>
 
-        <div className="carrossel">
+        <section className="carrossel">
           <MultiItemCarousel />
-        </div>
+        </section>
 
         <div className="meio">
-          <div className="tabela">
+          <section className="tabela">
             {Object.keys(categories).map((category: string, index: number) => (
               <Checkbox
                 key={index}
@@ -147,9 +147,9 @@ export default function Home() {
                 onChange={() => handleCheckboxChange(category)}
               />
             ))}
-          </div>
+          </section>
 
-          <div className="filtrados">
+          <section className="filtrados">
             {selectedCategory &&
               movies.map((movie) => (
                 <Movie
@@ -160,7 +160,7 @@ export default function Home() {
                   isFavorite={isFavorite(movie.id)}
                 />
               ))}
-          </div>
+          </section>
         </div>
       </div>
 

@@ -8,7 +8,6 @@
   
   .filme {
     display: flex;
-    background-color: rgb(161, 35, 35);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     width: 100%;
@@ -34,39 +33,6 @@
   .titulo {
     display: flex;
     justify-content: space-between;
-  }
-  
-  .recomendados {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(161, 35, 35);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    max-width: 300px;
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  .recfilmes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .recfilme {
-    flex: 1 1 300px;
-    max-width: 300px;
-  }
-
-  @media (max-width: 1150px) {
-    .corpo {
-        flex-direction: column;
-    }
-
-    .recomendados {
-        max-width: 1150px;
-        width: 100%;
-    }
   }
 
   @media (max-width: 772px) {

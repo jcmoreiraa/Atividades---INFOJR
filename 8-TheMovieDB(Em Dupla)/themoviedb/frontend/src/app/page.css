@@ -40,6 +40,7 @@
 
 .texto {
     background-color: rgba(0, 0, 0, 0.2);
+    color: white;
     border-radius: 10px;
     font-size: 2.5vh;
     width: 100%;
@@ -52,7 +53,6 @@
 }
 
 .carrossel {
-    background-color: rgb(161, 35, 35); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     width: 100%;
@@ -68,7 +68,6 @@
 }
 
 .tabela {
-    background-color: rgb(161, 35, 35); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 
@@ -83,7 +82,6 @@
 }
 
 .filtrados {
-    background-color: rgb(161, 35, 35); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     height: 100%;

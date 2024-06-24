@@ -96,7 +96,7 @@ export default function Home() {
         </div>
 
         <div className="corpo">
-          <div className="favoritos">
+          <section className="favoritos">
             <hr />
             <h2>Favoritos ({favoriteMovies.length})</h2>
             <hr />
@@ -111,9 +111,9 @@ export default function Home() {
                 />
               ))}
             </div>
-          </div>
+          </section>
 
-          <div className="recomendados">
+          <section className="recomendados">
             <hr />
             <h2>Recomendados</h2>
             <hr />
@@ -128,7 +128,7 @@ export default function Home() {
                 />
               ))}
             </div>
-          </div>
+          </section>
         </div>
       </div>
 

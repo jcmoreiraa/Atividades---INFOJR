@@ -90,7 +90,7 @@ const Filme = () => {
       <Header />
 
       <div className="corpo">
-        <div className="filme">
+        <section className="filme">
           <img src={filme.imageSrc} alt={filme.title} />
 
           <div className="detalhes">
@@ -103,7 +103,7 @@ const Filme = () => {
             <p>Idioma Original: {filme.idiomaOriginal}</p>
             <p>Sinopse: {filme.sinopse}</p>
           </div>
-        </div>
+        </section>
       </div>
 
       <Footer />

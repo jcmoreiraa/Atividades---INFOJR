@@ -1,14 +1,10 @@
 
 .search-container {
   position: relative;
-  width: 300px; 
+  max-width: 250px; 
   transition: width 0.3s ease; 
+  margin-left: 4px;
 }
-
-.search-container.expanded {
-  width: 400px; 
-}
-
 .search-form {
   display: flex;
   align-items: center;
@@ -69,10 +65,17 @@
   padding: 8px;
   cursor: pointer;
   color: white;
+  display: flex;
 }
 
 .suggestions-list li:hover {
   background-color: #444;
+}
+
+.suggestions-list li img {
+  width: 50px;
+  height: auto;
+  margin-right: 8px;
 }
 
 .search-input {

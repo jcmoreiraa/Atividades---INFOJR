@@ -17,7 +17,7 @@ export default function Header() {
     <div className="header">
 
         <Link href="/">
-            Home
+            TheMovieDB
         </Link>
 
         

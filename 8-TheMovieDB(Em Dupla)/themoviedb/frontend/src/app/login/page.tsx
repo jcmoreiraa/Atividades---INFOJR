@@ -88,6 +88,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        {message && <p>{message}</p>}
       </form>
 
       <Footer />
