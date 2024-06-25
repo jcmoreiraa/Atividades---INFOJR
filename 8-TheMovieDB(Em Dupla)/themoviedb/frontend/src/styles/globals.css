@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --background-start: #000000;
+    --background-end: #921515;
+    --background-destaque: rgb(161, 35, 35);
+    --background-botao: rgb(112, 28, 28);
+    --cor: white;
+}
+
+[data-theme="light"] {
+    --background-start: white;
+    --background-end: #4baee7;
+    --background-destaque: rgb(169, 231, 255);
+    --background-botao: rgb(255, 255, 255);
+    --cor: black;
+}
+
+
+body {
+    background: linear-gradient(
+        to bottom,
+        var(--background-start),
+        var(--background-end));
+    color: var(--cor);
+    margin: 25px;
+    padding: 0;
+
+}
+
+section, .profile, .Login {
+  background-color: var(--background-destaque); 
+  color: var(--cor);
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  border: var(--cor);
+}
+
+input:checked {
+  background-color: var(--cor);
+}
+
+.Criar, .pagination li.active a {
+  background-color: var(--background-botao);
+  border: var(--background-botao);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

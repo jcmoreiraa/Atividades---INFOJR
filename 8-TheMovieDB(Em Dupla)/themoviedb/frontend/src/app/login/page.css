@@ -1,0 +1,40 @@
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 400px;
+    padding: 25px;
+    border-radius: 15px;
+    justify-content: space-around;
+    max-width: 100%;
+}
+
+.FormFields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.FormFields input {
+    height: 50px;
+    padding: 15px;
+    border-radius: 10px;
+    color: black;
+}
+
+.Botoes {
+    display: flex;
+    gap: 25px;
+}
+
+.Criar {
+    border-radius: 10px;
+    width: 100px;
+}
+
+.Conecte:hover {
+    color: rgb(156, 156, 156);
+}
