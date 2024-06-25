@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    background-color: #E5CF94;
+    color: #5F3305;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }

@@ -1,0 +1,21 @@
+.star-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.star-icon {
+  transition: fill 0.3s, transform 0.3s;
+}
+
+.star-button.active .star-icon {
+  fill: #f0c419;
+  transform: scale(1.2); 
+}
+
+.star-button:focus {
+  outline: none; 
+}

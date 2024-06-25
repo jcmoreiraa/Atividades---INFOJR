@@ -1,0 +1,111 @@
+
+.Queue {
+    display: flex;
+    flex-direction: column;
+    color: #5F3305;
+    gap: 25px;
+    align-items: center;
+    max-width: 1235px;
+    width: 100%;
+    height: 738px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 0;
+}
+.Edit {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.AddPessoa .Historico {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    align-self: flex-start;
+}
+
+.Nome {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Info p {
+    font-size: 12px;
+}
+
+.Clientes {
+    display: flex;
+    flex-direction: column;
+    max-width: 1235px;
+    width: 100%;
+    gap: 25px;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.Cliente {
+    background-color: #FFFFFF;
+    display: flex;
+    padding: 1.5%;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1235px;
+    width: 100%;
+    height: 77px;
+}
+
+.Credencial {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 294px;
+    width: 100%;
+    height: 47px;
+}
+
+.Info {
+    display: flex;
+    gap: 15px;
+}
+
+.SubInfo {
+    display: flex;
+    gap: 3px;
+}
+
+.Valor {
+    font-weight: bold;
+}
+
+.SVG {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 515px) {
+    .Edit {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .Info {
+        flex-direction: column;
+        gap: 2px
+    }
+
+    .Cliente {
+        height: 90px;
+    }
+
+    .SVG {
+        padding-right: 20px;
+    }
+}

@@ -1,0 +1,25 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lateral {
+    display: flex;
+    gap: 25px;
+}
+
+.profile-icon {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 1.5rem;
+}
+
+
+
+
+
