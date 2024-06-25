@@ -7,6 +7,7 @@ import "./page.css";
 import { useEffect, useState } from "react";
 import Movie from "@/components/movie/movie";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 
 interface MovieData {
   id: number;
@@ -19,6 +20,8 @@ export default function Home() {
   const [favoriteMovies, setFavoriteMovies] = useState<MovieData[]>([]);
   const [recommendedMovies, setRecommendedMovies] = useState<MovieData[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [currentPageFavorites, setCurrentPageFavorites] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -81,7 +84,41 @@ export default function Home() {
       });
   }, []);
 
+  useEffect(() => {
+    const calculateItemsPerPage = () => {
+      if (window.innerWidth <= 469) {
+        return 1;
+      } else if (window.innerWidth <= 614) {
+        return 2;
+      } else if (window.innerWidth <= 749) {
+        return 3;
+      } else if (window.innerWidth <= 986) {
+        return 8;
+      } else {
+        return 32
+      }
+    };
+
+    const handleResize = () => {
+      const newItemsPerPage = calculateItemsPerPage();
+      setItemsPerPage(newItemsPerPage);
+    };
+
+    setItemsPerPage(calculateItemsPerPage());
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const isFavorite = (movieId: number) => favoriteMovies.some((movie) => movie.id === movieId);
+
+  const handlePageClickFavorites = (event: { selected: number }) => {
+    setCurrentPageFavorites(event.selected);
+  };
+
+  const offsetFavorites = currentPageFavorites * itemsPerPage;
+  const currentFavoriteMovies = favoriteMovies.slice(offsetFavorites, offsetFavorites + itemsPerPage);
 
   return (
     <main className="flex min-h-screen flex-col justify-between">
@@ -101,7 +138,7 @@ export default function Home() {
             <h2>Favoritos ({favoriteMovies.length})</h2>
             <hr />
             <div className="favfilmes">
-              {favoriteMovies.map((movie) => (
+              {currentFavoriteMovies.map((movie) => (
                 <Movie
                   key={movie.id}
                   imageSrc={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -111,6 +148,19 @@ export default function Home() {
                 />
               ))}
             </div>
+
+            <ReactPaginate
+              previousLabel={"<"}
+              nextLabel={">"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageCount={Math.ceil(favoriteMovies.length / itemsPerPage)}
+              marginPagesDisplayed={1}
+              pageRangeDisplayed={1}
+              onPageChange={handlePageClickFavorites}
+              containerClassName={"pagination"}
+              activeClassName={"active"}
+            />
           </section>
 
           <section className="recomendados">

@@ -88,13 +88,40 @@
     
     width: 100%;
     padding: 20px;
-    overflow-y: auto;
 
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pagina {
+    display: flex;
+    width: 100%;
     align-content: flex-start;
     flex-wrap: wrap;
     gap: 15px;
 }
+
+.pagination {
+    display: flex;
+    align-self: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    max-width: 500px;
+  }
+  .pagination li {
+    margin: 0 5px;
+  }
+  .pagination li a {
+    padding: 4px 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .pagination li.active a {
+    border: 1px solid
+  }
 
 @media (max-width: 768px) {
     .meio {
@@ -114,8 +141,10 @@
     }
 }
 
+
 @media (max-width: 472px) {
     .texto {
         font-size: 1.5vh;
     }
+
 }

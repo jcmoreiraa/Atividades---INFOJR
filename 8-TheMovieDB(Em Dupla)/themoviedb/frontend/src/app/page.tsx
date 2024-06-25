@@ -8,6 +8,7 @@ import Checkbox from "@/components/checkbox/checkbox";
 import Movie from "@/components/movie/movie";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import ReactPaginate from "react-paginate";
 
 interface Movie {
   id: number;
@@ -40,6 +41,8 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
   const router = useRouter();
   const apiKey = "04c35731a5ee918f014970082a0088b1";
 
@@ -55,6 +58,7 @@ export default function Home() {
   const handleCheckboxChange = (category: string) => {
     const newCategory = selectedCategory === category ? null : category;
     setSelectedCategory(newCategory);
+    setCurrentPage(0);
   };
 
   useEffect(() => {
@@ -111,7 +115,42 @@ export default function Home() {
     }
   }, [selectedCategory]);
 
+  useEffect(() => {
+    const calculateItemsPerPage = () => {
+      if (window.innerWidth <= 455) {
+        return 2;
+      } else if (window.innerWidth <= 614) {
+        return 3;
+      } else if (window.innerWidth <= 748) {
+        return 4;
+      } else if (window.innerWidth <= 986) {
+        return 8;
+      } else {
+        return 18
+      }
+    };
+
+    const handleResize = () => {
+      const newItemsPerPage = calculateItemsPerPage();
+      setItemsPerPage(newItemsPerPage);
+    };
+
+    setItemsPerPage(calculateItemsPerPage());
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+
   const isFavorite = (movieId: number) => favoriteMovies.some((movie) => movie.id === movieId);
+
+  const handlePageClick = (event: { selected: number }) => {
+    setCurrentPage(event.selected);
+  };
+
+  const offset = currentPage * itemsPerPage;
+  const currentMovies = movies.slice(offset, offset + itemsPerPage);
 
   return (
     <main className="flex min-h-screen flex-col justify-between">
@@ -150,16 +189,31 @@ export default function Home() {
           </section>
 
           <section className="filtrados">
-            {selectedCategory &&
-              movies.map((movie) => (
-                <Movie
-                  key={movie.id}
-                  id={movie.id}
-                  imageSrc={movie.imageSrc}
-                  title={movie.title}
-                  isFavorite={isFavorite(movie.id)}
-                />
-              ))}
+            <div className="pagina">
+              {selectedCategory &&
+                currentMovies.map((movie) => (
+                  <Movie
+                    key={movie.id}
+                    id={movie.id}
+                    imageSrc={movie.imageSrc}
+                    title={movie.title}
+                    isFavorite={isFavorite(movie.id)}
+                  />
+                ))}
+              </div>
+
+          <ReactPaginate
+            previousLabel={"<"}
+            nextLabel={">"}
+            breakLabel={"..."}
+            breakClassName={"break-me"}
+            pageCount={Math.ceil(movies.length / itemsPerPage)}
+            marginPagesDisplayed={1}
+            pageRangeDisplayed={1}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination"}
+            activeClassName={"active"}
+          />
           </section>
         </div>
       </div>
@@ -167,4 +221,4 @@ export default function Home() {
       <Footer />
     </main>
   );
-}
+};

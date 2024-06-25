@@ -44,8 +44,9 @@ input:checked {
   background-color: var(--cor);
 }
 
-.Criar {
+.Criar, .pagination li.active a {
   background-color: var(--background-botao);
+  border: var(--background-botao);
 }
 
 @layer utilities {
