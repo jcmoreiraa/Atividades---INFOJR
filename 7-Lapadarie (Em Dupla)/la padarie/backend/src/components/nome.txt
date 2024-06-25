@@ -1,0 +1,40 @@
+import { PrismaClient } from '@prisma/client';
+import { Request, Response } from 'express';
+
+const prisma = new PrismaClient();
+
+export default {
+    async delete(req: Request, res: Response) {
+        try {
+            const { nome } = req.params; 
+
+            
+            const pessoa = await prisma.fila.findFirst({
+                where: { nome },
+            });
+
+            if (!pessoa) {
+                return res.status(404).json({ error: 'Pessoa não encontrada na fila' });
+            }
+
+            
+            await prisma.historico.create({
+                data: {
+                    nome: pessoa.nome,
+                    paes: pessoa.paes,
+                    valor: pessoa.valor,
+                },
+            });
+
+            
+            await prisma.fila.delete({
+                where: { id: pessoa.id },
+            });
+
+            res.json({ message: 'Pessoa saiu da fila e foi movida para o histórico' });
+        } catch (error) {
+            console.error('Erro ao tirar da fila:', error);
+            res.status(500).json({ error: 'Erro ao tirar da fila' });
+        }
+    }
+}
