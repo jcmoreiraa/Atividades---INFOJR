@@ -2,7 +2,7 @@
 import { z } from 'zod';
 import UserCreateInputSchema from '../types/users/UserCreateInputSchema'
 
-const API_URL = 'http://localhost:3001/';
+const API_URL = 'http://localhost:3004/';
 
 export const getUsers = async () => {
   try {

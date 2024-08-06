@@ -44,6 +44,7 @@ export function AddUserDialog({ onAddUser }: AddUserDialogProps) {
     try {
       await onAddUser(data);
       setOpen(false);
+      
       form.reset();
     } catch (error) {
       console.error("Failed to add user:", error);

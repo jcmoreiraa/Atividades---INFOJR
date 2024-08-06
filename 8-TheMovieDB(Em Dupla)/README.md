@@ -1,200 +1,93 @@
-# Atividade de Núcleo
+# Atividade 8 - Teste
 
-## Informações principais
 
-- **Núcleo:** Web
-- **Orientadores:** [Márcio Ribeiro Júnior](https://github.com/ribmarciojr), [Djair Mycon]() e [Fábio Matos]()
-- **Coorientadores gerais:** Raissa Luna | Lucas Júlio
 
-## Descrição da atividade
+## Getting started
 
-O projeto MovieDB tem por objetivo explorar a API¹ do site [TheMovieDB](https://www.themoviedb.org/) e aprender como configurar a comunicação entre front-end e back-end em um mesmo projeto. O lado server-side será responsável por habilitar o servidor, puxar as informações da API do TheMovieDB e disponibilizar para ser utilizado pelo front. O lado client-side será responsável por obter os dados do servidor local e estruturar a página de forma que transforme os dados obtidos em um sites de filmes.
+To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-### Requisitos Obrigatórios:
+Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-- Atividade em dupla
-- Utilizar Typescript, React e NextJS | Front-end
-- Utilizar o Typescript, ExpressJS, Prisma ORM e Banco de Dados Relacional | Back-end
-- Responsividade
+## Add your files
 
-### Das Funcionalidades:
+- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
 
-- Deve ser possível se cadastrar como usuário;
-- Deve ser possível fazer login como usuário;
-- Deve ser possível acessar página principal com todos os filmes;
-- Deve ser possível buscar um filme por nome;
-- Deve ser possível favoritar um filme;
-- Deve ser possível verificar filmes favoritos;
-- Deve ser possível excluir filmes favoritos;
+```
+cd existing_repo
+git remote add origin https://gitlab.com/eu605237/atividade-8-teste.git
+git branch -M main
+git push -uf origin main
+```
 
+## Integrate with your tools
 
-### Requisistos Opcionais
-- Deve ser possível filtrar filmes(ex:. busca por gênero, busca por mais acessos);
-- Deve ser possível consultar detalhes de um filme em página do filme;
+- [ ] [Set up project integrations](https://gitlab.com/eu605237/atividade-8-teste/-/settings/integrations)
 
-### Interface
+## Collaborate with your team
 
-A atividade não possui um mockup pré-definido, então toda a estrutura e estilização do layout ficará livre, contudo, alguns elementos mínimos deverão estar presentes na página.
-- Página de Login;
-- Página principal;
-- Página de favoritos;
+- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
+- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
+- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
+- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
 
+## Test and Deploy
 
-### API_KEY²
+Use the built-in continuous integration in GitLab.
 
-- Key do TMDB - https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1
-- URL para obter imagens dos posters - https://image.tmdb.org/t/p/w500
-- URL para buscar filmes (não será obrigatório implementar o sistema de busca, é uma ferramenta adicional) - https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=
+- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
+- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
+- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
+- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
+- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
----
+***
 
-_¹API é um conjunto de rotinas e padrões de programação para acesso a um aplicativo de software ou plataforma baseado na Web. A sigla API refere-se ao termo em inglês "Application Programming Interface" que significa em tradução para o português "Interface de Programação de Aplicativos". Uma API é criada quando uma empresa de software tem a intenção de que outros criadores de software desenvolvam produtos associados ao seu serviço._
+# Editing this README
 
-_²API Keys são credenciais de acesso fornecidas de maneira a autorizar o uso de funcionalidades específicas de uma API. Existem vários tipos de implementações. Aplicações web: API Keys podem ser fornecidas como JSON Web Tokens (JWT) via cookies ou cabeçalhos HTTP; em operações de back-end, podem ser parte da URI original do request._
+When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
 
-## Materiais de apoio
+## Suggestions for a good README
 
-### Cursos Completos
+Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-- [Node.js Tutorial for Beginners: Learn Node in 1 Hour - Programming with Mosh](https://youtu.be/TlB_eWDSMt4)
-- [NodeJs - balta.io](https://youtube.com/playlist?list=PLHlHvK2lnJndvvycjBqQAbgEDqXxKLoqn)
-- [Express JS Crash Course - Traversy Media](https://youtu.be/L72fhGm1tfE)
-- Node Studio Treinamentos
-  | **[HTML5](https://youtube.com/playlist?list=PLwXQLZ3FdTVGKl3iPEyEWpFoYkMUxWW5O)**
-  | **[CSS3](https://youtube.com/playlist?list=PLwXQLZ3FdTVGf7GUtiOFLc_9AXO25iIzG)**
-  | **[Javascript](https://youtube.com/playlist?list=PLwXQLZ3FdTVF9Y0RbsuN54XYP7D0dZIlR)**
-  | **[Design Responsivo](https://youtube.com/playlist?list=PLwXQLZ3FdTVFi6oHo_K4IYDcwCU5-f1x5)**
-- [JavaScript - Curso em Vídeo](https://youtube.com/playlist?list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm)
-- [JavaScript Crash Course For Beginners - Traversy Media](https://youtu.be/hdI2bqOjy3c)
-- [JavaScript Fundamentos - Marcelo Espíndola](https://youtube.com/playlist?list=PLkiMYncb6g-2ypEzGZ8Zo-_46-IUJC3tu)
+## Name
+Choose a self-explaining name for your project.
 
-### Vídeos/Textos por assuntos presentes na atividade
+## Description
+Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-#### Node
+## Badges
+On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
 
-Instalação
+## Visuals
+Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-- [Como baixar e instalar o Node.js no Win 10 - Bóson Treinamentos](https://youtu.be/Wras1X6rBrc)
+## Installation
+Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-#### JSON
+## Usage
+Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-- [O que é JSON - JavaScript Object Notation - Bóson Treinamentos](https://youtu.be/K1f7G0JMkLU)
+## Support
+Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
-#### Nodemon
+## Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-- [Nodemon - como configurar e utilizar - Programando Soluções](https://youtu.be/LscE7X8RcVs)
-- [Documentação](https://www.npmjs.com/package/nodemon)
+## Contributing
+State if you are open to contributions and what your requirements are for accepting them.
 
-#### Express
+For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-- [Introdução ao Express - Victor Lima](https://youtu.be/pohvlFd0byI)
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-Instalação
+## Authors and acknowledgment
+Show your appreciation to those who have contributed to the project.
 
-- [Como instalar o Express no Node.js e criar rotas no Node.js - Celke](https://youtu.be/Wb4W0XvZ3h4)
-- [Documentação](https://expressjs.com/pt-br/starter/installing.html)
+## License
+For open source projects, say how it is licensed.
 
-Rotas
-
-- [Roteamento no Express - Expressjs (texto)](https://expressjs.com/pt-br/guide/routing.html)
-- [Criando Rotas com Express.js - treinaweb (texto)](https://www.treinaweb.com.br/blog/criando-rotas-com-express-js)
-- [Como utilizar rotas no Express - Node.js - Programando Soluções](https://youtu.be/jM9SoTtmISc)
-- [Rotas - Victor Lima](https://youtu.be/UMI7kFwmAHo)
-
-Requisição e Resposta
-
-- [Requisição e Resposta - api-automacaoiot (texto)](https://api-automacaoiot.readthedocs.io/pt_BR/latest/reference/request-response.html)
-- [O que são o req e res do Express - Programando Soluções](https://youtu.be/ver4YbPYOqg)
-
-Status
-
-- [Como tratar erro 404 de rota ou página não existente no Express - Programando Soluções](https://youtu.be/icNqDrk9Ojo)
-
-#### Cross-fetch
-
-- [Documentação](https://www.npmjs.com/package/cross-fetch)
-
-#### HTML
-
-Estrutura Básica
-
-- [HTML Basic - w3schools (Texto)](https://www.w3schools.com/html/html_basic.asp)
-- [Estrutura básica de um Documento HTML - Bóson Treinamentos](https://youtu.be/hMAvQtQ97eE)
-
-HTML Semântico
-
-- [HTML Semantic Elements - w3schools (Texto)](https://www.w3schools.com/html/html5_semantic_elements.asp)
-- [Estrutura Semântica do HTML em 25 minutos - Ferreira Studios](https://youtu.be/jEJUopJv12I)
-- [Semântica - Dica do Nerd](https://youtu.be/NdAjp7X2CUI)
-- [Estruturação da página utilizando tags Semânticas do HTML5 - Tiago Segato](https://youtu.be/6V3msF_YBQk)
-
-#### CSS
-
-Flexbox
-
-- [A Complete Guide to Flexbox - CSS Tricks (Texto)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [Curso de CSS Flexbox - Node Studio Treinamentos](https://youtube.com/playlist?list=PLwXQLZ3FdTVGjLmjwfRc0Q9TA5U-PCWp4)
-
-Formatação geral
-
-- [Usando Google Fonts - Curso em Vídeo](https://youtu.be/FLuQonci9wU)
-- [Unidades Relativas Part.1 - Ferreira Studios](https://youtu.be/etM0JBeFbf8)
-- [Unidades Relativas Part.2 - Ferreira Studios](https://youtu.be/g__c-7M9Xzk)
-- [Espaçamentos e a mágica do CSS Box Model - Rocketseat](https://youtu.be/nhW70H9H4gU)
-- [Representando Cores com CSS3 - Curso em Vídeo](https://youtu.be/uKjKnztS3cY)
-- [min(), max(), and clamp() - Kevin Powell](https://youtu.be/U9VF-4euyRo)
-- [CSS Position - Tiger Codes](https://youtu.be/zPlt84S1L0U)
-
-Media Queries
-
-- [Responsividade para sites - Curso em Vídeo](https://youtu.be/WcGPSeuJDJ0)
-- [Como utilizar Media Queries para sites Responsivos - Origamid](https://youtu.be/AltqAPZzAqo)
-
-#### Javascript
-
-Variáveis
-
-- [Variáveis (var, let, const e escopo) - Node Studio Treinamentos](https://youtu.be/GmG5FkF2Hlc)
-
-Funções
-
-- [Funções - Curso em Vídeo](https://youtu.be/mc3TKp2XzhI)
-- [funções - Matheus Battisti](https://youtu.be/ItzRdMj1lzw)
-
-DOM
-
-- [Introdução ao DOM - Curso em vídeo](https://youtu.be/WWZX8RWLxIk)
-- [Eventos DOM - Curso em vídeo](https://youtu.be/wWnBB-mZIvY)
-- [innerHTML property - nexTRIE](https://youtu.be/DSScGM_OtME)
-- [appendChild - Marcelo Espíndola](https://youtu.be/wqyVBiEPd7E)
-- [Events - Basic onclick Event - Intro to Web Apps](https://youtu.be/xj0DQI7N4Go)
-- [Event Handlers in Javascript - Programming With Avelx](https://youtu.be/7UstS0hsHgI)
-
-Array
-
-- [Arrays - w3schools (texto)](https://www.w3schools.com/js/js_arrays.asp)
-- [map() - dpw](https://youtu.be/o8fdyYZDKA0)
-- [Percorrendo arrays com forEach em JavaScript - Matheus Castiglioni](https://youtu.be/1YI4_JuDoTU)
-
-Fetch
-
-- [Como usar Fetch api no Javascript - Codando Básico](https://youtu.be/CXLsvT9mSo8)
-- [Asynchronous JavaScript Tutorial #9 - The Fetch API - The Net Ninja](https://youtu.be/drK6mdA9d_M)
-
-Async & Await
-
-- [Asynchronous JavaScript Tutorial #10 - Async & Await - The Net Ninja ](https://youtu.be/CWjNefiE47Y)
-- [JS Assíncrono: Entenda de vez Callbacks, Promises e Async/Await - DevPleno](https://youtu.be/7Bs4-rqbCQc)
-
-
-Obs .: Todos os materiais anteriores também são recomendados;
-
-## Instruções para envio
-
-1. Clone este repositório no seu computador
-2. Crie a partir da `main` uma nova branch com seu número de turma e nome. Por exemplo: `1-jose` caso pertença a turma 1.
-3. Construa a sua atividade apenas nessa branch, e não hesite em pedir por ajuda caso tenha dificuldades
-4. Suba constantemente a sua branch para este repositório para possibilitar o acompanhamento por parte dos orientadores
-5. Para saber se finalizou a atividade, verifique cuidadosamente se todos os requisitos foram cumpridos
-6. Após finalizar a atividade, faça um merge request com o padrão de título: `[número da atividade]` - `[nome da atividade]` (por exemplo: 2 - Coffee Shop)
-7. Esteja pronto para apresentar o que você fez na próxima RN (Reunião de Núcleo)
+## Project status
+If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
