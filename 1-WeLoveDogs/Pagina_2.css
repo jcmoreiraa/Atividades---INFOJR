@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+    
+   
+
+
+
+
+
+
+header{
+    width: 99%;
+    background: #ffffff;
+    font-family: open sans, sans-serif;
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+
+
+.welovedogs{
+    display:flex;
+    text-decoration: none;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.we{
+    color: #000000;
+}
+
+.love{
+    color: #7ed321;
+}
+
+.dogs{
+    color: #000000;
+}
+
+.menu{
+    list-style: none;
+    color: #000000;
+    width:400px;
+    font-weight: 700;
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase; 
+}
+
+.quemsomos:hover{
+    font-weight: 400;
+}
+
+.blogs:hover{
+    font-weight: 400;
+}
+
+.botaoinscrever{
+    font-family: 'Open Sans', sans-serif;
+    background: rgba(126,211,33,0.4);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 15px;
+}
+
+.botaoinscrever:hover{
+    background: rgba(126,211,33,1);
+    font-weight: 700;
+}
+
+nav{
+    width:98%;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*------------------------------------FIM MENU----------------------------------*/
+
+/*---------------------------------INICIO CORPO DO SITE------------------------*/
+
+
+
+
+h1{
+    font-size: 48px;
+    font-family: 'Open sans', sans-serif;
+    width: 340px;
+    margin-bottom: 30px;
+}
+
+
+
+.botaoinscrever2{
+    font-family: 'Open Sans', sans-serif;
+    background: rgba(126,211,33,1);
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    margin-top: 10px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 15px;
+}
+
+.botaoinscrever2:hover{
+     background: rgba(126,211,33,0.4);
+     font-weight: 400;
+}
+.texto{
+    width: 687px;
+height: 176px;
+margin-left: 420px;
+align-items: center;
+justify-self: center;
+
+
+}
+.imagem{
+    margin-left: 550px;
+}
+.quem_somos{
+    margin-left: 570px;
+}
+

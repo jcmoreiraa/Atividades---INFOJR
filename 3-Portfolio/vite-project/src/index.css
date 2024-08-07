@@ -1,0 +1,48 @@
+
+
+#section{
+    transition: color 0.5s ease-in-out;
+
+
+}
+.first_text_big{
+    transition: color 0.8s ease-in-out;
+}
+.nome{
+    transition: color 1.5s ease-in-out;
+
+}
+.hello{
+    transition: color 0.4s ease-in-out;
+
+
+}
+.title{
+    transition: color 0.8s ease-in-out;
+
+
+}
+.texto__{
+    transition: color 0.8s ease-out;
+
+}
+.leanding{
+    transition: color 0.8s ease-in-out;
+
+
+}
+.avaliable{
+    transition: all 0.4s ease-out;
+
+}
+.avaliable-dark{
+    transition: all 0.4s ease-out;
+
+}
+.bpl{
+    transition: color 0.5s ease-in-out;
+}
+.bpl_dark{
+    transition: color 0.5s ease-in-out;
+}
+

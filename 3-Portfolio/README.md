@@ -5,22 +5,42 @@
 
 ## Descrição da atividade
 
-- Clone este repositório e crie uma branch própia para vocês (que futuramente servirá para o resto das atividades). O nome da sua branch deverá seguir o modelo "numero-da-sua-turma"-"seu-nome", por exemplo, se José for da turma 1 ele deve nomear sua branch de "1-jose".
-- Faça o commit na sua mudança.
-- Façam um pull para a main para evitar conflitos e se tiver tudo certo fazer um merge request no GitLab. 
+### Tarefa
 
-## Materiais de apoio
+Com base no design especificado crie esse portfolio responsivo utilizando React.
 
-Git Básico
+- https://www.figma.com/file/m51hxPh7T2yRX58k1xbdh3/Dark-Mode-%E2%80%93-N%C3%BAcleo-Web?node-id=0%3A1
 
-- [Learn git in 15 minutes](https://www.youtube.com/watch?v=USjZcfj8yxE)
-- [Como usar Git e Github na prática: Guia para iniciantes | Mayk Brito](https://www.youtube.com/watch?v=2alg7MQ6_sI)
-- [GIT para programadores INICIANTES | Introdução e fundamentos | Attekita Dev](https://www.youtube.com/watch?v=P9xXbEhqhqA)
+## REQUISITOS
+
+### Requisitos Obrigatórios:
+
+- Implementar a tela conforme figma
+- Responsividade
+- Utilizar o react
+- Criar menu hamburguer da versão mobile.
+- Substituir o nome de exemplo pelo seu nome
+- Substituir as imagens placeholder por imagens à sua escolha
+
+### Requisitos Opcionais:
+
+- Adicionar animações ao menu hamburguer
+- Adicionar dark mode
+
+
+## LINKS UTEIS
+
+- Todos das atividades anteriores
+
+### React
+
+- https://www.youtube.com/watch?v=37SwqREHRGI&ab_channel=Rocketseat
+- https://react.dev/learn
 
 ## Instruções para envio
 
-1. Clone este repositório no seu computador
-2. Crie a partir da `main` uma nova branch com seu número de turma e nome. Por exemplo: `1-jose` caso pertença a turma 1.
+1. Clone este repositório no seu computador (caso já tenha clonado pule esse passo)
+2. Crie a partir da `main` uma nova branch com seu número de turma e nome. Por exemplo: `1-jose` caso pertença a turma 1. (caso já tenha criado pule esse passo)
 3. Construa a sua atividade apenas nessa branch, e não hesite em pedir por ajuda caso tenha dificuldades
 4. Suba constantemente a sua branch para este repositório para possibilitar o acompanhamento por parte dos orientadores
 5. Para saber se finalizou a atividade, verifique cuidadosamente se todos os requisitos foram cumpridos

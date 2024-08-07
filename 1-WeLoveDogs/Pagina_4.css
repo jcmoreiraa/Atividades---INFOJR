@@ -1,0 +1,161 @@
+
+
+
+h1{
+    font-family: Open Sans, sans-serif;
+font-size: 48px;
+font-weight: 700;
+line-height: 65px;
+letter-spacing: 0em;
+text-align: center;
+display: flex ;
+padding-right: 100px;
+
+
+}
+.primeiro_bloco{
+    display: flex;
+
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+    padding-right: 20px;
+    font-family: 'Open Sans', sans-serif; 
+    display: inline-block;
+
+    
+
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: 7px;
+    Width: 419px;
+    Height: 43px;
+    width: 418px;
+    size: 18px;
+
+    font-weight: bold;
+    padding-left: 10px;
+    
+
+
+}  
+
+.textarea{
+    border: 1px solid black;
+    font-weight: bold;
+    width: 418px;
+height: 160px;
+
+border-radius: 7px;
+padding-left: 10px;
+
+}
+
+::placeholder {
+    color: #9F9F9F;
+    font-weight: 700;
+  }
+  
+ 
+
+h1{
+    padding-left: 612px;
+    width: 216px;
+    height: 65px;
+    top: 181px;
+    left: 612px;
+    text-align: center;
+    
+}
+
+
+.bloco{
+    display: flex;
+    margin-top: 22px;
+    gap: 40px;
+}
+.textarea{
+    width: 418px;
+    height: 160px;
+    border-radius: 7px;
+    border: 1px solid black;
+    background: #FFF;
+
+}
+
+.main{
+    display: flex;
+}
+.ama_perro{
+        width: 7%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+
+    
+        
+    
+}
+
+
+.enviar{
+    font-family: 'Open Sans', sans-serif;
+    background: #7ED321;
+    color: #000000;
+    text-decoration: none;
+    
+    font-size: 16px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 15px;
+    align-self: auto;
+    display: flex;
+
+    
+}
+.img2{
+    padding-right: 500px;
+}
+
+.menu1{
+    list-style: none;
+    color: black;
+    width:400px;
+    font-weight: 700;
+    display:flex;
+    justify-content: space-between;
+    align-items: right;
+    border-radius: 10px;
+        width: 141px;
+        
+        margin-left: 70%;
+        margin-top: 20px;
+
+        
+    
+    
+
+    
+
+
+
+
+
+}
+.main{
+    align-items: center;
+}
+.enviar:hover{
+    background: rgba(126,211,33,0.3);
+
+
+}
+#texto{
+    font-family: 'Open Sans', sans-serif;
+}

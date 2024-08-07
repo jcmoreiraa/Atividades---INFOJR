@@ -5,7 +5,7 @@ Olá, pessoas! Bem-vindos ao Núcleo Web! Este é o local de acesso às atividad
 Neste texto seguem algumas explicações importantes a respeito de como funcionará a sua trajetória aqui dentro.
 
 - **Orientadores:** Turma  [Fábio Santos Matos de Oliveira](https://gitlab.com/Fabio-Matos1303) | Turma  [Djair Maykon](https://gitlab.com/djairmaykon) | Turma  [Márcio R. Júnior m](https://gitlab.com/marciojunior2109) 
-- **Coorientadores gerais:** [Raissa Luna](https://gitlab.com/) | [Lucas Júlio](https://gitlab.com/LucasJulio)
+- **Coorientadores gerais:** [Raissa Luna](https://gitlab.com/raissalunana) | [Lucas Júlio](https://gitlab.com/LucasJulio)
 
 ## Configuração do ambiente
 
